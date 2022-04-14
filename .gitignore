@@ -1,0 +1,5 @@
+.phpdoc
+ast.dump
+
+# IDE
+.idea
