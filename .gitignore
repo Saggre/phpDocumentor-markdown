@@ -3,3 +3,6 @@ ast.dump
 
 # IDE
 .idea
+
+# Composer
+/vendor/

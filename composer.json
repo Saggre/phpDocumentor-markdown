@@ -1,0 +1,36 @@
+{
+  "name": "saggre/phpdocumentor-markdown",
+  "authors": [
+    {
+      "name": "Saggre",
+      "email": "sakri.koskimies@hotmail.com"
+    }
+  ],
+  "version": "0.0.1",
+  "type": "library",
+  "keywords": [
+    "phpdocumentor",
+    "phpdoc",
+    "markdown",
+    "github",
+    "gitlab",
+    "documentation"
+  ],
+  "require": {
+    "php": ">=7.4"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^9.5"
+  },
+  "autoload": {
+    "psr-4": {
+      "PhpDocumentorMarkdown\\": "src/"
+    }
+  },
+  "autoload-dev": {
+  },
+  "scripts": {
+    "phpdoc": "phpdoc run -d . -t ./docs"
+  },
+  "license": "MIT"
+}
