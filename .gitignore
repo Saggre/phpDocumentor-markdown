@@ -1,5 +1,6 @@
+# PhpDocumentor
 .phpdoc
-ast.dump
+phpdoc.xml
 
 # IDE
 .idea

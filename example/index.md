@@ -1,31 +1,28 @@
 ---
-title: Marios pizzeria example
-footer: false
----
 
-# Marios pizzeria example
+# Pizza Place
 
-This is an automatically generated documentation for **Marios pizzeria example**.
+This is an automatically generated documentation for **Pizza Place**.
 
 
 ## Namespaces
 
 
-### \Marios
+### \PhpDocumentorMarkdown\Example
 
 #### Classes
 
 | Class | Description |
 |---    |---          |
-| [Pizza](./classes/Marios/Pizza.md) | |
-| [Pizzeria](./classes/Marios/Pizzeria.md) | Entrypoint for this pizza ordering application.|
+| [AbstractProduct](./classes/PhpDocumentorMarkdown/Example/AbstractProduct.md) | Base class for all products.|
+| [Pizza](./classes/PhpDocumentorMarkdown/Example/Pizza.md) | A pizza.|
 
 
 #### Traits
 
 | Trait | Description |
 |---    |---          |
-| [SharedTrait](./classes/Marios/SharedTrait.md) | Trait that all pizza&#039;s could share.|
+| [ReviewableTrait](./classes/PhpDocumentorMarkdown/Example/ReviewableTrait.md) | A trait for reviewable objects.|
 
 
 
@@ -33,22 +30,21 @@ This is an automatically generated documentation for **Marios pizzeria example**
 
 | Interface | Description |
 |---    |---          |
-| [Product](./classes/Marios/Product.md) | |
+| [ProductInterface](./classes/PhpDocumentorMarkdown/Example/ProductInterface.md) | Interface for a product.|
 
 
 
-### \Marios\Pizza
+### \PhpDocumentorMarkdown\Example\Pizza
 
 #### Classes
 
 | Class | Description |
 |---    |---          |
-| [Base](./classes/Marios/Pizza/Base.md) | Did you see this explanation?|
-| [Sauce](./classes/Marios/Pizza/Sauce.md) | |
-| [Topping](./classes/Marios/Pizza/Topping.md) | |
+| [Base](./classes/PhpDocumentorMarkdown/Example/Pizza/Base.md) | Represents a pizza base.|
+| [Sauce](./classes/PhpDocumentorMarkdown/Example/Pizza/Sauce.md) | Pizza sauce class.|
 
 
 
 
 ---
-> Automatically generated from source code comments on 2020-06-18 using [phpDocumentor](http://www.phpdoc.org/) and [dmarkic/phpdoc3-template-md](https://github.com/dmarkic/phpdoc3-template-md)
+> Automatically generated from source code comments on 2022-04-14 using [phpDocumentor](http://www.phpdoc.org/) and [saggre/phpdocumentor-markdown](https://github.com/Saggre/phpDocumentor-markdown)

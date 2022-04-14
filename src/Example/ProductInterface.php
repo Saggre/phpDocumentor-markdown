@@ -2,6 +2,9 @@
 
 namespace PhpDocumentorMarkdown\Example;
 
+/**
+ * Interface for a product.
+ */
 interface ProductInterface
 {
     /**

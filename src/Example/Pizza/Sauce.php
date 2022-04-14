@@ -2,6 +2,9 @@
 
 namespace PhpDocumentorMarkdown\Example\Pizza;
 
+/**
+ * Pizza sauce class.
+ */
 class Sauce
 {
     /**

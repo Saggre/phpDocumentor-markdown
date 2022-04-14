@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <template>
-    <name>md</name>
+    <name>markdown</name>
     <author>Sakri Koskimies</author>
     <email>sakri.koskimies@hotmail.com</email>
     <version>0.0.2</version>

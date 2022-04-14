@@ -1,9 +1,7 @@
 {% import "include/macros.twig" as macros %}
 {% block content %}
 ---
-title: {{ node.FullyQualifiedStructuralElementName }}
-{% include 'config/frontmatter.twig' %}
----
+{% include 'config/header.twig' %}
 
 # {{ node.name }}
 
@@ -12,13 +10,13 @@ title: {{ node.FullyQualifiedStructuralElementName }}
 {{ node.description|raw }}
 
 * Full name: `{{ node.FullyQualifiedStructuralElementName }}`
-{% if node.parent %}* Parent class: {{ macros.mdClassLink(node.parent, macros.mdClassPath(node), node.parent.FullyQualifiedStructuralElementName) }}
+{% if node.parent %}* Parent interface: {{ macros.mdClassLink(node.parent, macros.mdClassPath(node), node.parent.FullyQualifiedStructuralElementName) }}
 {% endif %}
-{% if node.final %}* This class is marked as **final** and can't be subclassed
+{% if node.final %}* This interface is marked as **final** and can't be subclassed
 {% endif %}
-{% if node.deprecated %}* **Warning:** this class is **deprecated**. This means that this class will likely be removed in a future version.
+{% if node.deprecated %}* **Warning:** this interface is **deprecated**. This means that this interface will likely be removed in a future version.
 {% endif %}
-{% if node.interfaces is not empty %}* This class implements: {{ node.interfaces|join(', ')|raw }}
+{% if node.interfaces is not empty %}* This interface implements: {{ node.interfaces|join(', ')|raw }}
 {% endif %}
 
 {% if node.tags.see is not empty or node.tags.link is not empty %}

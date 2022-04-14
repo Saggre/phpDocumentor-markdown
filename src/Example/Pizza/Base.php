@@ -2,6 +2,9 @@
 
 namespace PhpDocumentorMarkdown\Example\Pizza;
 
+/**
+ * Represents a pizza base.
+ */
 class Base
 {
     public const YEAST_SOURDOUGH_STARTER = 0b01;
