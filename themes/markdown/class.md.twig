@@ -1,4 +1,4 @@
-{% import "include/macros.twig" as macros %}
+{% import 'include/macros.twig' as macros %}
 {% block content %}
 ---
 {% include 'config/header.twig' %}
@@ -10,13 +10,13 @@
 {{ node.description|raw }}
 
 * Full name: `{{ node.FullyQualifiedStructuralElementName }}`
-{% if node.parent %}* Parent class: {{ macros.mdClassLink(node.parent, macros.mdClassPath(node), node.parent.FullyQualifiedStructuralElementName) }}
+{% if node.parent and node.parent is not empty %}* Parent class: {{ macros.mdClassLink(node.parent, macros.mdClassPath(node), node.parent.FullyQualifiedStructuralElementName) }}
 {% endif %}
 {% if node.final %}* This class is marked as **final** and can't be subclassed
 {% endif %}
 {% if node.deprecated %}* **Warning:** this class is **deprecated**. This means that this class will likely be removed in a future version.
 {% endif %}
-{% if node.interfaces is not empty %}* This class implements: {{ node.interfaces|join(', ')|raw }}
+{% if node.interfaces is not empty %}* This class implements: `{{ node.interfaces|join(', ')|raw }}`
 {% endif %}
 
 {% if node.tags.see is not empty or node.tags.link is not empty %}
@@ -39,9 +39,9 @@
 ## Constants
 
 | Constant | Type | Value |
-|:---      |:---  |:---   |
+|:---------|:-----|:------|
 {% for constant in node.constants %}
-|`{{constant.FullyQualifiedStructuralElementName}}`|{{constant.type}}|{{constant.value}}|
+|`{{constant.FullyQualifiedStructuralElementName}}`|{{macros.mdEsc(constant.type)}}|{{constant.value}}|
 {% endfor %}{# for constant #}
 {% endif %}{# if constants #}
 

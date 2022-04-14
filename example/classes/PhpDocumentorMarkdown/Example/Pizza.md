@@ -7,12 +7,13 @@ A pizza.
 
 
 * Full name: `\PhpDocumentorMarkdown\Example\Pizza`
-* Parent class: [\PhpDocumentorMarkdown\Example\AbstractProduct](./AbstractProduct.md)
-* This class implements: \PhpDocumentorMarkdown\Example\ProductInterface
+* Parent class: [`\PhpDocumentorMarkdown\Example\AbstractProduct`](./AbstractProduct.md)
+* This class implements: `\PhpDocumentorMarkdown\Example\ProductInterface`
 
 
 
 ## Methods
+
 
 ### __construct
 
@@ -35,7 +36,7 @@ public Pizza::__construct(string $name, float $price, \PhpDocumentorMarkdown\Exa
 |-----------|------|-------------|
 | `name` | **string** | Product name. |
 | `price` | **float** | Product price. |
-| `base` | **\PhpDocumentorMarkdown\Example\Pizza\Base|null** | Pizza base. |
+| `base` | **\PhpDocumentorMarkdown\Example\Pizza\Base&#124;null** | Pizza base. |
 
 
 **Return Value:**
@@ -45,6 +46,7 @@ public Pizza::__construct(string $name, float $price, \PhpDocumentorMarkdown\Exa
 
 
 ---
+
 ### getName
 
 Get the name of the product.
@@ -68,6 +70,7 @@ public Pizza::getName(): string
 
 
 ---
+
 ### getPrice
 
 Get the price of the product.
@@ -95,6 +98,7 @@ public Pizza::getPrice(): float
 
 ## Inherited methods
 
+
 ### isReviewed
 
 Whether the object has been reviewed.
@@ -118,6 +122,7 @@ public ReviewableTrait::isReviewed(): bool
 
 
 ---
+
 ### getTaxRate
 
 Get the tax rate for the product.

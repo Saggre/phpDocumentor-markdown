@@ -12,6 +12,7 @@ Pizza sauce class.
 
 ## Methods
 
+
 ### __construct
 
 

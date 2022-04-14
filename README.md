@@ -10,12 +10,14 @@ Example created from phpDocumentor 3 MariosPizzeria example is available in [exa
 
 Inspired by:
 
-* https://github.com/evert/phpdoc-md
-* https://github.com/heimrichhannot/phpdoc-github-template
+* [dmarkic/phpdoc3-template-md](https://github.com/dmarkic/phpdoc3-template-md)
+* [cvuorinen/phpdoc-markdown-public](https://github.com/cvuorinen/phpdoc-markdown-public)
+* [evert/phpdoc-md](https://github.com/evert/phpdoc-md)
+* [heimrichhannot/phpdoc-github-template](https://github.com/heimrichhannot/phpdoc-github-template)
 
 ## Installation
 
-Clone this respository or download it.
+Clone this repository or download it.
 
 ## Usage
 

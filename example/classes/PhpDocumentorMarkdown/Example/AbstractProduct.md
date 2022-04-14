@@ -7,11 +7,12 @@ Base class for all products.
 
 
 * Full name: `\PhpDocumentorMarkdown\Example\AbstractProduct`
-* This class implements: \PhpDocumentorMarkdown\Example\ProductInterface
+* This class implements: `\PhpDocumentorMarkdown\Example\ProductInterface`
 
 
 
 ## Methods
+
 
 ### getTaxRate
 

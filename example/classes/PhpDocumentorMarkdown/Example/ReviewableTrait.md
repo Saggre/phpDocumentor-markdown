@@ -13,6 +13,7 @@ A trait for reviewable objects.
 
 ## Methods
 
+
 ### isReviewed
 
 Whether the object has been reviewed.

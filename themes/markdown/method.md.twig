@@ -1,3 +1,5 @@
+{% import 'include/macros.twig' as macros %}
+
 ### {{ method.name }}
 
 {{ method.summary|raw }}
@@ -32,7 +34,7 @@
 | Parameter | Type | Description |
 |-----------|------|-------------|
 {% for argument in method.arguments %}
-| `{{ argument.name }}` | **{{ argument.type ? argument.type|raw }}** | {{ argument.description|replace({'|': '&#124;'})|nl2br|replace({"\n": "", "\r": "", "\t": ""})|raw }} |
+| `{{ argument.name }}` | **{{ argument.type ? macros.mdEsc(argument.type)|raw }}** | {{ argument.description|replace({'|': '&#124;'})|nl2br|replace({"\n": "", "\r": "", "\t": ""})|raw }} |
 {% endfor %}
 
 {% endif %}{# method.arguments is not empty #}

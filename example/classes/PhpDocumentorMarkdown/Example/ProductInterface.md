@@ -7,11 +7,11 @@ Interface for a product.
 
 
 * Full name: `\PhpDocumentorMarkdown\Example\ProductInterface`
-* Parent interface: [](../../../classes.md)
 
 
 
 ## Methods
+
 
 ### __construct
 
@@ -43,6 +43,7 @@ public ProductInterface::__construct(string $name, float $price): mixed
 
 
 ---
+
 ### getName
 
 Get the name of the product.
@@ -66,6 +67,7 @@ public ProductInterface::getName(): string
 
 
 ---
+
 ### getPrice
 
 Get the price of the product.
@@ -89,6 +91,7 @@ public ProductInterface::getPrice(): float
 
 
 ---
+
 ### getTaxRate
 
 Get the tax rate for this product.

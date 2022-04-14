@@ -13,12 +13,13 @@ Represents a pizza base.
 ## Constants
 
 | Constant | Type | Value |
-|:---      |:---  |:---   |
+|:---------|:-----|:------|
 |`\PhpDocumentorMarkdown\Example\Pizza\Base::YEAST_SOURDOUGH_STARTER`||0b1|
 |`\PhpDocumentorMarkdown\Example\Pizza\Base::YEAST_FRESH`||0b10|
 |`\PhpDocumentorMarkdown\Example\Pizza\Base::YEAST_ACTIVE_DRY`||0b11|
 
 ## Methods
+
 
 ### __construct
 
@@ -50,6 +51,7 @@ public Base::__construct(\PhpDocumentorMarkdown\Example\Pizza\Sauce $sauce, int 
 
 
 ---
+
 ### getSauce
 
 
@@ -73,6 +75,7 @@ public Base::getSauce(): \PhpDocumentorMarkdown\Example\Pizza\Sauce
 
 
 ---
+
 ### getYeast
 
 

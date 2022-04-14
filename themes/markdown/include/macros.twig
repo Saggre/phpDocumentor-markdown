@@ -31,7 +31,7 @@
 {{ relPath | join('/') }}{% endmacro %}
 
 {#
- Get full md link for node with baseDir
+  Get full md link for node with baseDir
 #}
 {% macro mdNodePath(node) %}
 {{ node.FullyQualifiedStructuralElementName | replace({'\\':'/'}) | trim }}.md{% endmacro %}
@@ -43,7 +43,12 @@
 {{ 'classes' ~ _self.mdNodePath(node) | trim}}{% endmacro %}
 
 {#
-Create MD link to class node from path
+  Create MD link to class node from path
 #}
 {% macro mdClassLink(node, from, name = null) %}
-[{{ name | default(node.name) }}]({{ _self.mdGetRelativePath(from, _self.mdClassPath(node))}}){% endmacro %}
+[`{{ name | default(node.name) }}`]({{ _self.mdGetRelativePath(from, _self.mdClassPath(node))}}){% endmacro %}
+
+{#
+  Escape markdown special characters
+#}
+{% macro mdEsc(text) %}{{ text | replace({'|':'&#124;'}) | raw }}{% endmacro %}

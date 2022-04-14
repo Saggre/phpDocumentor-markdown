@@ -24,7 +24,7 @@ This is an automatically generated documentation for **{{project.name}}**.
 #### Classes
 
 | Class | Description |
-|---    |---          |
+|-------|-------------|
 {% for class in namespace.classes|sort((a,b) => a.FullyQualifiedStructuralElementName <=> b.FullyQualifiedStructuralElementName) %}
 | {{ macros.mdClassLink(class) }} | {{ class.summary|replace({'|': '&#124;'})|nl2br|replace({"\n": "", "\r": "", "\t": ""})|raw }}|
 {% endfor %}{# for class #}
@@ -35,7 +35,7 @@ This is an automatically generated documentation for **{{project.name}}**.
 #### Traits
 
 | Trait | Description |
-|---    |---          |
+|-------|-------------|
 {% for trait in namespace.traits|sort((a,b) => a.FullyQualifiedStructuralElementName <=> b.FullyQualifiedStructuralElementName) %}
 | {{ macros.mdClassLink(trait) }} | {{ trait.summary|replace({'|': '&#124;'})|nl2br|replace({"\n": "", "\r": "", "\t": ""})|raw }}|
 {% endfor %}{# for trait #}
@@ -47,7 +47,7 @@ This is an automatically generated documentation for **{{project.name}}**.
 #### Interfaces
 
 | Interface | Description |
-|---    |---          |
+|-----------|-------------|
 {% for interface in namespace.interfaces|sort((a,b) => a.FullyQualifiedStructuralElementName <=> b.FullyQualifiedStructuralElementName) %}
 | {{ macros.mdClassLink(interface) }} | {{ interface.summary|replace({'|': '&#124;'})|nl2br|replace({"\n": "", "\r": "", "\t": ""})|raw }}|
 {% endfor %}{# for interace #}
