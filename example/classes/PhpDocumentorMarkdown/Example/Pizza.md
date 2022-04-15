@@ -8,7 +8,8 @@ A pizza.
 
 * Full name: `\PhpDocumentorMarkdown\Example\Pizza`
 * Parent class: [`\PhpDocumentorMarkdown\Example\AbstractProduct`](./AbstractProduct.md)
-* This class implements: `\PhpDocumentorMarkdown\Example\ProductInterface`
+* This class implements:
+[`\PhpDocumentorMarkdown\Example\ProductInterface`](./ProductInterface.md), [`\JsonSerializable`](../../JsonSerializable.md)
 
 
 
@@ -95,6 +96,30 @@ public Pizza::getPrice(): float
 
 ***
 
+### jsonSerialize
+
+
+
+```php
+public Pizza::jsonSerialize(): mixed
+```
+
+
+
+
+
+
+
+
+
+**Return Value:**
+
+
+
+
+
+***
+
 
 ## Inherited methods
 
@@ -149,4 +174,4 @@ public AbstractProduct::getTaxRate(): float
 
 
 ***
-> Automatically generated from source code comments on 2022-04-15 using [phpDocumentor](http://www.phpdoc.org/) and [saggre/phpdocumentor-markdown](https://github.com/Saggre/phpDocumentor-markdown)
+> Automatically generated from source code comments on 2022-04-16 using [phpDocumentor](http://www.phpdoc.org/) and [saggre/phpdocumentor-markdown](https://github.com/Saggre/phpDocumentor-markdown)

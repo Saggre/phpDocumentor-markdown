@@ -2,12 +2,13 @@
 
 namespace PhpDocumentorMarkdown\Example;
 
+use JsonSerializable;
 use PhpDocumentorMarkdown\Example\Pizza\Base;
 
 /**
  * A pizza.
  */
-class Pizza extends AbstractProduct implements ProductInterface
+class Pizza extends AbstractProduct implements ProductInterface, JsonSerializable
 {
     use ReviewableTrait;
 
@@ -33,9 +34,9 @@ class Pizza extends AbstractProduct implements ProductInterface
     protected ?Base $base;
 
     /**
-     * @param string    $name Product name.
-     * @param float     $price Product price.
-     * @param Base|null $base Pizza base.
+     * @param  string  $name  Product name.
+     * @param  float  $price  Product price.
+     * @param  Base|null  $base  Pizza base.
      */
     public function __construct(string $name, float $price, ?Base $base = null)
     {
@@ -62,5 +63,10 @@ class Pizza extends AbstractProduct implements ProductInterface
     public function getPrice(): float
     {
         return $this->price;
+    }
+
+    public function jsonSerialize()
+    {
+        // TODO: Implement jsonSerialize() method.
     }
 }

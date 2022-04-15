@@ -17,15 +17,15 @@ This is an automatically generated documentation for **Pizza Place**.
 
 | Class | Description |
 |-------|-------------|
-| [`AbstractProduct`](./classes/PhpDocumentorMarkdown/Example/AbstractProduct.md) | Base class for all products.|
-| [`Pizza`](./classes/PhpDocumentorMarkdown/Example/Pizza.md) | A pizza.|
+| [`Pizza Place`](./classes/PhpDocumentorMarkdown/Example/AbstractProduct.md) | Base class for all products.|
+| [`Pizza Place`](./classes/PhpDocumentorMarkdown/Example/Pizza.md) | A pizza.|
 
 
 #### Traits
 
 | Trait | Description |
 |-------|-------------|
-| [`ReviewableTrait`](./classes/PhpDocumentorMarkdown/Example/ReviewableTrait.md) | A trait for reviewable objects.|
+| [`Pizza Place`](./classes/PhpDocumentorMarkdown/Example/ReviewableTrait.md) | A trait for reviewable objects.|
 
 
 
@@ -33,7 +33,7 @@ This is an automatically generated documentation for **Pizza Place**.
 
 | Interface | Description |
 |-----------|-------------|
-| [`ProductInterface`](./classes/PhpDocumentorMarkdown/Example/ProductInterface.md) | Interface for a product.|
+| [`Pizza Place`](./classes/PhpDocumentorMarkdown/Example/ProductInterface.md) | Interface for a product.|
 
 
 
@@ -43,11 +43,11 @@ This is an automatically generated documentation for **Pizza Place**.
 
 | Class | Description |
 |-------|-------------|
-| [`Base`](./classes/PhpDocumentorMarkdown/Example/Pizza/Base.md) | Represents a pizza base.|
-| [`Sauce`](./classes/PhpDocumentorMarkdown/Example/Pizza/Sauce.md) | Pizza sauce class.|
+| [`Pizza Place`](./classes/PhpDocumentorMarkdown/Example/Pizza/Base.md) | Represents a pizza base.|
+| [`Pizza Place`](./classes/PhpDocumentorMarkdown/Example/Pizza/Sauce.md) | Pizza sauce class.|
 
 
 
 
 ***
-> Automatically generated from source code comments on 2022-04-15 using [phpDocumentor](http://www.phpdoc.org/) and [saggre/phpdocumentor-markdown](https://github.com/Saggre/phpDocumentor-markdown)
+> Automatically generated from source code comments on 2022-04-16 using [phpDocumentor](http://www.phpdoc.org/) and [saggre/phpdocumentor-markdown](https://github.com/Saggre/phpDocumentor-markdown)
