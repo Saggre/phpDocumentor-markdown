@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a609771ec238bb888da12b667ef9ea68",
+    "content-hash": "5dbcaac591686428d1ae6c5821d1face",
     "packages": [],
     "packages-dev": [
         {
@@ -1583,6 +1583,10 @@
                 "documentation",
                 "phpdoc"
             ],
+            "support": {
+                "issues": "https://github.com/phpDocumentor/phpDocumentor/issues",
+                "source": "https://github.com/phpDocumentor/phpDocumentor/tree/v3.1.2"
+            },
             "time": "2021-08-31T20:17:41+00:00"
         },
         {
@@ -6179,5 +6183,5 @@
     "platform-dev": {
         "php": ">=7.4"
     },
-    "plugin-api-version": "1.1.0"
+    "plugin-api-version": "2.3.0"
 }

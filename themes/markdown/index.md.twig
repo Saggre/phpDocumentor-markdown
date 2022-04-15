@@ -1,9 +1,13 @@
 {% import "include/macros.twig" as macros %}
+{# Assign global vars here #}
+
 {% block content %}
 ***
 {% include 'config/header.md.twig' %}
 
 # {{ project.name|raw }}
+
+{{ project.description|raw }}
 
 This is an automatically generated documentation for **{{project.name}}**.
 

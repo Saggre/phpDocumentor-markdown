@@ -66,6 +66,7 @@ vendor/bin/phpunit
 - Use PSR-12 coding style
 - Twig extensions do not yet work with phpDocumentor3, so custom functionality is created with [Twig macros](./themes/markdown/include/macros.twig).
 - The test suite uses Twig extensions to test the Twig macro functionality.
+- Check `\phpDocumentor\Descriptor\ProjectDescriptor` for data structure used to generate the documentation.
 
 ## Inspired by:
 

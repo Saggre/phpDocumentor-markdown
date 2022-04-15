@@ -17,11 +17,11 @@
     "gitlab",
     "documentation"
   ],
-  "require": {},
   "require-dev": {
     "php": ">=7.4",
     "phpunit/phpunit": "^9.5",
-    "twig/twig": "2.*"
+    "twig/twig": "2.*",
+    "phpdocumentor/phpdocumentor": "3.*"
   },
   "autoload": {
     "psr-4": {
