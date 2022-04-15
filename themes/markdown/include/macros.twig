@@ -46,7 +46,7 @@
   Create MD link to class node from path
 #}
 {% macro mdClassLink(nodeOrNamespace, from, name = null) %}
-[`{{ name | default(node.name) | default('Unknown') }}`]({{ _self.mdGetRelativePath(from, _self.mdClassPath(nodeOrNamespace))}}){% endmacro %}
+[`{{ name | default(nodeOrNamespace.name) | default('Unknown') }}`]({{ _self.mdGetRelativePath(from, _self.mdClassPath(nodeOrNamespace))}}){% endmacro %}
 
 {#
   Escape markdown special characters
