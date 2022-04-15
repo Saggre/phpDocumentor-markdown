@@ -2,6 +2,10 @@
 .phpdoc
 phpdoc.xml
 
+# PHPUbit
+phpunit.xml
+.phpunit*
+
 # IDE
 .idea
 

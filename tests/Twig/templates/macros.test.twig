@@ -1,0 +1,17 @@
+{% import (relativeIncludePath ~ '/macros.twig') as macros %}
+
+{# results variable contains macro output #}
+{% set results = [] %}
+
+{% for test in tests %}
+    {% if test.key == 'mdEsc' %}
+        {% set results = results | merge([
+            clone_with_output(test, macros.mdEsc(test.input))
+        ]) %}
+    {% endif %}
+{% endfor %}
+
+{% autoescape false %}
+    {# print result object as json #}
+    {{ results | object_to_json | raw }}
+{% endautoescape %}

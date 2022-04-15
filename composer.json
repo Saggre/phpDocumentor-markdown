@@ -18,11 +18,11 @@
   ],
   "require": {
     "php": ">=7.4",
-    "phpdocumentor/phpdocumentor": ">=3.0",
-    "twig/twig": "2.*"
+    "phpdocumentor/phpdocumentor": ">=3.0"
   },
   "require-dev": {
-    "phpunit/phpunit": "^9.5"
+    "phpunit/phpunit": "^9.5",
+    "twig/twig": "2.*"
   },
   "autoload": {
     "psr-4": {
@@ -30,6 +30,9 @@
     }
   },
   "autoload-dev": {
+    "psr-4": {
+      "PhpDocumentorMarkdown\\Test\\": "tests/"
+    }
   },
   "scripts": {
     "phpdoc": "phpdoc run -d . -t ./docs"
