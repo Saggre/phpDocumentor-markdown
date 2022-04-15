@@ -10,7 +10,7 @@
 {{ node.description|raw }}
 
 * Full name: `{{ node.FullyQualifiedStructuralElementName }}`
-{% if if node.parent and node.parent is not empty %}* Parent trait: {{ macros.mdClassLink(node.parent, macros.mdClassPath(node), node.parent.FullyQualifiedStructuralElementName) }}
+{% if node.parent and node.parent is not empty %}* Parent trait: {{ macros.mdClassLink(node.parent, macros.mdClassPath(node), node.parent.FullyQualifiedStructuralElementName) }}
 {% endif %}
 {% if node.final %}* This trait is marked as **final** and can't be subclassed
 {% endif %}
