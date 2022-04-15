@@ -1,5 +1,6 @@
 {
   "name": "saggre/phpdocumentor-markdown",
+  "description": "Markdown template for phpDocumentor3",
   "authors": [
     {
       "name": "Saggre",
