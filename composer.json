@@ -34,8 +34,6 @@
       "PhpDocumentorMarkdown\\Test\\": "tests/"
     }
   },
-  "scripts": {
-    "phpdoc": "phpdoc run -d . -t ./docs"
-  },
+  "scripts": {},
   "license": "MIT"
 }
