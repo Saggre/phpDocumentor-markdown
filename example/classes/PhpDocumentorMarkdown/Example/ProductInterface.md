@@ -1,4 +1,4 @@
----
+***
 
 # ProductInterface
 
@@ -42,7 +42,7 @@ public ProductInterface::__construct(string $name, float $price): mixed
 
 
 
----
+***
 
 ### getName
 
@@ -66,7 +66,7 @@ public ProductInterface::getName(): string
 
 
 
----
+***
 
 ### getPrice
 
@@ -90,7 +90,7 @@ public ProductInterface::getPrice(): float
 
 
 
----
+***
 
 ### getTaxRate
 
@@ -114,8 +114,8 @@ public ProductInterface::getTaxRate(): float
 
 
 
----
+***
 
 
----
+***
 > Automatically generated from source code comments on 2022-04-15 using [phpDocumentor](http://www.phpdoc.org/) and [saggre/phpdocumentor-markdown](https://github.com/Saggre/phpDocumentor-markdown)

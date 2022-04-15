@@ -1,4 +1,4 @@
----
+***
 
 # Pizza
 
@@ -45,7 +45,7 @@ public Pizza::__construct(string $name, float $price, \PhpDocumentorMarkdown\Exa
 
 
 
----
+***
 
 ### getName
 
@@ -69,7 +69,7 @@ public Pizza::getName(): string
 
 
 
----
+***
 
 ### getPrice
 
@@ -93,7 +93,7 @@ public Pizza::getPrice(): float
 
 
 
----
+***
 
 
 ## Inherited methods
@@ -121,7 +121,7 @@ public ReviewableTrait::isReviewed(): bool
 
 
 
----
+***
 
 ### getTaxRate
 
@@ -145,8 +145,8 @@ public AbstractProduct::getTaxRate(): float
 
 
 
----
+***
 
 
----
+***
 > Automatically generated from source code comments on 2022-04-15 using [phpDocumentor](http://www.phpdoc.org/) and [saggre/phpdocumentor-markdown](https://github.com/Saggre/phpDocumentor-markdown)

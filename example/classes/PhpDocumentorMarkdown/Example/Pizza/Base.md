@@ -1,4 +1,4 @@
----
+***
 
 # Base
 
@@ -50,7 +50,7 @@ public Base::__construct(\PhpDocumentorMarkdown\Example\Pizza\Sauce $sauce, int 
 
 
 
----
+***
 
 ### getSauce
 
@@ -74,7 +74,7 @@ public Base::getSauce(): \PhpDocumentorMarkdown\Example\Pizza\Sauce
 
 
 
----
+***
 
 ### getYeast
 
@@ -98,8 +98,8 @@ public Base::getYeast(): int
 
 
 
----
+***
 
 
----
+***
 > Automatically generated from source code comments on 2022-04-15 using [phpDocumentor](http://www.phpdoc.org/) and [saggre/phpdocumentor-markdown](https://github.com/Saggre/phpDocumentor-markdown)
