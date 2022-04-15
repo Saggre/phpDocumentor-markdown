@@ -15,6 +15,8 @@ use Twig\TemplateWrapper;
 
 class MacroTestCase extends TestCase
 {
+    use MacroFunctionsTrait;
+
     private TemplateWrapper $template;
 
     protected function setUp(): void

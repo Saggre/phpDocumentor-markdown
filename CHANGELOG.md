@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 ### Added
 - Added links to implemented interface md files
+- Add documentation to Twig macros
+- Add tests for Twig macros
+- Add PHP wrapper for Twig macros
 
 ### Changed
 - Removed method return section when return value is not documented
