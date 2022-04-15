@@ -8,6 +8,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - Added links to implemented interface md files
 
+### Changed
+- Removed method return section when return value is not documented
+
 ## [0.1.1] - 2022-04-15
 ### Changed
 - Regenerated examples
