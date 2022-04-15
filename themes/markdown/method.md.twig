@@ -39,7 +39,7 @@
 
 {% endif %}{# method.arguments is not empty #}
 
-{% if method.response.description %}
+{% if method.response.description and method.response.description is not empty %}
 **Return Value:**
 
 {{ method.response.description|raw }}

@@ -31,10 +31,6 @@ public AbstractProduct::getTaxRate(): float
 
 
 
-**Return Value:**
-
-
-
 
 
 ***

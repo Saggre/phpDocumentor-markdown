@@ -48,7 +48,7 @@ class Pizza extends AbstractProduct implements ProductInterface, JsonSerializabl
     /**
      * Get the name of the product.
      *
-     * @return string
+     * @return string The name of the product.
      */
     public function getName(): string
     {

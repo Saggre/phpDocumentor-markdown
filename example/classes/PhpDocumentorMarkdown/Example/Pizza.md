@@ -40,10 +40,6 @@ public Pizza::__construct(string $name, float $price, \PhpDocumentorMarkdown\Exa
 | `base` | **\PhpDocumentorMarkdown\Example\Pizza\Base&#124;null** | Pizza base. |
 
 
-**Return Value:**
-
-
-
 
 
 ***
@@ -66,7 +62,7 @@ public Pizza::getName(): string
 
 **Return Value:**
 
-
+The name of the product.
 
 
 
@@ -88,10 +84,6 @@ public Pizza::getPrice(): float
 
 
 
-**Return Value:**
-
-
-
 
 
 ***
@@ -109,10 +101,6 @@ public Pizza::jsonSerialize(): mixed
 
 
 
-
-
-
-**Return Value:**
 
 
 
@@ -140,10 +128,6 @@ public ReviewableTrait::isReviewed(): bool
 
 
 
-**Return Value:**
-
-
-
 
 
 ***
@@ -161,10 +145,6 @@ public AbstractProduct::getTaxRate(): float
 
 
 
-
-
-
-**Return Value:**
 
 
 

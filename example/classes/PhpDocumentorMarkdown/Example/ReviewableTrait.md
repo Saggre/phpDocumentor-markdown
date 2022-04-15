@@ -30,10 +30,6 @@ public ReviewableTrait::isReviewed(): bool
 
 
 
-**Return Value:**
-
-
-
 
 
 ***

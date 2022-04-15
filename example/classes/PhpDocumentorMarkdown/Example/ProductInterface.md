@@ -36,10 +36,6 @@ public ProductInterface::__construct(string $name, float $price): mixed
 | `price` | **float** | Product price. |
 
 
-**Return Value:**
-
-
-
 
 
 ***
@@ -57,10 +53,6 @@ public ProductInterface::getName(): string
 
 
 
-
-
-
-**Return Value:**
 
 
 
@@ -84,10 +76,6 @@ public ProductInterface::getPrice(): float
 
 
 
-**Return Value:**
-
-
-
 
 
 ***
@@ -105,10 +93,6 @@ public ProductInterface::getTaxRate(): float
 
 
 
-
-
-
-**Return Value:**
 
 
 

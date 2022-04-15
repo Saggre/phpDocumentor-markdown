@@ -35,10 +35,6 @@ public Sauce::__construct(string $name): mixed
 | `name` | **string** |  |
 
 
-**Return Value:**
-
-
-
 
 
 ***

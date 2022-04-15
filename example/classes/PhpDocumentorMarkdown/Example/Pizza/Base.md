@@ -44,10 +44,6 @@ public Base::__construct(\PhpDocumentorMarkdown\Example\Pizza\Sauce $sauce, int 
 | `yeast` | **int** |  |
 
 
-**Return Value:**
-
-
-
 
 
 ***
@@ -68,10 +64,6 @@ public Base::getSauce(): \PhpDocumentorMarkdown\Example\Pizza\Sauce
 
 
 
-**Return Value:**
-
-
-
 
 
 ***
@@ -89,10 +81,6 @@ public Base::getYeast(): int
 
 
 
-
-
-
-**Return Value:**
 
 
 
