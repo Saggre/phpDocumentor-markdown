@@ -46,16 +46,5 @@ This is an automatically generated documentation for **Pizza Place**.
 
 
 
-### \PhpDocumentorMarkdown\Extension
-
-#### Classes
-
-| Class | Description |
-|-------|-------------|
-| [`TwigMarkdown`](./classes/PhpDocumentorMarkdown/Extension/TwigMarkdown.md) | Provides Twig filters.|
-
-
-
-
 ---
-> Automatically generated from source code comments on 2022-04-14 using [phpDocumentor](http://www.phpdoc.org/) and [saggre/phpdocumentor-markdown](https://github.com/Saggre/phpDocumentor-markdown)
+> Automatically generated from source code comments on 2022-04-15 using [phpDocumentor](http://www.phpdoc.org/) and [saggre/phpdocumentor-markdown](https://github.com/Saggre/phpDocumentor-markdown)

@@ -1,41 +1,25 @@
-# phpDocumentor 3 MarkDown template
+# Markdown template for phpDocumentor3
 
-[phpDocumentor 3 template](https://docs.phpdoc.org/latest/getting-started/changing-the-look-and-feel.html) that generates Markdown documentation.
+**Note:** Tested with phpDocumentor v3.3.1
 
-Example created from phpDocumentor 3 MariosPizzeria example is available in [example/](example/) directory.
+**Note:** For now it documents classes, interfaces and traits. More will be added eventually.
 
-**Note:** phpDocumentor 3 is in development. Tested with latest v3.0.0-rc.
+## Example
+An example is available in [example](example/index.md) directory.
 
-**Note:** For now it documents classes, interfaces and traits. Will add more soon.
+## Installation
+Clone this repository or download it.
 
-Inspired by:
+## Usage
+Usage instructions
+
+```bash
+phpDocumentor.phar run --directory=<YOUR SOURCE DIRECTORY> --target=<TARGET DIRECTORY> --template=<PATH TO THIS REPOSITORY/themes/markdown>
+```
+
+## Inspired by:
 
 * [dmarkic/phpdoc3-template-md](https://github.com/dmarkic/phpdoc3-template-md)
 * [cvuorinen/phpdoc-markdown-public](https://github.com/cvuorinen/phpdoc-markdown-public)
 * [evert/phpdoc-md](https://github.com/evert/phpdoc-md)
 * [heimrichhannot/phpdoc-github-template](https://github.com/heimrichhannot/phpdoc-github-template)
-
-## Installation
-
-Clone this repository or download it.
-
-## Usage
-
-Usage instructions
-
-```bash
-# phpDocumentor.phar run --directory=<YOUR SOURCE DIRECTORY> --target=<TARGET DIRECTORY> --template=<PATH TO THIS REPOSITORY/themes/md>
-```
-
-## Changelog
-
-### v0.0.2 (2020-06-18)
-
-* Added Constants
-* Added Interfaces
-* Added Traits
-- Added inherted methods
-
-### v0.0.1
-
-* Initial version
