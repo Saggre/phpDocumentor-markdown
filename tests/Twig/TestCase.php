@@ -18,7 +18,7 @@ class TestCase extends \PHPUnit\Framework\TestCase
     {
         parent::setUp();
 
-        $this->testTemplatePath    = __DIR__ . '/templates';
+        $this->testTemplatePath    = __DIR__.'/templates';
         $this->relativeIncludePath = 'themes/markdown/include';
     }
 

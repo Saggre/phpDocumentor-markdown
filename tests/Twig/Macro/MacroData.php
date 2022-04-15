@@ -16,30 +16,15 @@ class MacroData implements JsonSerializable
      */
     protected $input;
     /**
-     * @var mixed
-     */
-    protected $expected;
-    /**
      * @var mixed|null
      */
     protected $output;
 
-    public function __construct(string $key, $input, $expected, $output = null)
+    public function __construct(string $key, $input, $output = null)
     {
-        $this->key      = $key;
-        $this->input    = $input;
-        $this->expected = $expected;
-        $this->output   = $output;
-    }
-
-    /**
-     * Whether this macro contains valid output data.
-     *
-     * @return bool
-     */
-    public function isValidOutput(): bool
-    {
-        return $this->output === $this->expected;
+        $this->key    = $key;
+        $this->input  = $input;
+        $this->output = $output;
     }
 
     /**
@@ -67,14 +52,6 @@ class MacroData implements JsonSerializable
     }
 
     /**
-     * @return mixed
-     */
-    public function getExpected()
-    {
-        return $this->expected;
-    }
-
-    /**
      * @return mixed|null
      */
     public function getOutput()
@@ -98,7 +75,6 @@ class MacroData implements JsonSerializable
         return new self(
             $data['key'],
             $data['input'],
-            $data['expected'],
             $data['output'] ?? null
         );
     }
@@ -106,10 +82,9 @@ class MacroData implements JsonSerializable
     public function jsonSerialize(): array
     {
         return [
-            'key'      => $this->key,
-            'input'    => $this->input,
-            'expected' => $this->expected,
-            'output'   => $this->output,
+            'key'    => $this->key,
+            'input'  => $this->input,
+            'output' => $this->output,
         ];
     }
 }
