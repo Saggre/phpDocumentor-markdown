@@ -1,0 +1,24 @@
+name: Generate docs
+
+on:
+  push:
+  pull_request:
+  schedule:
+    - cron: "0 12 * * 6"
+
+jobs:
+  generate-docs:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up environment
+        run: |
+          cp phpdoc.dist.xml phpdoc.xml
+          wget https://phpdoc.org/phpDocumentor.phar
+          chmod +x phpDocumentor.phar
+
+      - name: Generate documentation
+        run: ./phpDocumentor.phar
