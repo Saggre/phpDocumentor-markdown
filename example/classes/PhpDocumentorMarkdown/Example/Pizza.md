@@ -154,4 +154,4 @@ public AbstractProduct::getTaxRate(): float
 
 
 ***
-> Automatically generated from source code comments on 2022-04-16 using [phpDocumentor](http://www.phpdoc.org/) and [saggre/phpdocumentor-markdown](https://github.com/Saggre/phpDocumentor-markdown)
+> Automatically generated from source code comments on 2022-04-17 using [phpDocumentor](http://www.phpdoc.org/) and [saggre/phpdocumentor-markdown](https://github.com/Saggre/phpDocumentor-markdown)
