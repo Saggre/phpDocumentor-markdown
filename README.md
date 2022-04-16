@@ -1,41 +1,40 @@
-# Markdown template for phpDocumentor3
+# Markdown template for phpDocumentor 3.x
 
 ![Tests Status](https://github.com/Saggre/phpDocumentor-markdown/workflows/Run%20tests/badge.svg?style=flat-square)
 ![Generate Docs Status](https://github.com/Saggre/phpDocumentor-markdown/workflows/Generate%20docs/badge.svg?style=flat-square)
-
-**Note:** Tested with phpDocumentor v3.3.1. Should work with all v3.x releases.
 
 ## Example
 An example is available in the [example](example/index.md) directory.
 
 ## Installation & Usage
-Usage instructions, assuming `phpdoc` is the phpDocumentor3 binary.
+- Please refer to [this guide](https://docs.phpdoc.org/3.0/guide/getting-started/installing.html) for instructions on installing phpDocumentor.
+- Usage instructions, assume that `phpDocumentor` is the phpDocumentor 3.x binary.
 
 ### Using Composer
 
 #### Installation via Composer
 ```bash
-# Require this package
+# Require this package. You probably want it as a dev dependency
 composer require --dev saggre/phpdocumentor-markdown
 ```
 
 #### Running manually after installing via Composer
 ```bash
 # Run phpDocumentor with --template argument pointed to markdown template inside vendor directory
-phpdoc --directory=src --target=docs --template="vendor/saggre/phpdocumentor-markdown/themes/markdown"
+phpDocumentor --directory=src --target=docs --template="vendor/saggre/phpdocumentor-markdown/themes/markdown"
 ```
 
 #### Adding a Composer helper script
-Add this script to your `composer.json` and run `composer documentation` to generate the documentation.
+Add this script to your `composer.json` and run `composer create-docs` to generate the documentation.
 
 ```json
 "scripts": {
-    "documentation": "phpdoc --directory=src --target=docs --template='vendor/saggre/phpdocumentor-markdown/themes/markdown'"
+    "create-docs": "phpDocumentor --directory=src --target=docs --template='vendor/saggre/phpdocumentor-markdown/themes/markdown'"
 },
 ```
 
 #### Using with PhpDocumentor XML config
-Add a template element to your phpDocumentor XML config and run `phpdoc` to generate the documentation.
+Add a template element to your phpDocumentor XML config and run `phpDocumentor` to generate the documentation.
 ```xml
 <phpdocumentor>
     <!-- Specify template element inside phpdocumentor -->
@@ -47,13 +46,16 @@ You can also check out the [config file](./phpdoc.dist.xml) used for generating 
 ### Running manually
 ```bash
 # Run phpDocumentor with --template argument pointed to this directory's markdown template
-phpdoc --directory=src --target=docs --template=<PATH TO THIS REPOSITORY/themes/markdown>
+phpDocumentor --directory=src --target=docs --template=<PATH TO THIS REPOSITORY/themes/markdown>
 ```
 
 ## Running tests
 ```bash
 # Clone the repository
 git clone git@github.com:Saggre/phpDocumentor-markdown.git
+
+# Go to the cloned repository
+cd phpDocumentor-markdown
 
 # Install dependencies
 composer install
@@ -69,7 +71,7 @@ composer run-tests
 - Use PSR-12 coding style
 - Twig extensions do not yet work with phpDocumentor3, so custom functionality is created with [Twig macros](./themes/markdown/include/macros.twig).
 - The test suite uses Twig extensions to test the Twig macro functionality.
-- Check `\phpDocumentor\Descriptor\ProjectDescriptor` for data structure used to generate the documentation.
+- Check [`\phpDocumentor\Descriptor\ProjectDescriptor`](https://github.com/phpDocumentor/phpDocumentor/blob/master/src/phpDocumentor/Descriptor/ProjectDescriptor.php) for data structure used to generate the documentation.
 
 ## Inspired by:
 
