@@ -1,0 +1,26 @@
+name: Run tests
+
+on:
+  push:
+  pull_request:
+  schedule:
+    - cron: "0 12 * * 6"
+
+jobs:
+  test-plugin:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up environment
+        run: cp phpunit.dist.xml phpunit.xml
+
+      - name: Install composer dependencies
+        uses: nick-zh/composer@php7.4
+        with:
+          args: 'install --ignore-platform-reqs'
+
+      - name: Run tests
+        run: composer test
