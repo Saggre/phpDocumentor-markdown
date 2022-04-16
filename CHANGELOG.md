@@ -13,9 +13,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Add tests for Twig macros
 - Add PHP wrapper for Twig macros
 - Run tests and generate docs (test) with GitHub Actions
+- Add properties to classes and traits documentation
 
 ### Changed
 - Removed method return section when return value is not documented
+
+### Fixed
+- Fixed issue with empty table cells
 
 ## [0.1.1] - 2022-04-15
 ### Changed

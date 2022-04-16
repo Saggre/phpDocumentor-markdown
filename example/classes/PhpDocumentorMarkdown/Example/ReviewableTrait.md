@@ -18,12 +18,12 @@ A trait for reviewable objects.
 
 
 ```php
-public array $reviews
+public static array $reviews
 ```
 
 
 
-
+* This property is **static**.
 
 
 ***
