@@ -61,7 +61,7 @@ composer install
 cp phpunit.xml.dist phpunit.xml
 
 # Run PHPUnit in project root directory
-vendor/bin/phpunit
+composer run-tests
 ```
 
 ## Contributing

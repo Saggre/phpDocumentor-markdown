@@ -23,4 +23,4 @@ jobs:
           args: 'install --ignore-platform-reqs'
 
       - name: Run tests
-        run: composer test
+        run: composer run-tests

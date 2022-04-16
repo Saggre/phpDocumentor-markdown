@@ -33,7 +33,7 @@
     }
   },
   "scripts": {
-    "test": "vendor/bin/phpunit"
+    "run-tests": "vendor/bin/phpunit"
   },
   "license": "MIT"
 }
