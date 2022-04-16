@@ -8,7 +8,13 @@ An example is available in the [example](example/index.md) directory.
 
 ## Installation & Usage
 - Please refer to [this guide](https://docs.phpdoc.org/3.0/guide/getting-started/installing.html) for instructions on installing phpDocumentor.
-- Usage instructions, assume that `phpDocumentor` is the phpDocumentor 3.x binary.
+- Usage instructions assume that `phpDocumentor` is the phpDocumentor 3.x binary.
+
+### Running manually
+```bash
+# Run phpDocumentor with --template argument pointed to this directory's markdown template
+phpDocumentor --directory=src --target=docs --template=<PATH TO THIS REPOSITORY/themes/markdown>
+```
 
 ### Using Composer
 
@@ -42,12 +48,6 @@ Add a template element to your phpDocumentor XML config and run `phpDocumentor` 
 </phpdocumentor>
 ```
 You can also check out the [config file](./phpdoc.dist.xml) used for generating this repository's example documentation for a full example.
-
-### Running manually
-```bash
-# Run phpDocumentor with --template argument pointed to this directory's markdown template
-phpDocumentor --directory=src --target=docs --template=<PATH TO THIS REPOSITORY/themes/markdown>
-```
 
 ## Running tests
 ```bash
