@@ -10,6 +10,39 @@ Pizza sauce class.
 
 
 
+## Properties
+
+
+### name
+
+Sauce name.
+
+```php
+protected string $name
+```
+
+
+
+
+
+
+***
+
+### tomatoSupplier
+
+Tomato supplier.
+
+```php
+public static string $tomatoSupplier
+```
+
+
+
+* This property is **static**.
+
+
+***
+
 ## Methods
 
 
@@ -18,7 +51,7 @@ Pizza sauce class.
 
 
 ```php
-public Sauce::__construct(string $name): mixed
+public __construct(string $name): mixed
 ```
 
 
@@ -32,7 +65,7 @@ public Sauce::__construct(string $name): mixed
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `name` | **string** |  |
+| `$name` | **string** |  |
 
 
 

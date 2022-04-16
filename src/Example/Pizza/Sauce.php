@@ -15,7 +15,14 @@ class Sauce
     protected string $name;
 
     /**
-     * @param string $name
+     * Tomato supplier.
+     *
+     * @var string
+     */
+    public static string $tomatoSupplier;
+
+    /**
+     * @param  string  $name
      */
     public function __construct(string $name)
     {

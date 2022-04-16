@@ -10,6 +10,23 @@ A trait for reviewable objects.
 
 
 
+## Properties
+
+
+### reviews
+
+
+
+```php
+public array $reviews
+```
+
+
+
+
+
+
+***
 
 ## Methods
 
@@ -19,7 +36,7 @@ A trait for reviewable objects.
 Whether the object has been reviewed.
 
 ```php
-public ReviewableTrait::isReviewed(): bool
+public isReviewed(): bool
 ```
 
 

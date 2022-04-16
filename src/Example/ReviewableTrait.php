@@ -8,6 +8,11 @@ namespace PhpDocumentorMarkdown\Example;
 trait ReviewableTrait
 {
     /**
+     * @var array $reviews Product reviews.
+     */
+    public array $reviews = [];
+
+    /**
      * Whether the object has been reviewed.
      *
      * @return bool

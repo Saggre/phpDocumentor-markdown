@@ -9,6 +9,8 @@ Base class for all products.
 * Full name: `\PhpDocumentorMarkdown\Example\AbstractProduct`
 * This class implements:
 [`\PhpDocumentorMarkdown\Example\ProductInterface`](./ProductInterface.md)
+* This class is an **Abstract class**
+
 
 
 
@@ -20,7 +22,7 @@ Base class for all products.
 Get the tax rate for the product.
 
 ```php
-public AbstractProduct::getTaxRate(): float
+public getTaxRate(): float
 ```
 
 

@@ -18,7 +18,7 @@ Interface for a product.
 
 
 ```php
-public ProductInterface::__construct(string $name, float $price): mixed
+public __construct(string $name, float $price): mixed
 ```
 
 
@@ -32,8 +32,8 @@ public ProductInterface::__construct(string $name, float $price): mixed
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `name` | **string** | Product name. |
-| `price` | **float** | Product price. |
+| `$name` | **string** | Product name. |
+| `$price` | **float** | Product price. |
 
 
 
@@ -45,7 +45,7 @@ public ProductInterface::__construct(string $name, float $price): mixed
 Get the name of the product.
 
 ```php
-public ProductInterface::getName(): string
+public getName(): string
 ```
 
 
@@ -65,7 +65,7 @@ public ProductInterface::getName(): string
 Get the price of the product.
 
 ```php
-public ProductInterface::getPrice(): float
+public getPrice(): float
 ```
 
 
@@ -85,7 +85,7 @@ public ProductInterface::getPrice(): float
 Get the tax rate for this product.
 
 ```php
-public ProductInterface::getTaxRate(): float
+public getTaxRate(): float
 ```
 
 

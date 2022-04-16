@@ -9,14 +9,46 @@ Represents a pizza base.
 * Full name: `\PhpDocumentorMarkdown\Example\Pizza\Base`
 
 
-
 ## Constants
 
-| Constant | Type | Value |
-|:---------|:-----|:------|
-|`\PhpDocumentorMarkdown\Example\Pizza\Base::YEAST_SOURDOUGH_STARTER`||0b1|
-|`\PhpDocumentorMarkdown\Example\Pizza\Base::YEAST_FRESH`||0b10|
-|`\PhpDocumentorMarkdown\Example\Pizza\Base::YEAST_ACTIVE_DRY`||0b11|
+| Constant | Visibility | Type | Value |
+|:---------|:-----------|:-----|:------|
+|`YEAST_SOURDOUGH_STARTER`|private| |0b1|
+|`YEAST_FRESH`|public| |0b10|
+|`YEAST_ACTIVE_DRY`|public| |0b11|
+
+## Properties
+
+
+### sauce
+
+The sauce used.
+
+```php
+protected \PhpDocumentorMarkdown\Example\Pizza\Sauce $sauce
+```
+
+
+
+
+
+
+***
+
+### yeast
+
+Type of yeast used.
+
+```php
+protected int $yeast
+```
+
+
+
+
+
+
+***
 
 ## Methods
 
@@ -26,7 +58,7 @@ Represents a pizza base.
 
 
 ```php
-public Base::__construct(\PhpDocumentorMarkdown\Example\Pizza\Sauce $sauce, int $yeast = self::YEAST_SOURDOUGH_STARTER): mixed
+public __construct(\PhpDocumentorMarkdown\Example\Pizza\Sauce $sauce, int $yeast = self::YEAST_SOURDOUGH_STARTER): mixed
 ```
 
 
@@ -40,8 +72,8 @@ public Base::__construct(\PhpDocumentorMarkdown\Example\Pizza\Sauce $sauce, int 
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `sauce` | **\PhpDocumentorMarkdown\Example\Pizza\Sauce** |  |
-| `yeast` | **int** |  |
+| `$sauce` | **\PhpDocumentorMarkdown\Example\Pizza\Sauce** |  |
+| `$yeast` | **int** |  |
 
 
 
@@ -53,7 +85,7 @@ public Base::__construct(\PhpDocumentorMarkdown\Example\Pizza\Sauce $sauce, int 
 
 
 ```php
-public Base::getSauce(): \PhpDocumentorMarkdown\Example\Pizza\Sauce
+public getSauce(): \PhpDocumentorMarkdown\Example\Pizza\Sauce
 ```
 
 
@@ -73,7 +105,7 @@ public Base::getSauce(): \PhpDocumentorMarkdown\Example\Pizza\Sauce
 
 
 ```php
-public Base::getYeast(): int
+public getYeast(): int
 ```
 
 

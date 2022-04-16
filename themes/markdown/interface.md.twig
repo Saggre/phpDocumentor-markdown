@@ -34,16 +34,15 @@
 {% endif %}{# node.tags.see || node.tags.link #}
 
 {# Check constants #}
-{% if node.constants|length > 0 %}
-
+{% if node.constants | length > 0 %}
 ## Constants
 
-| Constant | Type | Value |
-|:---------|:-----|:------|
+| Constant | Visibility | Type | Value |
+|:---------|:-----------|:-----|:------|
 {% for constant in node.constants %}
-|`{{constant.FullyQualifiedStructuralElementName}}`|{{constant.type}}|{{constant.value}}|
-{% endfor %}{# for constant #}
-{% endif %}{# if constants #}
+|`{{constant.name}}`|{{ constant.visibility | default('*default*') }}|{{macros.mdEsc(constant.type) | default(' ')}}|{{constant.value}}|
+{% endfor %}
+{% endif %}
 
 {# Check methods #}
 {% if node.methods|length > 0 %}

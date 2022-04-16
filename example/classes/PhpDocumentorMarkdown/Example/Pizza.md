@@ -13,6 +13,54 @@ A pizza.
 
 
 
+## Properties
+
+
+### name
+
+Product name.
+
+```php
+private string $name
+```
+
+
+
+
+
+
+***
+
+### price
+
+Product price.
+
+```php
+protected float $price
+```
+
+
+
+
+
+
+***
+
+### base
+
+Pizza base.
+
+```php
+protected ?\PhpDocumentorMarkdown\Example\Pizza\Base $base
+```
+
+
+
+
+
+
+***
+
 ## Methods
 
 
@@ -21,7 +69,7 @@ A pizza.
 
 
 ```php
-public Pizza::__construct(string $name, float $price, \PhpDocumentorMarkdown\Example\Pizza\Base|null $base = null): mixed
+public __construct(string $name, float $price, \PhpDocumentorMarkdown\Example\Pizza\Base|null $base = null): mixed
 ```
 
 
@@ -35,9 +83,9 @@ public Pizza::__construct(string $name, float $price, \PhpDocumentorMarkdown\Exa
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `name` | **string** | Product name. |
-| `price` | **float** | Product price. |
-| `base` | **\PhpDocumentorMarkdown\Example\Pizza\Base&#124;null** | Pizza base. |
+| `$name` | **string** | Product name. |
+| `$price` | **float** | Product price. |
+| `$base` | **\PhpDocumentorMarkdown\Example\Pizza\Base&#124;null** | Pizza base. |
 
 
 
@@ -49,7 +97,7 @@ public Pizza::__construct(string $name, float $price, \PhpDocumentorMarkdown\Exa
 Get the name of the product.
 
 ```php
-public Pizza::getName(): string
+public getName(): string
 ```
 
 
@@ -73,7 +121,7 @@ The name of the product.
 Get the price of the product.
 
 ```php
-public Pizza::getPrice(): float
+public getPrice(): float
 ```
 
 
@@ -93,7 +141,7 @@ public Pizza::getPrice(): float
 
 
 ```php
-public Pizza::jsonSerialize(): mixed
+public jsonSerialize(): mixed
 ```
 
 
@@ -117,7 +165,7 @@ public Pizza::jsonSerialize(): mixed
 Whether the object has been reviewed.
 
 ```php
-public ReviewableTrait::isReviewed(): bool
+public isReviewed(): bool
 ```
 
 
@@ -137,7 +185,7 @@ public ReviewableTrait::isReviewed(): bool
 Get the tax rate for the product.
 
 ```php
-public AbstractProduct::getTaxRate(): float
+public getTaxRate(): float
 ```
 
 
