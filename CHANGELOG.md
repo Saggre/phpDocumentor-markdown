@@ -5,12 +5,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+
+## [0.1.2] - 2022-04-17
 ### Added
 - Added links to implemented interface md files
 - Add documentation to Twig macros
 - Add tests for Twig macros
 - Add PHP wrapper for Twig macros
-- Run test with GitHub Actions
+- Run tests and generate docs (test) with GitHub Actions
 
 ### Changed
 - Removed method return section when return value is not documented

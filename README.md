@@ -1,6 +1,7 @@
 # Markdown template for phpDocumentor3
 
 ![Tests Status](https://github.com/Saggre/phpDocumentor-markdown/workflows/Run%20tests/badge.svg?style=flat-square)
+![Generate Docs Status](https://github.com/Saggre/phpDocumentor-markdown/workflows/Generate%20docs/badge.svg?style=flat-square)
 
 **Note:** Tested with phpDocumentor v3.3.1. Should work with all v3.x releases.
 
