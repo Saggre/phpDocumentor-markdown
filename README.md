@@ -4,7 +4,7 @@
 ![Generate Docs Status](https://github.com/Saggre/phpDocumentor-markdown/workflows/Generate%20docs/badge.svg?style=flat-square)
 
 Automatically generate GitHub/GitLab-ready Markdown documentation from your PHP source code using [phpDocumentor](https://www.phpdoc.org/). 
-Generates documentation for classes, interfaces, functions, methods, properties and constants.
+Generates documentation for classes, interfaces, traits, constants, properties and methods.
 
 ## Example
 An example is available in the [example](example/index.md) directory.
