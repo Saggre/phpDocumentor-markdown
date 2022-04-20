@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.1.3] - 2022-04-20
+### Added
+- Option for leaving out .md file extensions from urls (used for GitLab wiki pages).
+
 ## [0.1.2] - 2022-04-17
 ### Added
 - Added links to implemented interface md files

@@ -37,7 +37,7 @@
   @param $nodeOrNamespace object|string The node to get the link for or a PHP class namespace string
 #}
 {% macro mdNodePath(nodeOrNamespace) %}
-{{ nodeOrNamespace.FullyQualifiedStructuralElementName | default(nodeOrNamespace) | replace({'\\':'/'}) | trim ~ '.md' }}{% endmacro %}
+{{ nodeOrNamespace.FullyQualifiedStructuralElementName | default(nodeOrNamespace) | replace({'\\':'/'}) | trim ~ (parameter.urlFileExtensions == 'no' ? '' : '.md') }}{% endmacro %}
 
 {#
   Get full link to a class from documentation root directory

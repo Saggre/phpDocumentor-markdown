@@ -15,5 +15,7 @@
             </source>
         </api>
     </version>
-    <template name="./themes/markdown"/>
+    <template name="./themes/markdown">
+        <parameter name="urlFileExtensions" value="yes"/>
+    </template>
 </phpdocumentor>
