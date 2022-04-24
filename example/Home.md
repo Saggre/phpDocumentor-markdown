@@ -1,11 +1,11 @@
 
 ***
 
-# Pizza Place
+# Pizza Place (Example documentation)
 
 
 
-This is an automatically generated documentation for **Pizza Place**.
+This is an automatically generated documentation for **Pizza Place (Example documentation)**.
 
 
 ## Namespaces
@@ -50,4 +50,4 @@ This is an automatically generated documentation for **Pizza Place**.
 
 
 ***
-> Automatically generated from source code comments on 2022-04-20 using [phpDocumentor](http://www.phpdoc.org/) and [saggre/phpdocumentor-markdown](https://github.com/Saggre/phpDocumentor-markdown)
+> Automatically generated from source code comments on 2022-04-24 using [phpDocumentor](http://www.phpdoc.org/) and [saggre/phpdocumentor-markdown](https://github.com/Saggre/phpDocumentor-markdown)

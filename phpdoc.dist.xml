@@ -4,7 +4,7 @@
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xmlns="https://www.phpdoc.org"
 >
-    <title>Pizza Place</title>
+    <title>Pizza Place (Example documentation)</title>
     <paths>
         <output>example</output>
     </paths>

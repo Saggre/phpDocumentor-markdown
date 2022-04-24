@@ -5,7 +5,7 @@
     <email>sakri.koskimies@hotmail.com</email>
     <version>0.0.2</version>
     <transformations>
-        <transformation writer="twig" source="index.md.twig" artifact="index.md"/>
+        <transformation writer="twig" source="index.md.twig" artifact="Home.md"/>
         <transformation writer="twig" query="indexes.classes" source="class.md.twig"
                         artifact="classes/{{FullyQualifiedStructuralElementName}}.md"/>
         <transformation writer="twig" query="indexes.traits" source="trait.md.twig"
