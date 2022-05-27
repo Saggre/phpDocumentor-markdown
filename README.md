@@ -1,10 +1,11 @@
-# Markdown template for phpDocumentor 3.x
+# phpDocumentor - Generate GitHub/GitLab-Ready Markdown Documentation
+
+## Markdown template for phpDocumentor 3.x
 
 ![Tests Status](https://github.com/Saggre/phpDocumentor-markdown/workflows/Run%20tests/badge.svg?style=flat-square)
 ![Generate Docs Status](https://github.com/Saggre/phpDocumentor-markdown/workflows/Generate%20docs/badge.svg?style=flat-square)
 
-Automatically generate GitHub/GitLab-ready Markdown documentation from your PHP source code using [phpDocumentor](https://www.phpdoc.org/). 
-Generates documentation for classes, interfaces, traits, constants, properties and methods.
+Have you ever wished there was an easier way to generate documentation for your PHP source code? Well, now there is! With [phpDocumentor](https://www.phpdoc.org/) and phpDocumentor-markdown, you can automatically generate GitHub/GitLab-ready Markdown documentation from your PHP source code. This template can be used to document classes, interfaces, traits, constants, properties and methods.
 
 ## Example
 An example is available in the [example](example/index.md) directory.
