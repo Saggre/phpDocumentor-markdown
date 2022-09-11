@@ -77,7 +77,7 @@ class PhpdocBinaryHandler
      * @return array PHPDocumentor binary version numbers
      * @throws \Exception Throws if binary is invalid or does not exist.
      */
-    protected static function assertBinaryVersion(): array
+    public static function assertBinaryVersion(): array
     {
         $version = self::getBinaryVersion();
 

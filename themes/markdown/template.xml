@@ -5,12 +5,12 @@
     <email>sakri.koskimies@hotmail.com</email>
     <version>0.1.4</version>
     <transformations>
-        <transformation writer="twig" source="../twig/index.md.twig" artifact="Home.md"/>
-        <transformation writer="twig" query="indexes.classes" source="../twig/class.md.twig"
+        <transformation writer="twig" source="index.md.twig" artifact="Home.md"/>
+        <transformation writer="twig" query="indexes.classes" source="class.md.twig"
                         artifact="classes/{{FullyQualifiedStructuralElementName}}.md"/>
-        <transformation writer="twig" query="indexes.traits" source="../twig/trait.md.twig"
+        <transformation writer="twig" query="indexes.traits" source="trait.md.twig"
                         artifact="classes/{{FullyQualifiedStructuralElementName}}.md"/>
-        <transformation writer="twig" query="indexes.interfaces" source="../twig/interface.md.twig"
+        <transformation writer="twig" query="indexes.interfaces" source="interface.md.twig"
                         artifact="classes/{{FullyQualifiedStructuralElementName}}.md"/>
     </transformations>
     <parameters>

@@ -27,4 +27,32 @@ class Utils
         echo "\033[0m";
         echo PHP_EOL;
     }
+
+    /**
+     * Delete a directory and all its contents.
+     *
+     * @param $path
+     * @return void
+     */
+    public static function deleteDir($path): void
+    {
+        if (!is_dir($path)) {
+            throw new \InvalidArgumentException("$path must be a directory");
+        }
+
+        if (substr($path, strlen($path) - 1, 1) != '/') {
+            $path .= '/';
+        }
+
+        $files = glob($path . '*', GLOB_MARK);
+        foreach ($files as $file) {
+            if (is_dir($file)) {
+                self::deleteDir($file);
+            } else {
+                unlink($file);
+            }
+        }
+
+        rmdir($path);
+    }
 }
