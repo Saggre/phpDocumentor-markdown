@@ -3,6 +3,9 @@
         <testsuite name="Twig">
             <directory suffix="Test.php">./tests/Twig</directory>
         </testsuite>
+        <testsuite name="E2E">
+            <directory suffix="Test.php">./tests/E2E</directory>
+        </testsuite>
     </testsuites>
     <extensions>
         <extension class="\PhpDocumentorMarkdown\Test\Twig\Extension"/>

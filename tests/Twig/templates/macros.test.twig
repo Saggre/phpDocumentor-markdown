@@ -29,6 +29,11 @@
             clone_with_output(test, macros.mdClassLink(test.input[0], test.input[1], test.input[2]))
         ]) %}
     {% endif %}
+    {% if test.key == 'mdPrint' %}
+        {% set results = results | merge([
+            clone_with_output(test, macros.mdPrint(test.input[0], test.input[1]))
+        ]) %}
+    {% endif %}
 {% endfor %}
 
 {% autoescape false %}

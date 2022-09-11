@@ -88,4 +88,32 @@ class MacroTest extends MacroTestCase
             $this->mdClassLink($name, 'classes/Fully/Qualified', 'ClassName')->getOutput()
         );
     }
+
+    /**
+     * Test mdPrint macro.
+     *
+     * @return void
+     */
+    public function testMdPrint()
+    {
+        $value = 'Foobar';
+
+        $result = $this->getMacroData('mdPrint', [$value, 0]);
+        self::assertMacroOutputEquals(
+            $value,
+            $result->getOutput()
+        );
+
+        $result = $this->getMacroData('mdPrint', [$value, 3]);
+        self::assertMacroOutputEquals(
+            "$value\n\n\n",
+            $result->getOutput()
+        );
+
+        $result = $this->getMacroData('mdPrint', ['', 2]);
+        self::assertMacroOutputEquals(
+            '',
+            $result->getOutput()
+        );
+    }
 }
