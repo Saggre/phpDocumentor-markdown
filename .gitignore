@@ -8,10 +8,6 @@ phpunit.xml
 tests/E2E/output
 test
 
-# Binary
-bin/*
-!bin/.gitkeep
-
 # IDE
 .idea
 

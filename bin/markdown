@@ -1,0 +1,17 @@
+#!/usr/bin/env php
+<?php
+
+require dirname(__DIR__) . '/vendor/autoload.php';
+
+use PhpDocumentorMarkdown\Command\BinaryCommand;
+use PhpDocumentorMarkdown\Command\DocumentorCommand;
+use Symfony\Component\Console\Application;
+
+$application = new Application();
+$application->add(new BinaryCommand());
+$application->add(new DocumentorCommand());
+
+try {
+    $application->run();
+} catch (Exception $e) {
+}

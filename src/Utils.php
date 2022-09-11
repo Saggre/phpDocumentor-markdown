@@ -18,14 +18,26 @@ class Utils
      * Print to CLI with color.
      *
      * @param string $content
-     * @return void
+     * @param bool $return
+     * @return string|null
      */
-    public static function cliOutput(string $content): void
+    public static function cliOutput(string $content, bool $return = false): ?string
     {
+        ob_start();
+
         echo "\033[0;36m";
         echo $content;
         echo "\033[0m";
-        echo PHP_EOL;
+
+        $value = ob_get_clean();
+
+        if ($return) {
+            return $value;
+        }
+
+        echo $value . PHP_EOL;
+
+        return null;
     }
 
     /**

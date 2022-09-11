@@ -1,0 +1,721 @@
+<?xml version="1.0"?>
+<project name="Pizza Place (Example documentation)">
+    <file path="src/Example/AbstractProduct.php" hash="98286316c92dcb1f29e5a16f54b2f317">
+        <docblock line="0">
+            <description></description>
+            <long-description></long-description>
+            <tag
+                    name="package"
+                    description="Application"
+            />
+        </docblock>
+
+
+        <namespace-alias name="\PhpDocumentorMarkdown\Example"/>
+
+
+        <class final="false" abstract="true" namespace="\PhpDocumentorMarkdown\Example" line="8">
+            <name>AbstractProduct</name>
+            <full_name>\PhpDocumentorMarkdown\Example\AbstractProduct</full_name>
+            <docblock line="8">
+                <description>Base class for all products.</description>
+                <long-description></long-description>
+                <tag
+                        name="package"
+                        description="Application"
+                />
+            </docblock>
+
+
+            <implements>\PhpDocumentorMarkdown\Example\ProductInterface</implements>
+
+
+            <method final="false" abstract="false" static="false" namespace="\PhpDocumentorMarkdown\Example" line="15"
+                    visibility="public" returnByReference="false">
+                <name>getTaxRate</name>
+                <full_name>\PhpDocumentorMarkdown\Example\AbstractProduct::getTaxRate()</full_name>
+                <value></value>
+                <docblock line="15">
+                    <description>Get the tax rate for the product.</description>
+                    <long-description></long-description>
+                    <tag
+                            name="return"
+                            description=""
+                            type="float"/>
+                </docblock>
+
+            </method>
+
+        </class>
+
+
+        <parse_markers></parse_markers>
+    </file>
+    <file path="src/Example/Pizza/Base.php" hash="d6de55fec9f740f1e5cd769da4d28c76">
+        <docblock line="0">
+            <description></description>
+            <long-description></long-description>
+            <tag
+                    name="package"
+                    description="Application"
+            />
+        </docblock>
+
+
+        <namespace-alias name="\PhpDocumentorMarkdown\Example\Pizza"/>
+
+
+        <class final="false" abstract="false" namespace="\PhpDocumentorMarkdown\Example\Pizza" line="8">
+            <name>Base</name>
+            <full_name>\PhpDocumentorMarkdown\Example\Pizza\Base</full_name>
+            <docblock line="8">
+                <description>Represents a pizza base.</description>
+                <long-description></long-description>
+                <tag
+                        name="package"
+                        description="Application"
+                />
+            </docblock>
+
+
+            <constant namespace="\PhpDocumentorMarkdown\Example\Pizza\Base" line="10" visibility="private">
+                <name>YEAST_SOURDOUGH_STARTER</name>
+                <full_name>\PhpDocumentorMarkdown\Example\Pizza\Base::YEAST_SOURDOUGH_STARTER</full_name>
+                <value>0b1</value>
+                <docblock line="10">
+                    <description></description>
+                    <long-description></long-description>
+                </docblock>
+
+            </constant>
+
+            <constant namespace="\PhpDocumentorMarkdown\Example\Pizza\Base" line="11" visibility="public">
+                <name>YEAST_FRESH</name>
+                <full_name>\PhpDocumentorMarkdown\Example\Pizza\Base::YEAST_FRESH</full_name>
+                <value>0b10</value>
+                <docblock line="11">
+                    <description></description>
+                    <long-description></long-description>
+                </docblock>
+
+            </constant>
+
+            <constant namespace="\PhpDocumentorMarkdown\Example\Pizza\Base" line="12" visibility="public">
+                <name>YEAST_ACTIVE_DRY</name>
+                <full_name>\PhpDocumentorMarkdown\Example\Pizza\Base::YEAST_ACTIVE_DRY</full_name>
+                <value>0b11</value>
+                <docblock line="12">
+                    <description></description>
+                    <long-description></long-description>
+                </docblock>
+
+            </constant>
+
+
+            <property namespace="\PhpDocumentorMarkdown\Example\Pizza\Base" line="19" visibility="protected">
+                <name>sauce</name>
+                <full_name>\PhpDocumentorMarkdown\Example\Pizza\Base::$sauce</full_name>
+                <default></default>
+                <docblock line="19">
+                    <description>The sauce used.</description>
+                    <long-description></long-description>
+                    <tag
+                            name="var"
+                            description=""
+                            type="\PhpDocumentorMarkdown\Example\Pizza\Sauce"/>
+                </docblock>
+
+            </property>
+
+            <property namespace="\PhpDocumentorMarkdown\Example\Pizza\Base" line="26" visibility="protected">
+                <name>yeast</name>
+                <full_name>\PhpDocumentorMarkdown\Example\Pizza\Base::$yeast</full_name>
+                <default></default>
+                <docblock line="26">
+                    <description>Type of yeast used.</description>
+                    <long-description></long-description>
+                    <tag
+                            name="var"
+                            description=""
+                            type="int"/>
+                </docblock>
+
+            </property>
+
+
+            <method final="false" abstract="false" static="false" namespace="\PhpDocumentorMarkdown\Example\Pizza"
+                    line="32" visibility="public" returnByReference="false">
+                <name>__construct</name>
+                <full_name>\PhpDocumentorMarkdown\Example\Pizza\Base::__construct()</full_name>
+                <value></value>
+                <argument line="32" by_reference="false">
+                    <name>sauce</name>
+                    <default></default>
+                    <type>\PhpDocumentorMarkdown\Example\Pizza\Sauce</type>
+                </argument>
+
+                <argument line="32" by_reference="false">
+                    <name>yeast</name>
+                    <default>self::YEAST_SOURDOUGH_STARTER</default>
+                    <type>int</type>
+                </argument>
+
+                <docblock line="32">
+                    <description></description>
+                    <long-description></long-description>
+                    <tag
+                            name="param"
+                            description=""
+                            variable="sauce" type="\PhpDocumentorMarkdown\Example\Pizza\Sauce"/>
+                    <tag
+                            name="param"
+                            description=""
+                            variable="yeast" type="int"/>
+                </docblock>
+
+            </method>
+
+            <method final="false" abstract="false" static="false" namespace="\PhpDocumentorMarkdown\Example\Pizza"
+                    line="41" visibility="public" returnByReference="false">
+                <name>getSauce</name>
+                <full_name>\PhpDocumentorMarkdown\Example\Pizza\Base::getSauce()</full_name>
+                <value></value>
+                <docblock line="41">
+                    <description></description>
+                    <long-description></long-description>
+                    <tag
+                            name="return"
+                            description=""
+                            type="\PhpDocumentorMarkdown\Example\Pizza\Sauce"/>
+                </docblock>
+
+            </method>
+
+            <method final="false" abstract="false" static="false" namespace="\PhpDocumentorMarkdown\Example\Pizza"
+                    line="49" visibility="public" returnByReference="false">
+                <name>getYeast</name>
+                <full_name>\PhpDocumentorMarkdown\Example\Pizza\Base::getYeast()</full_name>
+                <value></value>
+                <docblock line="49">
+                    <description></description>
+                    <long-description></long-description>
+                    <tag
+                            name="return"
+                            description=""
+                            type="int"/>
+                </docblock>
+
+            </method>
+
+        </class>
+
+
+        <parse_markers></parse_markers>
+    </file>
+    <file path="src/Example/Pizza/Sauce.php" hash="db79825e574f700cb58167925f161f73">
+        <docblock line="0">
+            <description></description>
+            <long-description></long-description>
+            <tag
+                    name="package"
+                    description="Application"
+            />
+        </docblock>
+
+
+        <namespace-alias name="\PhpDocumentorMarkdown\Example\Pizza"/>
+
+
+        <class final="false" abstract="false" namespace="\PhpDocumentorMarkdown\Example\Pizza" line="8">
+            <name>Sauce</name>
+            <full_name>\PhpDocumentorMarkdown\Example\Pizza\Sauce</full_name>
+            <docblock line="8">
+                <description>Pizza sauce class.</description>
+                <long-description></long-description>
+                <tag
+                        name="package"
+                        description="Application"
+                />
+            </docblock>
+
+
+            <property namespace="\PhpDocumentorMarkdown\Example\Pizza\Sauce" line="15" visibility="protected">
+                <name>name</name>
+                <full_name>\PhpDocumentorMarkdown\Example\Pizza\Sauce::$name</full_name>
+                <default></default>
+                <docblock line="15">
+                    <description>Sauce name.</description>
+                    <long-description></long-description>
+                    <tag
+                            name="var"
+                            description=""
+                            type="string"/>
+                </docblock>
+
+            </property>
+
+            <property namespace="\PhpDocumentorMarkdown\Example\Pizza\Sauce" line="22" visibility="public">
+                <name>tomatoSupplier</name>
+                <full_name>\PhpDocumentorMarkdown\Example\Pizza\Sauce::$tomatoSupplier</full_name>
+                <default></default>
+                <docblock line="22">
+                    <description>Tomato supplier.</description>
+                    <long-description></long-description>
+                    <tag
+                            name="var"
+                            description=""
+                            type="string"/>
+                </docblock>
+
+            </property>
+
+
+            <method final="false" abstract="false" static="false" namespace="\PhpDocumentorMarkdown\Example\Pizza"
+                    line="27" visibility="public" returnByReference="false">
+                <name>__construct</name>
+                <full_name>\PhpDocumentorMarkdown\Example\Pizza\Sauce::__construct()</full_name>
+                <value></value>
+                <argument line="27" by_reference="false">
+                    <name>name</name>
+                    <default></default>
+                    <type>string</type>
+                </argument>
+
+                <docblock line="27">
+                    <description></description>
+                    <long-description></long-description>
+                    <tag
+                            name="param"
+                            description=""
+                            variable="name" type="string"/>
+                </docblock>
+
+            </method>
+
+        </class>
+
+
+        <parse_markers></parse_markers>
+    </file>
+    <file path="src/Example/Pizza.php" hash="20d2c6938bcb158baa77bbf4326a9a41">
+        <docblock line="0">
+            <description></description>
+            <long-description></long-description>
+            <tag
+                    name="package"
+                    description="Application"
+            />
+        </docblock>
+
+
+        <namespace-alias name="\PhpDocumentorMarkdown\Example"/>
+
+
+        <class final="false" abstract="false" namespace="\PhpDocumentorMarkdown\Example" line="11">
+            <name>Pizza</name>
+            <full_name>\PhpDocumentorMarkdown\Example\Pizza</full_name>
+            <docblock line="11">
+                <description>A pizza.</description>
+                <long-description></long-description>
+                <tag
+                        name="package"
+                        description="Application"
+                />
+            </docblock>
+
+            <extends>\PhpDocumentorMarkdown\Example\AbstractProduct</extends>
+            <implements>\PhpDocumentorMarkdown\Example\ProductInterface</implements>
+            <implements>\JsonSerializable</implements>
+
+
+            <property namespace="\PhpDocumentorMarkdown\Example\Pizza" line="20" visibility="private">
+                <name>name</name>
+                <full_name>\PhpDocumentorMarkdown\Example\Pizza::$name</full_name>
+                <default></default>
+                <docblock line="20">
+                    <description>Product name.</description>
+                    <long-description></long-description>
+                    <tag
+                            name="var"
+                            description=""
+                            type="string"/>
+                </docblock>
+
+            </property>
+
+            <property namespace="\PhpDocumentorMarkdown\Example\Pizza" line="27" visibility="protected">
+                <name>price</name>
+                <full_name>\PhpDocumentorMarkdown\Example\Pizza::$price</full_name>
+                <default></default>
+                <docblock line="27">
+                    <description>Product price.</description>
+                    <long-description></long-description>
+                    <tag
+                            name="var"
+                            description=""
+                            type="float"/>
+                </docblock>
+
+            </property>
+
+            <property namespace="\PhpDocumentorMarkdown\Example\Pizza" line="34" visibility="protected">
+                <name>base</name>
+                <full_name>\PhpDocumentorMarkdown\Example\Pizza::$base</full_name>
+                <default></default>
+                <docblock line="34">
+                    <description>Pizza base.</description>
+                    <long-description></long-description>
+                    <tag
+                            name="var"
+                            description=""
+                            type="\PhpDocumentorMarkdown\Example\Pizza\Base|null"/>
+                </docblock>
+
+            </property>
+
+            <property namespace="\PhpDocumentorMarkdown\Example\ReviewableTrait" line="13" visibility="public">
+                <name>reviews</name>
+                <full_name>\PhpDocumentorMarkdown\Example\ReviewableTrait::$reviews</full_name>
+                <default>[]</default>
+                <inherited_from>\PhpDocumentorMarkdown\Example\ReviewableTrait</inherited_from>
+                <docblock line="13">
+                    <description></description>
+                    <long-description></long-description>
+                    <tag
+                            name="var"
+                            description="Product reviews."
+                            variable="reviews" type="array"/>
+                </docblock>
+
+            </property>
+
+
+            <method final="false" abstract="false" static="false" namespace="\PhpDocumentorMarkdown\Example" line="41"
+                    visibility="public" returnByReference="false">
+                <name>__construct</name>
+                <full_name>\PhpDocumentorMarkdown\Example\Pizza::__construct()</full_name>
+                <value></value>
+                <argument line="41" by_reference="false">
+                    <name>name</name>
+                    <default></default>
+                    <type>string</type>
+                </argument>
+
+                <argument line="41" by_reference="false">
+                    <name>price</name>
+                    <default></default>
+                    <type>float</type>
+                </argument>
+
+                <argument line="41" by_reference="false">
+                    <name>base</name>
+                    <default>null</default>
+                    <type>\PhpDocumentorMarkdown\Example\Pizza\Base|null</type>
+                </argument>
+
+                <docblock line="41">
+                    <description></description>
+                    <long-description></long-description>
+                    <tag
+                            name="param"
+                            description="Product name."
+                            variable="name" type="string"/>
+                    <tag
+                            name="param"
+                            description="Product price."
+                            variable="price" type="float"/>
+                    <tag
+                            name="param"
+                            description="Pizza base."
+                            variable="base" type="\PhpDocumentorMarkdown\Example\Pizza\Base|null"/>
+                </docblock>
+
+            </method>
+
+            <method final="false" abstract="false" static="false" namespace="\PhpDocumentorMarkdown\Example" line="53"
+                    visibility="public" returnByReference="false">
+                <name>getName</name>
+                <full_name>\PhpDocumentorMarkdown\Example\Pizza::getName()</full_name>
+                <value></value>
+                <docblock line="53">
+                    <description>Get the name of the product.</description>
+                    <long-description></long-description>
+                    <tag
+                            name="return"
+                            description="The name of the product."
+                            type="string"/>
+                </docblock>
+
+            </method>
+
+            <method final="false" abstract="false" static="false" namespace="\PhpDocumentorMarkdown\Example" line="63"
+                    visibility="public" returnByReference="false">
+                <name>getPrice</name>
+                <full_name>\PhpDocumentorMarkdown\Example\Pizza::getPrice()</full_name>
+                <value></value>
+                <docblock line="63">
+                    <description>Get the price of the product.</description>
+                    <long-description></long-description>
+                    <tag
+                            name="return"
+                            description=""
+                            type="float"/>
+                </docblock>
+
+            </method>
+
+            <method final="false" abstract="false" static="false" namespace="\PhpDocumentorMarkdown\Example" line="68"
+                    visibility="public" returnByReference="false">
+                <name>jsonSerialize</name>
+                <full_name>\PhpDocumentorMarkdown\Example\Pizza::jsonSerialize()</full_name>
+                <value></value>
+                <docblock line="68">
+                    <description></description>
+                    <long-description></long-description>
+                </docblock>
+
+            </method>
+
+            <method final="false" abstract="false" static="false" namespace="\PhpDocumentorMarkdown\Example" line="20"
+                    visibility="public" returnByReference="false">
+                <name>isReviewed</name>
+                <full_name>\PhpDocumentorMarkdown\Example\ReviewableTrait::isReviewed()</full_name>
+                <value></value>
+                <inherited_from>\PhpDocumentorMarkdown\Example\ReviewableTrait</inherited_from>
+                <docblock line="20">
+                    <description>Whether the object has been reviewed.</description>
+                    <long-description></long-description>
+                    <tag
+                            name="return"
+                            description=""
+                            type="bool"/>
+                </docblock>
+
+            </method>
+
+            <method final="false" abstract="false" static="false" namespace="\PhpDocumentorMarkdown\Example" line="15"
+                    visibility="public" returnByReference="false">
+                <name>getTaxRate</name>
+                <full_name>\PhpDocumentorMarkdown\Example\AbstractProduct::getTaxRate()</full_name>
+                <value></value>
+                <inherited_from>\PhpDocumentorMarkdown\Example\AbstractProduct</inherited_from>
+                <docblock line="15">
+                    <description>Get the tax rate for the product.</description>
+                    <long-description></long-description>
+                    <tag
+                            name="return"
+                            description=""
+                            type="float"/>
+                </docblock>
+
+            </method>
+
+        </class>
+
+
+        <todo line="70">Implement jsonSerialize() method.</todo>
+
+        <parse_markers></parse_markers>
+    </file>
+    <file path="src/Example/ProductInterface.php" hash="2ed70c5565f131ace461bbee94faeb29">
+        <docblock line="0">
+            <description></description>
+            <long-description></long-description>
+            <tag
+                    name="package"
+                    description="Application"
+            />
+        </docblock>
+
+
+        <namespace-alias name="\PhpDocumentorMarkdown\Example"/>
+
+
+        <interface namespace="\PhpDocumentorMarkdown\Example" line="8" package="\Application">
+            <name>ProductInterface</name>
+            <full_name>\PhpDocumentorMarkdown\Example\ProductInterface</full_name>
+            <docblock line="8">
+                <description>Interface for a product.</description>
+                <long-description></long-description>
+                <tag
+                        name="package"
+                        description="Application"
+                />
+            </docblock>
+
+            <method final="false" abstract="false" static="false" namespace="\PhpDocumentorMarkdown\Example" line="14"
+                    visibility="public" returnByReference="false">
+                <name>__construct</name>
+                <full_name>\PhpDocumentorMarkdown\Example\ProductInterface::__construct()</full_name>
+                <value></value>
+                <argument line="14" by_reference="false">
+                    <name>name</name>
+                    <default></default>
+                    <type>string</type>
+                </argument>
+
+                <argument line="14" by_reference="false">
+                    <name>price</name>
+                    <default></default>
+                    <type>float</type>
+                </argument>
+
+                <docblock line="14">
+                    <description></description>
+                    <long-description></long-description>
+                    <tag
+                            name="param"
+                            description="Product name."
+                            variable="name" type="string"/>
+                    <tag
+                            name="param"
+                            description="Product price."
+                            variable="price" type="float"/>
+                </docblock>
+
+            </method>
+
+            <method final="false" abstract="false" static="false" namespace="\PhpDocumentorMarkdown\Example" line="21"
+                    visibility="public" returnByReference="false">
+                <name>getName</name>
+                <full_name>\PhpDocumentorMarkdown\Example\ProductInterface::getName()</full_name>
+                <value></value>
+                <docblock line="21">
+                    <description>Get the name of the product.</description>
+                    <long-description></long-description>
+                    <tag
+                            name="return"
+                            description=""
+                            type="string"/>
+                </docblock>
+
+            </method>
+
+            <method final="false" abstract="false" static="false" namespace="\PhpDocumentorMarkdown\Example" line="28"
+                    visibility="public" returnByReference="false">
+                <name>getPrice</name>
+                <full_name>\PhpDocumentorMarkdown\Example\ProductInterface::getPrice()</full_name>
+                <value></value>
+                <docblock line="28">
+                    <description>Get the price of the product.</description>
+                    <long-description></long-description>
+                    <tag
+                            name="return"
+                            description=""
+                            type="float"/>
+                </docblock>
+
+            </method>
+
+            <method final="false" abstract="false" static="false" namespace="\PhpDocumentorMarkdown\Example" line="35"
+                    visibility="public" returnByReference="false">
+                <name>getTaxRate</name>
+                <full_name>\PhpDocumentorMarkdown\Example\ProductInterface::getTaxRate()</full_name>
+                <value></value>
+                <docblock line="35">
+                    <description>Get the tax rate for this product.</description>
+                    <long-description></long-description>
+                    <tag
+                            name="return"
+                            description=""
+                            type="float"/>
+                </docblock>
+
+            </method>
+
+        </interface>
+
+
+        <parse_markers></parse_markers>
+    </file>
+    <file path="src/Example/ReviewableTrait.php" hash="b121909a90550eb0a4c1213f4b5a8eff">
+        <docblock line="0">
+            <description></description>
+            <long-description></long-description>
+            <tag
+                    name="package"
+                    description="Application"
+            />
+        </docblock>
+
+
+        <namespace-alias name="\PhpDocumentorMarkdown\Example"/>
+
+
+        <trait namespace="\PhpDocumentorMarkdown\Example" line="8">
+            <name>ReviewableTrait</name>
+            <full_name>\PhpDocumentorMarkdown\Example\ReviewableTrait</full_name>
+            <docblock line="8">
+                <description>A trait for reviewable objects.</description>
+                <long-description></long-description>
+                <tag
+                        name="package"
+                        description="Application"
+                />
+            </docblock>
+
+            <property namespace="\PhpDocumentorMarkdown\Example\ReviewableTrait" line="13" visibility="public">
+                <name>reviews</name>
+                <full_name>\PhpDocumentorMarkdown\Example\ReviewableTrait::$reviews</full_name>
+                <default>[]</default>
+                <docblock line="13">
+                    <description></description>
+                    <long-description></long-description>
+                    <tag
+                            name="var"
+                            description="Product reviews."
+                            variable="reviews" type="array"/>
+                </docblock>
+
+            </property>
+
+
+            <method final="false" abstract="false" static="false" namespace="\PhpDocumentorMarkdown\Example" line="20"
+                    visibility="public" returnByReference="false">
+                <name>isReviewed</name>
+                <full_name>\PhpDocumentorMarkdown\Example\ReviewableTrait::isReviewed()</full_name>
+                <value></value>
+                <docblock line="20">
+                    <description>Whether the object has been reviewed.</description>
+                    <long-description></long-description>
+                    <tag
+                            name="return"
+                            description=""
+                            type="bool"/>
+                </docblock>
+
+            </method>
+
+        </trait>
+
+
+        <parse_markers></parse_markers>
+    </file>
+
+    <namespace name="Example" full_name="\PhpDocumentorMarkdown\Example">
+        <namespace name="Pizza" full_name="\PhpDocumentorMarkdown\Example\Pizza"/>
+
+    </namespace>
+
+    <namespace name="Pizza" full_name="\PhpDocumentorMarkdown\Example\Pizza"/>
+
+    <namespace name="\" full_name="\">
+        <namespace name="PhpDocumentorMarkdown" full_name="\PhpDocumentorMarkdown">
+            <namespace name="Example" full_name="\PhpDocumentorMarkdown\Example">
+                <namespace name="Pizza" full_name="\PhpDocumentorMarkdown\Example\Pizza"/>
+
+            </namespace>
+
+        </namespace>
+
+    </namespace>
+
+    <namespace name="PhpDocumentorMarkdown" full_name="\PhpDocumentorMarkdown">
+        <namespace name="Example" full_name="\PhpDocumentorMarkdown\Example">
+            <namespace name="Pizza" full_name="\PhpDocumentorMarkdown\Example\Pizza"/>
+
+        </namespace>
+
+    </namespace>
+
+</project>
