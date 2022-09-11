@@ -3,7 +3,7 @@
   "description": "Markdown template for phpDocumentor3",
   "authors": [
     {
-      "name": "Saggre",
+      "name": "Sakri Koskimies",
       "email": "sakri.koskimies@hotmail.com"
     }
   ],
@@ -19,6 +19,7 @@
   ],
   "require-dev": {
     "php": ">=7.4",
+    "ext-json": "*",
     "phpunit/phpunit": "^9.5",
     "twig/twig": "2.*"
   },
