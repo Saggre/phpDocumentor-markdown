@@ -5,6 +5,8 @@ phpdoc.xml
 # PHPUbit
 phpunit.xml
 .phpunit*
+tests/E2E/output
+test
 
 # IDE
 .idea
