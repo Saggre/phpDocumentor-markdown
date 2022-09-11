@@ -17,9 +17,13 @@
     "gitlab",
     "documentation"
   ],
-  "require-dev": {
+  "require": {
     "php": ">=7.4",
     "ext-json": "*",
+    "guzzlehttp/guzzle": "^7.0",
+    "composer/composer": "^2.4"
+  },
+  "require-dev": {
     "phpunit/phpunit": "^9.5",
     "twig/twig": "2.*"
   },
@@ -35,7 +39,14 @@
   },
   "scripts": {
     "run-tests": "vendor/bin/phpunit",
-    "create-docs": "phpdoc && cp -r example/* docs/.wiki"
+    "create-docs": "phpdoc && cp -r example/* docs/.wiki",
+    "pre-install-cmd": "PhpDocumentorMarkdown\\PhpdocBinaryHandler::downloadBinaryIfNotExists"
   },
-  "license": "MIT"
+  "bin": [
+    "bin/phpdoc"
+  ],
+  "license": "MIT",
+  "extra": {
+    "phpdoc-binary-url": "https://github.com/phpDocumentor/phpDocumentor/releases/download/v3.3.1/phpDocumentor.phar"
+  }
 }

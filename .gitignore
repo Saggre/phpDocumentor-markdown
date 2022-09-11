@@ -2,11 +2,15 @@
 .phpdoc
 phpdoc.xml
 
-# PHPUbit
+# PHPUnit
 phpunit.xml
 .phpunit*
 tests/E2E/output
 test
+
+# Binary
+bin/*
+!bin/.gitkeep
 
 # IDE
 .idea
