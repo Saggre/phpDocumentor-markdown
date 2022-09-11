@@ -5,10 +5,8 @@
 
 # {{ node.name }}
 
-{{ node.summary|raw }}
-
-{{ node.description|raw }}
-
+{{ macros.mdPrint( node.summary | raw, 1 ) }}
+{{ macros.mdPrint( node.description | raw, 1) }}
 * Full name: `{{ node.FullyQualifiedStructuralElementName }}`
 {% if node.parent and node.parent is not empty %}* Parent class: {{ macros.mdClassLink(node.parent, macros.mdClassPath(node), node.parent.FullyQualifiedStructuralElementName) }}
 {% endif %}
@@ -26,6 +24,7 @@
 {% endif %}
 {% if node.final %}* This class is a **Final class**
 {% endif %}
+
 
 {% if node.tags.see is not empty or node.tags.link is not empty %}
 **See Also:**

@@ -57,6 +57,13 @@
 
 {#
   Escape markdown special characters
-  @param $text string The text to escape
+  @param $value string The text to escape
 #}
-{% macro mdEsc(text) %}{{ text | replace({'|':'&#124;'}) | raw }}{% endmacro %}
+{% macro mdEsc(value) %}{{ value | replace({'|':'&#124;'}) | raw }}{% endmacro %}
+
+{#
+  Print value if it's not empty
+  @param $value string The text to print
+  @param $ln int how many line breaks to print
+#}
+{% macro mdPrint(value, ln = 0) %}{% if value is not empty %}{{ value | raw }}{% if ln > 0 %}{% for i in range(0, ln-1) %}{{ '\n' }}{% endfor %}{% endif %}{% endif %}{% endmacro %}
