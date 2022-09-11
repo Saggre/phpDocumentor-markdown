@@ -21,6 +21,18 @@ class PhpdocBinaryHandler
     }
 
     /**
+     * Call the binary.
+     *
+     * @param string $command
+     * @return false|string|null
+     */
+    public static function call(string $command)
+    {
+        $path = self::getBinaryPath();
+        return shell_exec("$path $command");
+    }
+
+    /**
      * Get PHPDocumentor phar download url.
      *
      * @param string $version
@@ -48,8 +60,7 @@ class PhpdocBinaryHandler
      */
     protected static function getBinaryVersion(): ?array
     {
-        $path = self::getBinaryPath();
-        $version = shell_exec("$path -V");
+        $version = self::call('-V');
 
         if (empty($version)) {
             return null;
