@@ -7,7 +7,7 @@
 {# Method signature #}
 ```php
 {% if method.final %}{{ 'final' ~ ' ' }}{% endif %}{{ method.visibility ~ ' ' }}{%if method.static%}{{ 'static' ~ ' ' }}{% endif %}{{ method.name }}({% for argument in method.arguments %}
-{{- argument.type }} 
+{{- argument.type }}
 {{- argument.byReference ? '&' }} $
 {{- argument.name }}{{ argument.default ? ' = '~argument.default }}
 {%- if not loop.last %}, {% endif %}
@@ -46,7 +46,18 @@
 
 {% endif %}
 
+{% if method.tags.throws|length > 0 or method.tags.throw|length > 0 %}
+
+**Throws:**
+{% for exception in method.tags.throws %}
+{{ exception.description|markdown|raw }}
+- {{ macros.mdClassLink(exception.type | raw, macros.mdClassPath(node), exception.type | shortFQSEN ) }}
+{% endfor %}
+
+{% endif %}
+
 {% if method.tags.see is not empty or method.tags.link is not empty %}
+
 **See Also:**
 
 {% for see in method.tags.see %}
