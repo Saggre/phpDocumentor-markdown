@@ -90,6 +90,7 @@ public __construct(string $name, float $price, \PhpDocumentorMarkdown\Example\Pi
 
 
 
+
 ***
 
 ### getName
@@ -114,6 +115,7 @@ The name of the product.
 
 
 
+
 ***
 
 ### getPrice
@@ -134,6 +136,7 @@ public getPrice(): float
 
 
 
+
 ***
 
 ### jsonSerialize
@@ -143,6 +146,7 @@ public getPrice(): float
 ```php
 public jsonSerialize(): mixed
 ```
+
 
 
 
@@ -178,6 +182,7 @@ public isReviewed(): bool
 
 
 
+
 ***
 
 ### getTaxRate
@@ -198,8 +203,9 @@ public getTaxRate(): float
 
 
 
+
 ***
 
 
 ***
-> Automatically generated on 2022-09-09
+> Automatically generated on 2023-11-24

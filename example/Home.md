@@ -50,4 +50,4 @@ This is an automatically generated documentation for **Pizza Place (Example docu
 
 
 ***
-> Automatically generated on 2022-09-09
+> Automatically generated on 2023-11-24

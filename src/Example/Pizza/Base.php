@@ -2,6 +2,8 @@
 
 namespace PhpDocumentorMarkdown\Example\Pizza;
 
+use Exception;
+
 /**
  * Represents a pizza base.
  */
@@ -45,6 +47,7 @@ class Base
 
     /**
      * @return int
+     * @throws Exception
      */
     public function getYeast(): int
     {

@@ -78,6 +78,7 @@ public __construct(\PhpDocumentorMarkdown\Example\Pizza\Sauce $sauce, int $yeast
 
 
 
+
 ***
 
 ### getSauce
@@ -87,6 +88,7 @@ public __construct(\PhpDocumentorMarkdown\Example\Pizza\Sauce $sauce, int $yeast
 ```php
 public getSauce(): \PhpDocumentorMarkdown\Example\Pizza\Sauce
 ```
+
 
 
 
@@ -118,8 +120,14 @@ public getYeast(): int
 
 
 
+**Throws:**
+
+- [`Exception`](../../../Exception.md)
+
+
+
 ***
 
 
 ***
-> Automatically generated on 2022-09-09
+> Automatically generated on 2023-11-24

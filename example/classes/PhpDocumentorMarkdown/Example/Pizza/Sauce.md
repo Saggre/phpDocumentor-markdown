@@ -70,8 +70,9 @@ public __construct(string $name): mixed
 
 
 
+
 ***
 
 
 ***
-> Automatically generated on 2022-09-09
+> Automatically generated on 2023-11-24

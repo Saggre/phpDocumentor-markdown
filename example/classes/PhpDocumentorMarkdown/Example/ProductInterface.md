@@ -38,6 +38,7 @@ public __construct(string $name, float $price): mixed
 
 
 
+
 ***
 
 ### getName
@@ -47,6 +48,7 @@ Get the name of the product.
 ```php
 public getName(): string
 ```
+
 
 
 
@@ -78,6 +80,7 @@ public getPrice(): float
 
 
 
+
 ***
 
 ### getTaxRate
@@ -98,8 +101,9 @@ public getTaxRate(): float
 
 
 
+
 ***
 
 
 ***
-> Automatically generated on 2022-09-09
+> Automatically generated on 2023-11-24
