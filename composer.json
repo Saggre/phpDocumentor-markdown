@@ -33,7 +33,7 @@
     }
   },
   "scripts": {
-    "run-tests": "vendor/bin/phpunit",
+    "test": "vendor/bin/phpunit",
     "create-docs": "phpdoc && cp -r example/* docs/.wiki"
   },
   "license": "MIT"

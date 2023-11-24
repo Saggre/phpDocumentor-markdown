@@ -7,15 +7,22 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.1.4] - 2023-11-24
+
 ### Added
 
 - Add wiki repo as git submodule
 - Composer helper scripts
+- Add throws section to output
 
 ### Changed
 
 - Set index Markdown file name to Home.md
 - Removed watermark from footer
+
+### Fixed
+
+- Fixed issue with interface extends
 
 ## [0.1.3] - 2022-04-20
 
