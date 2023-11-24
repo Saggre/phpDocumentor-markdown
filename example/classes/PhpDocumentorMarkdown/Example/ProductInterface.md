@@ -7,7 +7,7 @@ Interface for a product.
 
 
 * Full name: `\PhpDocumentorMarkdown\Example\ProductInterface`
-
+* Parent interfaces: [`\PhpDocumentorMarkdown\Example\Arrayable`](./Arrayable.md)
 
 
 ## Methods
@@ -89,6 +89,31 @@ Get the tax rate for this product.
 
 ```php
 public getTaxRate(): float
+```
+
+
+
+
+
+
+
+
+
+
+
+
+***
+
+
+## Inherited methods
+
+
+### toArray
+
+Get the instance as an array.
+
+```php
+public toArray(): array
 ```
 
 

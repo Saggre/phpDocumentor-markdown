@@ -33,6 +33,7 @@ This is an automatically generated documentation for **Pizza Place (Example docu
 
 | Interface | Description |
 |-----------|-------------|
+| [`Arrayable`](./classes/PhpDocumentorMarkdown/Example/Arrayable.md) | |
 | [`ProductInterface`](./classes/PhpDocumentorMarkdown/Example/ProductInterface.md) | Interface for a product.|
 
 

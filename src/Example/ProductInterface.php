@@ -5,7 +5,7 @@ namespace PhpDocumentorMarkdown\Example;
 /**
  * Interface for a product.
  */
-interface ProductInterface
+interface ProductInterface extends Arrayable
 {
     /**
      * @param string $name Product name.

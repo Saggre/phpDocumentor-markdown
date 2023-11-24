@@ -10,7 +10,8 @@
 {{ node.description|raw }}
 
 * Full name: `{{ node.FullyQualifiedStructuralElementName }}`
-{% if node.parent and node.parent is not empty %}* Parent interface: {{ macros.mdClassLink(node.parent, macros.mdClassPath(node), node.parent.FullyQualifiedStructuralElementName) }}
+{% if node.parent and node.parent is not empty %}
+* Parent interfaces: {% for parent in node.parent %}{% if loop.index0 > 0 %}{{ ', ' }}{% endif %}{{ macros.mdClassLink(parent, macros.mdClassPath(node), parent.FullyQualifiedStructuralElementName) }}{% endfor %}
 {% endif %}
 {% if node.final %}* This interface is marked as **final** and can't be subclassed
 {% endif %}
