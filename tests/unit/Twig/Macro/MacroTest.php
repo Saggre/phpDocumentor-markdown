@@ -1,8 +1,8 @@
 <?php
 
-namespace PhpDocumentorMarkdown\Test\Twig\Macro;
+namespace PhpDocumentorMarkdown\Test\Unit\Twig\Macro;
 
-class MacroTest extends MacroTestCase
+class MacroTest extends MacroTwigTestCase
 {
     /**
      * Test mdEsc macro.

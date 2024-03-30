@@ -1,6 +1,6 @@
 <?php
 
-namespace PhpDocumentorMarkdown\Test\Twig\Macro;
+namespace PhpDocumentorMarkdown\Test\Unit\Twig\Macro;
 
 /**
  * A PHP wrapper for Twig macros. Used for testing.

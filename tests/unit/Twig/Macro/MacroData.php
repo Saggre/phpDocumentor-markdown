@@ -1,6 +1,6 @@
 <?php
 
-namespace PhpDocumentorMarkdown\Test\Twig\Macro;
+namespace PhpDocumentorMarkdown\Test\Unit\Twig\Macro;
 
 use JsonSerializable;
 use stdClass;

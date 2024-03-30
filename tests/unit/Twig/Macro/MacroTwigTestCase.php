@@ -1,11 +1,11 @@
 <?php
 
-namespace PhpDocumentorMarkdown\Test\Twig\Macro;
+namespace PhpDocumentorMarkdown\Test\Unit\Twig\Macro;
 
 use PhpDocumentorMarkdown\Extension\JsonExtension;
 use PhpDocumentorMarkdown\Extension\MacroDataExtension;
 use PhpDocumentorMarkdown\Extension\ObjectExtension;
-use PhpDocumentorMarkdown\Test\Twig\TestCase;
+use PhpDocumentorMarkdown\Test\Unit\Twig\TwigTestCase;
 use Twig\Environment;
 use Twig\Error\LoaderError;
 use Twig\Error\RuntimeError;
@@ -13,7 +13,7 @@ use Twig\Error\SyntaxError;
 use Twig\Loader\FilesystemLoader;
 use Twig\TemplateWrapper;
 
-class MacroTestCase extends TestCase
+class MacroTwigTestCase extends TwigTestCase
 {
     use MacroFunctionsTrait;
 
@@ -41,12 +41,12 @@ class MacroTestCase extends TestCase
     {
         // Allow Twig to load files from both /tests and /themes
         $loader = new FilesystemLoader(ROOT_DIR);
-        $twig   = new Environment($loader);
+        $twig = new Environment($loader);
         $twig->addExtension(new JsonExtension());
         $twig->addExtension(new ObjectExtension());
         $twig->addExtension(new MacroDataExtension());
 
-        $this->template = $twig->load('tests/Twig/templates/macros.test.twig');
+        $this->template = $twig->load('tests/unit/Twig/templates/macros.test.twig');
     }
 
     /**
@@ -75,8 +75,8 @@ class MacroTestCase extends TestCase
     /**
      * Get the macro data from the template.
      *
-     * @param  string  $macro  Macro name to run.
-     * @param  mixed  $input  Input to give the macro.
+     * @param string $macro Macro name to run.
+     * @param mixed $input Input to give the macro.
      *
      * @return MacroData|null
      */
@@ -84,7 +84,7 @@ class MacroTestCase extends TestCase
     {
         $variables = [
             'relativeIncludePath' => $this->getRelativeIncludePath(),
-            'tests'               => [
+            'tests' => [
                 new MacroData($macro, $input),
             ],
         ];

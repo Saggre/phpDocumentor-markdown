@@ -2,9 +2,12 @@
 .phpdoc
 phpdoc.xml
 
-# PHPUbit
+# Tests
 phpunit.xml
 .phpunit*
+*.dump
+var/
+.tests/
 
 # IDE
 .idea
