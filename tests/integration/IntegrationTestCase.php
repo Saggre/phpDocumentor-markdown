@@ -4,6 +4,9 @@ namespace PhpDocumentorMarkdown\Test\Integration;
 
 use phpDocumentor\Console\Application;
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
+use Symfony\Component\Console\Exception\ExceptionInterface;
+use Symfony\Component\Console\Input\ArrayInput;
+use Symfony\Component\Console\Output\BufferedOutput;
 use Symfony\Component\Filesystem\Filesystem;
 
 class IntegrationTestCase extends KernelTestCase
@@ -31,6 +34,8 @@ class IntegrationTestCase extends KernelTestCase
      */
     protected string $targetDir;
 
+    protected array $cachedFiles;
+
     protected function setUp(): void
     {
         parent::setUp();
@@ -45,6 +50,8 @@ class IntegrationTestCase extends KernelTestCase
 
         $this->application = $this->createApplication();
         $this->filesystem = new Filesystem();
+
+        $this->cachedFiles = [];
 
         $this->setUpTestsTmpDir();
     }
@@ -61,5 +68,53 @@ class IntegrationTestCase extends KernelTestCase
         }
 
         $this->filesystem->mkdir($this->tmpDir);
+    }
+
+    /**
+     * Assert that a file contains a string.
+     *
+     * @param string $needle
+     * @param string $path
+     * @param string $message
+     * @return void
+     */
+    protected function assertFileContainsString(string $needle, string $path, string $message = ''): void
+    {
+        if (!$this->filesystem->exists($path)) {
+            $this->fail("$path does not exist");
+        }
+
+        $haystack = file_get_contents($path);
+        $this->assertStringContainsString($needle, $haystack, $message);
+    }
+
+    /**
+     * Run PhpDocumentor.
+     *
+     * @param array $input
+     * @param BufferedOutput|null $output
+     * @return void
+     */
+    protected function runApplication(array $input = [], ?BufferedOutput $output = null): void
+    {
+        if ($output === null) {
+            $output = new BufferedOutput();
+        }
+
+        $_input = new ArrayInput(array_merge($input, [
+            '--directory' => [$this->sourceDir],
+            '--target' => $this->targetDir,
+            '--template' => $this->templateDir,
+            '--no-interaction' => true,
+            '--cache-folder' => $this->cacheDir,
+            '-vvv' => true,
+        ]));
+
+        try {
+            $command = $this->application->find('project:run');
+            $command->run($_input, $output);
+        } catch (ExceptionInterface $e) {
+            $this->fail($e->getMessage());
+        }
     }
 }
