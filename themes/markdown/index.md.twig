@@ -20,7 +20,7 @@ This is an automatically generated documentation for **{{project.name}}**.
 ## Namespaces
 
 {% for namespace in project.indexes.namespaces|sort((a,b) => a.FullyQualifiedStructuralElementName <=> b.FullyQualifiedStructuralElementName) %}
-{% if namespace.classes|length > 0 or namespace.traits|length > 0 or namespace.interfaces|length > 0 %}
+{% if namespace.classes|length > 0 or namespace.traits|length > 0 or namespace.interfaces|length > 0 or namespace.functions|length > 0 %}
 
 ### {{ namespace.FullyQualifiedStructuralElementName }}
 
@@ -30,35 +30,41 @@ This is an automatically generated documentation for **{{project.name}}**.
 | Class | Description |
 |-------|-------------|
 {% for class in namespace.classes|sort((a,b) => a.FullyQualifiedStructuralElementName <=> b.FullyQualifiedStructuralElementName) %}
-| {{ macros.mdClassLink(class) }} | {{ class.summary|replace({'|': '&#124;'})|nl2br|replace({"\n": "", "\r": "", "\t": ""})|raw }}|
+| {{ macros.mdLink(class, path, null, 'class') }} | {{ class.summary|replace({'|': '&#124;'})|nl2br|replace({"\n": "", "\r": "", "\t": ""})|raw }}|
 {% endfor %}{# for class #}
 {% endif %}{# if classes.length #}
 
 {% if namespace.traits|length > 0 %}
-
 #### Traits
 
 | Trait | Description |
 |-------|-------------|
 {% for trait in namespace.traits|sort((a,b) => a.FullyQualifiedStructuralElementName <=> b.FullyQualifiedStructuralElementName) %}
-| {{ macros.mdClassLink(trait) }} | {{ trait.summary|replace({'|': '&#124;'})|nl2br|replace({"\n": "", "\r": "", "\t": ""})|raw }}|
+| {{ macros.mdLink(trait, path, null, 'class') }} | {{ trait.summary|replace({'|': '&#124;'})|nl2br|replace({"\n": "", "\r": "", "\t": ""})|raw }}|
 {% endfor %}{# for trait #}
-
 {% endif %}{# if traits #}
 
 {% if namespace.interfaces|length > 0 %}
-
 #### Interfaces
 
 | Interface | Description |
 |-----------|-------------|
 {% for interface in namespace.interfaces|sort((a,b) => a.FullyQualifiedStructuralElementName <=> b.FullyQualifiedStructuralElementName) %}
-| {{ macros.mdClassLink(interface) }} | {{ interface.summary|replace({'|': '&#124;'})|nl2br|replace({"\n": "", "\r": "", "\t": ""})|raw }}|
-{% endfor %}{# for interace #}
-
+| {{ macros.mdLink(interface, path, null, 'class') }} | {{ interface.summary|replace({'|': '&#124;'})|nl2br|replace({"\n": "", "\r": "", "\t": ""})|raw }}|
+{% endfor %}{# for interface #}
 {% endif %}{# if interfaces #}
 
-{% endif %}{# if classes, traits, interfaces length #}
+{% if namespace.functions|length > 0 %}
+#### Functions
+
+| Function | Description |
+|----------|-------------|
+{% for function in namespace.functions|sort((a,b) => a.FullyQualifiedStructuralElementName <=> b.FullyQualifiedStructuralElementName) %}
+| {{ macros.mdLink(function, path, null, 'function') }} | {{ function.summary|replace({'|': '&#124;'})|nl2br|replace({"\n": "", "\r": "", "\t": ""})|raw }}|
+{% endfor %}{# for function #}
+{% endif %}{# if functions #}
+
+{% endif %}{# if classes, traits, interfaces, functions length #}
 {% endfor %}{# for namespace #}
 
 {% include 'config/footer.md.twig' %}

@@ -1,0 +1,44 @@
+{% import "include/macros.twig" as macros %}
+{% block content %}
+***
+{% include 'config/header.md.twig' %}
+
+# {{ node.name }}()
+
+{{ node.summary|raw }}
+
+{% if node.deprecated %}* **Warning:** this function is **deprecated**. This means that this function will likely be removed in a future version.{% endif %}
+
+{{ node.description|raw }}
+
+* Full name: `{{ node.name }}`
+* Defined in: `{{ node.file.path }}`
+
+## Parameters
+
+{% if node.arguments is not empty %}
+| Parameter | Type | Description |
+|-----------|------|-------------|
+{% for argument in node.arguments %}
+| `${{ argument.name }}` | **{{ argument.type ? macros.mdEsc(argument.type) }}** | {{ argument.description|replace({'|': '&#124;'})|raw }} |
+{% endfor %}
+{% else %}
+This function has no parameters.
+{% endif %}
+
+## Return Value
+
+{% if node.response %}
+{% if node.response.type %}
+**{{ node.response.type }}**
+{% endif %}
+
+{% if node.response.description %}
+{{ node.response.description|raw }}
+{% endif %}
+{% else %}
+This function does not return a value.
+{% endif %}
+
+{% include 'config/footer.md.twig' %}
+{% endblock %}

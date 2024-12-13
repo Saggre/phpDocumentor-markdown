@@ -33,27 +33,37 @@
 {{ relPath | join('/') }}{% endmacro %}
 
 {#
-  Get full md link for a node or for a namespace without /classes directory
-  @param $nodeOrNamespace object|string The node to get the link for or a PHP class namespace string
+  Get full md link for a node or for a namespace without directory prefix
+  @param $nodeOrNamespace object|string The node to get the link for or a PHP namespace string
 #}
 {% macro mdNodePath(nodeOrNamespace) %}
 {{ nodeOrNamespace.FullyQualifiedStructuralElementName | default(nodeOrNamespace) | replace({'\\':'/'}) | trim ~ (parameter.urlFileExtensions == 'no' ? '' : '.md') }}{% endmacro %}
 
 {#
   Get full link to a class from documentation root directory
-  @param $nodeOrNamespace object|string The node to get the link for or a PHP class namespace string
+  @param $nodeOrNamespace object|string The node to get the link for or a PHP namespace string
 #}
 {% macro mdClassPath(nodeOrNamespace) %}
 {{ 'classes' ~ _self.mdNodePath(nodeOrNamespace) | trim}}{% endmacro %}
 
 {#
-  Create a relative md link to a class
-  @param $nodeOrNamespace object|string The node to get the link for or a PHP class namespace string
+  Get full link to a function from documentation root directory
+  @param $nodeOrNamespace object|string The node to get the link for or a PHP namespace string
+#}
+{% macro mdFunctionPath(nodeOrNamespace) %}
+{{ 'functions' ~ _self.mdNodePath(nodeOrNamespace) | trim}}{% endmacro %}
+
+{#
+  Create a relative md link to a class or function
+  @param $nodeOrNamespace object|string The node to get the link for or a PHP namespace string
   @param $relativeTo string The path to make relative to (usually path of the md file that this is being printed to)
   @param $name string|null Link text
+  @param $type string Either 'class' or 'function'
 #}
-{% macro mdClassLink(nodeOrNamespace, relativeTo, name = null) %}
-[`{{ name | default(nodeOrNamespace.name) | default('Unknown') }}`]({{ _self.mdGetRelativePath(relativeTo, _self.mdClassPath(nodeOrNamespace))}}){% endmacro %}
+{% macro mdLink(nodeOrNamespace, relativeTo, name = null, type = 'class') %}
+[`{{ name | default(nodeOrNamespace.name) | default('Unknown') }}`]({{ _self.mdGetRelativePath(relativeTo, 
+    type == 'function' ? _self.mdFunctionPath(nodeOrNamespace) : _self.mdClassPath(nodeOrNamespace)
+)}}){% endmacro %}
 
 {#
   Escape markdown special characters

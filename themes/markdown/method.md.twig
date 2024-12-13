@@ -51,7 +51,7 @@
 **Throws:**
 {% for exception in method.tags.throws %}
 {{ exception.description|markdown|raw }}
-- {{ macros.mdClassLink(exception.type | raw, macros.mdClassPath(node), exception.type | shortFQSEN ) }}
+- {{ macros.mdLink(exception.type, path, exception.type | shortFQSEN, 'class') }}
 {% endfor %}
 
 {% endif %}

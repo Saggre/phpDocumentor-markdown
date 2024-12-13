@@ -10,7 +10,7 @@
 {{ node.description|raw }}
 
 * Full name: `{{ node.FullyQualifiedStructuralElementName }}`
-{% if node.parent and node.parent is not empty %}* Parent class: {{ macros.mdClassLink(node.parent, macros.mdClassPath(node), node.parent.FullyQualifiedStructuralElementName) }}
+{% if node.parent and node.parent is not empty %}* Parent class: {{ macros.mdLink(node.parent, path, node.parent.FullyQualifiedStructuralElementName, 'class') }}
 {% endif %}
 {% if node.final %}* This class is marked as **final** and can't be subclassed
 {% endif %}
@@ -19,7 +19,7 @@
 {% if node.interfaces is not empty %}
 * This class implements:
 {% for interface in node.interfaces %}
-{% if loop.index0 > 0 %}{{ ', ' }}{% endif %}{{ macros.mdClassLink(interface, macros.mdClassPath(node), interface) }}{% endfor %}
+{% if loop.index0 > 0 %}{{ ', ' }}{% endif %}{{ macros.mdLink(interface, path, interface, 'class') }}{% endfor %}
 
 {% endif %}
 {% if node.abstract %}* This class is an **Abstract class**

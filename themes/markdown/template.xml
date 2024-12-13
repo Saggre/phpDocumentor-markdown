@@ -12,6 +12,8 @@
                         artifact="classes/{{FullyQualifiedStructuralElementName}}.md"/>
         <transformation writer="twig" query="indexes.interfaces" source="interface.md.twig"
                         artifact="classes/{{FullyQualifiedStructuralElementName}}.md"/>
+        <transformation writer="twig" query="indexes.functions" source="function.md.twig"
+                        artifact="functions/{{FullyQualifiedStructuralElementName}}.md"/>
     </transformations>
     <parameters>
         <parameter key="twig-debug">true</parameter>
