@@ -5,15 +5,15 @@
     <email>sakri.koskimies@hotmail.com</email>
     <version>0.1.4</version>
     <transformations>
-        <transformation writer="twig" source="index.md.twig" artifact="Home.md"/>
+        <transformation writer="twig" source="index.md.twig" artifact="index.md"/>
         <transformation writer="twig" query="indexes.classes" source="class.md.twig"
-                        artifact="classes/{{FullyQualifiedStructuralElementName}}.md"/>
+                        artifact="Classes/{{FullyQualifiedStructuralElementName}}.md"/>
         <transformation writer="twig" query="indexes.traits" source="trait.md.twig"
-                        artifact="classes/{{FullyQualifiedStructuralElementName}}.md"/>
+                        artifact="Classes/{{FullyQualifiedStructuralElementName}}.md"/>
         <transformation writer="twig" query="indexes.interfaces" source="interface.md.twig"
-                        artifact="classes/{{FullyQualifiedStructuralElementName}}.md"/>
+                        artifact="Classes/{{FullyQualifiedStructuralElementName}}.md"/>
         <transformation writer="twig" query="indexes.functions" source="function.md.twig"
-                        artifact="functions/{{name}}.md"/>
+                        artifact="Functions/{{name}}.md"/>
     </transformations>
     <parameters>
         <parameter key="twig-debug">true</parameter>
