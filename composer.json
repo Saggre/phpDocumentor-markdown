@@ -34,7 +34,8 @@
   },
   "scripts": {
     "test": "vendor/bin/phpunit",
-    "create-docs": "phpdoc && cp -r example/* docs/.wiki"
+    "create-docs": "phpdoc",
+    "create-docs:debug": "phpdoc -vvv"
   },
   "license": "MIT"
 }
