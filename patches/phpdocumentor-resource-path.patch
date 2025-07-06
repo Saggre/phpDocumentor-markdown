@@ -1,0 +1,12 @@
+diff --git a/config/reflection.yaml b/config/reflection.yaml
+--- a/config/reflection.yaml
++++ b/config/reflection.yaml
+@@ -12,7 +12,7 @@
+       tags: ['phpdoc.reflection.reducer']
+
+   phpDocumentor\Reflection\Php\:
+-    resource: '%kernel.project_dir%/vendor/phpdocumentor/reflection/src/phpDocumentor/Reflection/Php'
++    resource: '%vendor_dir%/phpdocumentor/reflection/src/phpDocumentor/Reflection/Php'
+
+   phpDocumentor\Reflection\Php\NodesFactory:
+     class: phpDocumentor\Reflection\Php\NodesFactory
