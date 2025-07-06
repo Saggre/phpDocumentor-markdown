@@ -1,69 +1,82 @@
 {% import "include/macros.twig" as macros %}
 {% block content %}
-***
 {% include 'config/header.md.twig' %}
-
 # {{ node.name }}
+{% if node.summary %}
 
-{{ node.summary|raw }}
+{{ macros.mdEsc(node.summary) | raw }}
+{% endif -%}
+{%- if node.description %}
 
-{{ node.description|raw }}
+{{ macros.mdEsc(node.description) | raw }}
+{%- endif -%}
 
 * Full name: `{{ node.FullyQualifiedStructuralElementName }}`
-{% if node.parent and node.parent is not empty %}
-* Parent interfaces: {% for parent in node.parent %}{% if loop.index0 > 0 %}{{ ', ' }}{% endif %}{{ macros.mdClassLink(parent, macros.mdClassPath(node), parent.FullyQualifiedStructuralElementName) }}{% endfor %}
+{% if node.parent and node.parent is not empty %}* Parent interfaces:
+{% for parent in node.parent %}{% if loop.index0 == 0 %}{{ '  ' }}{% endif %}{{ macros.mdClassLink(parent, macros.mdClassPath(node), parent.FullyQualifiedStructuralElementName) }}{% if loop.index0 > 0 %}{{ ', ' }}{% endif %}{% endfor %}
+{{- '\n' -}}
 {% endif %}
 {% if node.final %}* This interface is marked as **final** and can't be subclassed
 {% endif %}
 {% if node.deprecated %}* **Warning:** this interface is **deprecated**. This means that this interface will likely be removed in a future version.
 {% endif %}
-{% if node.interfaces is not empty %}* This interface implements: {{ node.interfaces|join(', ')|raw }}
+{% if node.interfaces is not empty %}* This class implements:
+{% for interface in node.interfaces %}{% if loop.index0 == 0 %}{{ '  ' }}{% endif %}{{ macros.mdClassLink(interface, macros.mdClassPath(node), interface) }}{% if loop.index0 > 0 %}{{ ', ' }}{% endif %}{% endfor %}
+{{- '\n' -}}
 {% endif %}
+{% set sees = node.tags.see | default([]) | filter(see => see.reference | trim) %}
+{% set links = node.tags.link | default([]) | filter(link => link.link | trim) %}
+{% if sees is not empty or links is not empty -%}
 
-{% if node.tags.see is not empty or node.tags.link is not empty %}
 **See Also:**
 
-{% for see in node.tags.see %}
-* {{ see.reference }} {% if see.description %}- {{ see.description|raw }}{% endif %}
-
+{% for see in sees %}
+* {{ see.reference }}{% if see.description | trim %} - {{ see.description | raw }}{% endif %}{{- '\n' -}}
 {% endfor %}
-{% for link in node.tags.link %}
-* {{ link.link }} {% if link.description and link.description != link.link %}- {{ link.description|raw }}{% endif %}
-
-{% endfor %}
-
-{% endif %}{# node.tags.see || node.tags.link #}
-
-{# Check constants #}
-{% if node.constants | length > 0 %}
-## Constants
-
-| Constant | Visibility | Type | Value |
-|:---------|:-----------|:-----|:------|
-{% for constant in node.constants %}
-|`{{constant.name}}`|{{ constant.visibility | default('*default*') }}|{{macros.mdEsc(constant.type) | default(' ')}}|{{constant.value}}|
+{% for link in links %}
+* {{ link.link }}{% if link.description | trim and link.description != link.link %} - {{ link.description | raw }}{% endif %}{{- '\n' -}}
 {% endfor %}
 {% endif %}
+{% if node.constants | length > 0 %}
 
-{# Check methods #}
-{% if node.methods|length > 0 %}
+## Constants
+
+{% set constants = [] %}
+{% for constant in node.constants %}
+{% set constants = constants | merge([
+    {
+        name: '`' ~ constant.name ~ '`',
+        visibility: constant.visibility | default('*default*'),
+        type: constant.type ? macros.mdEsc(constant.type) : '',
+        value: constant.value
+    }
+]) %}
+{% endfor %}
+
+{{ macros.mdTable(constants, [
+    { label: 'Constant', key: 'name' },
+    { label: 'Visibility', key: 'visibility' },
+    { label: 'Type', key: 'type' },
+    { label: 'Value', key: 'value' },
+]) -}}
+{%- endif %}
+{% if node.methods | length > 0 %}
+
 ## Methods
 
-{% for method in node.methods %}
-{% include 'method.md.twig' %}
+{% for method in node.methods -%}
+    {% if loop.index0 > 0 %}{{ '\n' }}{% endif %}{% include 'method.md.twig' %}
 {% endfor %}
-{% endif %}{# if methods #}
-
-{# Check inherited methods #}
-{% if node.InheritedMethods|length > 0 %}
+{% endif %}
+{% if node.InheritedMethods | length > 0 %}
 
 ## Inherited methods
 
-{% for method in node.InheritedMethods %}
-{% include 'method.md.twig' %}
+{% for method in node.InheritedMethods -%}
+    {% if loop.index0 > 0 %}{{ '\n' }}{% endif %}{% include 'method.md.twig' %}
 {% endfor %}
-
-{% endif %}{# if InheritedMethods #}
-
-{% include 'config/footer.md.twig' %}
+{% endif %}
+{% if parameter.includeFooter == 'yes' %}
+    {% include 'config/footer.md.twig' %}
+{% endif %}
 {% endblock %}

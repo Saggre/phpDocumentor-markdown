@@ -17,5 +17,6 @@
     </version>
     <template name="./themes/markdown">
         <parameter name="urlFileExtensions" value="yes"/>
+        <parameter name="includeFooter" value="no"/>
     </template>
 </phpdocumentor>

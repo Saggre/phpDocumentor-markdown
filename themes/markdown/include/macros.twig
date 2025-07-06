@@ -1,62 +1,149 @@
 {#
-  Twig implementation of getRelativePath
-  @param $relativeTo string The path to make relative to
-  @param $path string The path to make relative
-#}
-{% macro mdGetRelativePath(relativeTo, path) %}
-{% set from = relativeTo | split('/') %}
-{% set to = path | split('/') %}
-{% set relPath = to %}
-{% set break = false %}
-{% for dir in from %}
-{% if not break %}
-{% set depth = loop.index0 %}
-{% if dir == to[depth] %}
-{% set relPath = relPath | slice(1) %}
-{% else %}
-{% set remaining = from | length - depth %}
-{% if remaining > 1 %}
-{% set relPathLen = relPath | length %}
-{% set padLength = remaining - 1 %}
-{% for i in 1..padLength %}
-{% set relPath = '..' | split('/') | merge(relPath) %}
-{% endfor %}
-{% set break = true %}
-{% else %}
-{% set relPath0 = './' ~ relPath[0] %}
-{% set relPathRest = relPath | slice(1) %}
-{% set relPath = relPath0|split('/') | merge(relPathRest) %}
-{% endif %}
-{% endif %}
-{% endif %}
-{% endfor %}
-{{ relPath | join('/') }}{% endmacro %}
+ # Computes a relative Markdown path from one file to another.
+ # Example: from 'classes/Foo/Bar.md' to 'classes/Foo/Baz/Qux.md' => 'Baz/Qux.md'
+ #          from 'classes/Foo/Bar.md' to 'classes/Utils/Helper.md' => '../Utils/Helper.md'
+ # @param  relativeTo string   Path of the file you're linking from
+ # @param  path       string   Absolute path of the file you're linking to
+ # @return string     Relative path from `relativeTo` to `path`
+ #}
+{% macro mdGetRelativePath(relativeTo, path) -%}
+{# Split paths into arrays of directory parts #}
+    {%- set from = relativeTo | split('/') -%}
+    {%- set to = path | split('/') -%}
+    {%- set relPath = to -%}
+    {%- set break = false -%}
+
+{# Compare each directory level #}
+    {%- for dir in from -%}
+        {%- if not break -%}
+            {%- set depth = loop.index0 -%}
+            {%- if dir == to[depth] -%}
+{# Same directory level #}
+                {%- set relPath = relPath | slice(1) -%}
+            {%- else -%}
+                {%- set remaining = from | length - depth -%}
+                {%- if remaining > 1 -%}
+{# Divergent directories #}
+                    {%- set padLength = remaining - 1 -%}
+                    {%- for i in 1..padLength -%}
+                        {%- set relPath = '..' | split('/') | merge(relPath) -%}
+                    {%- endfor -%}
+                    {%- set break = true -%}
+                {%- else -%}
+                    {%- set relPath0 = './' ~ relPath[0] -%}
+                    {%- set relPathRest = relPath | slice(1) -%}
+                    {%- set relPath = relPath0 | split('/') | merge(relPathRest) -%}
+                {%- endif -%}
+            {%- endif -%}
+        {%- endif -%}
+    {%- endfor -%}
+
+{# Join segments back into a path #}
+    {{- relPath | join('/') -}}
+{%- endmacro %}
 
 {#
-  Get full md link for a node or for a namespace without /classes directory
-  @param $nodeOrNamespace object|string The node to get the link for or a PHP class namespace string
-#}
-{% macro mdNodePath(nodeOrNamespace) %}
-{{ nodeOrNamespace.FullyQualifiedStructuralElementName | default(nodeOrNamespace) | replace({'\\':'/'}) | trim ~ (parameter.urlFileExtensions == 'no' ? '' : '.md') }}{% endmacro %}
+ # Get full md link for a node or for a namespace without /classes directory
+ # @param $nodeOrNamespace object|string The node to get the link for or a PHP class namespace string
+ #}
+{% macro mdNodePath(nodeOrNamespace) -%}
+    {{- nodeOrNamespace.FullyQualifiedStructuralElementName | default(nodeOrNamespace) | replace({'\\':'/'}) | trim ~ (parameter.urlFileExtensions == 'no' ? '' : '.md') -}}
+{%- endmacro %}
 
 {#
-  Get full link to a class from documentation root directory
-  @param $nodeOrNamespace object|string The node to get the link for or a PHP class namespace string
-#}
-{% macro mdClassPath(nodeOrNamespace) %}
-{{ 'classes' ~ _self.mdNodePath(nodeOrNamespace) | trim}}{% endmacro %}
+ # Get full link to a class from documentation root directory
+ # @param $nodeOrNamespace object|string The node to get the link for or a PHP class namespace string
+ #}
+{% macro mdClassPath(nodeOrNamespace) -%}
+    {{- 'classes' ~ _self.mdNodePath(nodeOrNamespace) | trim -}}
+{%- endmacro %}
 
 {#
-  Create a relative md link to a class
-  @param $nodeOrNamespace object|string The node to get the link for or a PHP class namespace string
-  @param $relativeTo string The path to make relative to (usually path of the md file that this is being printed to)
-  @param $name string|null Link text
-#}
-{% macro mdClassLink(nodeOrNamespace, relativeTo, name = null) %}
-[`{{ name | default(nodeOrNamespace.name) | default('Unknown') }}`]({{ _self.mdGetRelativePath(relativeTo, _self.mdClassPath(nodeOrNamespace))}}){% endmacro %}
+ # Create a relative md link to a class
+ # @param $nodeOrNamespace object|string The node to get the link for or a PHP class namespace string
+ # @param $relativeTo      string        The path to make relative to (usually path of the md file that this is being printed to)
+ # @param $name            string|null   Link text
+ #}
+{% macro mdClassLink(nodeOrNamespace, relativeTo, name = null) -%}
+    [{{- '`' ~ name | default(nodeOrNamespace.name) | default('Unknown') ~ '`'-}}]({{- _self.mdGetRelativePath(relativeTo, _self.mdClassPath(nodeOrNamespace)) -}})
+{%- endmacro %}
 
 {#
-  Escape markdown special characters
-  @param $text string The text to escape
+ # Escape markdown special characters
+ # @param $text string The text to escape
+ #}
+{% macro mdEsc(text) -%}
+    {{- text | replace({'|':'\\|'}) | raw -}}
+{%- endmacro %}
+
+{#
+ # Repeat a character a given number of times
+ # @param $char  string The character to repeat
+ # @param $times int    The number of times to repeat the character
+ #}
+{% macro mdRepeat(char, times) %}
+    {%- if times <= 0 -%}
+        {{- '' -}}
+    {%- else -%}
+        {%- set result = '' -%}
+        {%- for i in 1..times -%}
+            {%- set result = result ~ char -%}
+        {%- endfor -%}
+        {{- result -}}
+    {%- endif -%}
+{% endmacro %}
+
+{#
+ # Pad a string to the right with spaces to a given length
+ # @param str string The string to pad
+ # @param length int The target length of the string
+ #}
+{% macro mdPadRight(str, length) %}
+    {%- set str = str|default('') -%}
+    {%- set delta = length - str|length -%}
+    {{- str ~ _self.mdRepeat(' ', delta > 0 ? delta : 0) -}}
+{% endmacro %}
+
+{#
+# Render a generic Markdown table from raw values
+#
+# @param rows    array   List of associative arrays or objects (rows)
+# @param headers array   List of headers as { label: string, key: string }
 #}
-{% macro mdEsc(text) %}{{ text | replace({'|':'&#124;'}) | raw }}{% endmacro %}
+{% macro mdTable(rows, headers) %}
+    {%- set widths = [] -%}
+{# Initialize column widths based on header labels #}
+    {%- for col in headers %}
+        {%- set widths = widths | merge({ (loop.index0 ~ 'r'): col.label | length }) %}
+    {%- endfor %}
+{# Compute max width for each column from content #}
+    {%- for row in rows %}
+        {%- for col in headers %}
+            {%- set value = attribute(row, col.key) %}
+            {%- set value = _self.mdEsc(value) | nl2br | replace({"\n": "", "\r": "", "\t": ""}) | raw %}
+            {%- set length = value | length %}
+            {%- if length > widths[loop.index0 ~ 'r'] %}
+                {%- set widths = widths | merge({ (loop.index0 ~ 'r'): length }) %}
+            {%- endif %}
+        {%- endfor %}
+    {%- endfor %}
+{# Header row #}
+    {%- for col in headers %}
+        {{- '| ' ~ _self.mdPadRight(col.label, widths[loop.index0 ~ 'r']) ~ ' ' }}
+    {%- endfor -%}
+    {{ '|' }}
+{# Divider row #}
+    {%- for col in headers %}
+        {{- '|-' ~ _self.mdRepeat('-', widths[loop.index0 ~ 'r'])  ~ '-' }}
+    {%- endfor -%}
+    {{ '|' }}
+{# Data rows #}
+    {%- for row in rows %}
+        {%- for col in headers %}
+            {%- set value = attribute(row, col.key) %}
+            {%- set value = _self.mdEsc(value) | nl2br | replace({"\n": "", "\r": "", "\t": ""}) | raw %}
+            {{- '| ' ~ _self.mdPadRight(value, widths[loop.index0 ~ 'r']) ~ ' ' }}
+        {%- endfor -%}
+        {{ '|' ~ "\n" }}
+    {%- endfor %}
+{% endmacro %}

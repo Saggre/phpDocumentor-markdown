@@ -3,7 +3,7 @@
     <name>markdown</name>
     <author>Sakri Koskimies</author>
     <email>sakri.koskimies@hotmail.com</email>
-    <version>0.1.4</version>
+    <version>1.0.0</version>
     <transformations>
         <transformation writer="twig" source="index.md.twig" artifact="Home.md"/>
         <transformation writer="twig" query="indexes.classes" source="class.md.twig"
