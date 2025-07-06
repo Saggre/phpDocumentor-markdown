@@ -18,7 +18,7 @@
 {% set sees = node.tags.see | default([]) | filter(see => see.reference | trim) %}
 {% set links = node.tags.link | default([]) | filter(link => link.link | trim) %}
 {% if sees is not empty or links is not empty %}
-{{ '\n' }}
+
 **See Also:**
 
 {% for see in sees %}
@@ -30,13 +30,13 @@
 {% endif %}
 {# Gitlab supports automatic table of contents generation #}
 {% if md_flavour == 'gitlab' %}
-{{- '\n' -}}
+
 ## Table of contents
 
 [[_TOC_]]
 {% endif %}
 {% if node.properties | length > 0 %}
-{{- '\n' -}}
+
 ## Properties
 
 {% for property in node.properties %}
@@ -44,7 +44,7 @@
 {% endfor %}
 {% endif %}
 {% if node.methods | length > 0 %}
-{{- '\n' -}}
+
 ## Methods
 
 {% for method in node.methods %}
