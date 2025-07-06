@@ -4,6 +4,7 @@ namespace PhpDocumentorMarkdown\Example;
 
 /**
  * Base class for all products.
+ * @see https://example.com
  */
 abstract class AbstractProduct implements ProductInterface
 {

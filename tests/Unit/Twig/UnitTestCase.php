@@ -1,24 +1,26 @@
 <?php
 
-namespace PhpDocumentorMarkdown\Test\Twig;
+namespace PhpDocumentorMarkdown\Test\Unit\Twig;
 
-class TestCase extends \PHPUnit\Framework\TestCase
+use PHPUnit\Framework\TestCase;
+
+class UnitTestCase extends TestCase
 {
     /**
      * @var string The path to test templates.
      */
-    private string $testTemplatePath;
+    protected string $testTemplatePath;
 
     /**
      * @var string The relative path to production template include dir.
      */
-    private string $relativeIncludePath;
+    protected string $relativeIncludePath;
 
     protected function setUp(): void
     {
         parent::setUp();
 
-        $this->testTemplatePath    = __DIR__.'/templates';
+        $this->testTemplatePath = __DIR__ . '/templates';
         $this->relativeIncludePath = 'themes/markdown/include';
     }
 

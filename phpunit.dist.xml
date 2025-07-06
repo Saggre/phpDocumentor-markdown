@@ -1,10 +1,16 @@
-<phpunit backupGlobals="false" colors="true">
+<phpunit backupGlobals="false" colors="true" verbose="true" bootstrap="./tests/bootstrap.php">
     <testsuites>
-        <testsuite name="Twig">
-            <directory suffix="Test.php">./tests/Twig</directory>
+        <testsuite name="Unit">
+            <directory suffix="Test.php">./tests/Unit</directory>
+        </testsuite>
+        <testsuite name="Functional">
+            <directory suffix="Test.php">./tests/Functional</directory>
         </testsuite>
     </testsuites>
     <extensions>
-        <extension class="\PhpDocumentorMarkdown\Test\Twig\Extension"/>
+        <extension class="\PhpDocumentorMarkdown\Test\Unit\Twig\Extension"/>
     </extensions>
+    <php>
+        <server name="KERNEL_CLASS" value="PhpDocumentorMarkdown\Test\Util\App\TestKernel"/>
+    </php>
 </phpunit>

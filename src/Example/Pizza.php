@@ -6,7 +6,7 @@ use JsonSerializable;
 use PhpDocumentorMarkdown\Example\Pizza\Base;
 
 /**
- * A pizza.
+ * A pizza | pie.
  */
 class Pizza extends AbstractProduct implements ProductInterface, JsonSerializable
 {

@@ -1,0 +1,25 @@
+{% import (relativeIncludePath ~ '/macros.twig') as macros %}
+{% if key == 'mdEsc' %}
+    {{- macros.mdEsc(args[0]) -}}
+{% endif %}
+{% if key == 'mdGetRelativePath' %}
+    {{- macros.mdGetRelativePath(args[0], args[1]) -}}
+{% endif %}
+{% if key == 'mdNodePath' %}
+    {{- macros.mdNodePath(args[0]) -}}
+{% endif %}
+{% if key == 'mdClassPath' %}
+    {{- macros.mdClassPath(args[0]) -}}
+{% endif %}
+{% if key == 'mdClassLink' %}
+    {{- macros.mdClassLink(args[0], args[1], args[2]) -}}
+{% endif %}
+{% if key == 'mdRepeat' %}
+    {{- macros.mdRepeat(args[0], args[1]) -}}
+{% endif %}
+{% if key == 'mdPadRight' %}
+    {{- macros.mdPadRight(args[0], args[1]) -}}
+{% endif %}
+{% if key == 'mdTable' %}
+    {{- macros.mdTable(args[0], args[1]) -}}
+{% endif %}
