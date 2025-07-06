@@ -28,13 +28,6 @@
 * {{ link.link }}{% if link.description | trim and link.description != link.link %} - {{ link.description | raw }}{% endif %}{{- '\n' -}}
 {% endfor %}
 {% endif %}
-{# Gitlab supports automatic table of contents generation #}
-{% if md_flavour == 'gitlab' %}
-
-## Table of contents
-
-[[_TOC_]]
-{% endif %}
 {% if node.properties | length > 0 %}
 
 ## Properties

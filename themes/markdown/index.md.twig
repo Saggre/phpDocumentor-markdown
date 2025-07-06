@@ -6,12 +6,6 @@
 } only %}
 
 This is an automatically generated documentation for **{{project.name}}**.
-{# Gitlab supports automatic table of contents generation #}
-{% if md_flavour == 'gitlab' %}
-
-# Table of contents
-[[_TOC_]]
-{% endif %}
 
 ## Namespaces
 {% for namespace in project.indexes.namespaces | sort((a,b) => a.FullyQualifiedStructuralElementName <=> b.FullyQualifiedStructuralElementName) %}
