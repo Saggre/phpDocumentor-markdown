@@ -1,8 +1,10 @@
-{% import "include/macros.twig" as macros %}
+{% import 'include/macros.twig' as macros %}
 {% block content %}
-{% include 'config/header.md.twig' %}
-# {{ project.name | raw }}
-{{ project.description | raw }}
+{% include 'partials/header.md.twig' with {
+    title: project.name,
+    description: project.description,
+} only %}
+
 This is an automatically generated documentation for **{{project.name}}**.
 {# Gitlab supports automatic table of contents generation #}
 {% if md_flavour == 'gitlab' %}
@@ -73,4 +75,4 @@ This is an automatically generated documentation for **{{project.name}}**.
 {%- endif %}
 {% endif %}
 {% endfor %}
-{% if parameter.includeFooter == 'yes' %}{% include 'config/footer.md.twig' %}{% endif %}{% endblock %}
+{% if parameter.includeFooter == 'yes' %}{% include 'partials/footer.md.twig' %}{% endif %}{% endblock %}

@@ -1,15 +1,10 @@
 {% import 'include/macros.twig' as macros %}
 {% block content %}
-{% include 'config/header.md.twig' %}
-# {{ node.name }}
-{% if node.summary %}
-
-{{ macros.mdEsc(node.summary) | raw }}
-{% endif -%}
-{%- if node.description %}
-
-{{ macros.mdEsc(node.description) | raw }}
-{%- endif -%}
+{% include 'partials/header.md.twig' with {
+    title: node.name,
+    subtitle: node.summary,
+    description: node.description,
+} only %}
 
 * Full name: `{{ node.FullyQualifiedStructuralElementName }}`
 {% if node.parent and node.parent is not empty %}* Parent class: {{ macros.mdClassLink(node.parent, macros.mdClassPath(node), node.parent.FullyQualifiedStructuralElementName) }}
@@ -93,6 +88,6 @@
 {% endfor %}
 {% endif %}
 {% if parameter.includeFooter == 'yes' %}
-{% include 'config/footer.md.twig' %}
+{% include 'partials/footer.md.twig' %}
 {% endif %}
 {% endblock %}

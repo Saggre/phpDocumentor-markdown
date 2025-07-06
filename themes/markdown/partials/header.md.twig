@@ -1,0 +1,10 @@
+{% import 'include/macros.twig' as macros %}
+# {{ title | raw }}
+{% if subtitle | trim %}
+
+{{ macros.mdEsc(subtitle) | raw }}
+{% endif -%}
+{%- if description | trim %}
+
+{{ macros.mdEsc(description) | raw }}
+{%- endif -%}
