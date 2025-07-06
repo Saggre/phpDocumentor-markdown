@@ -16,7 +16,11 @@
         </api>
     </version>
     <template name="./themes/markdown">
+        <!-- github|gitlab -->
+        <parameter name="markdownFlavour" value="github"/>
+        <!-- yes|no -->
         <parameter name="urlFileExtensions" value="yes"/>
+        <!-- yes|no -->
         <parameter name="includeFooter" value="no"/>
     </template>
 </phpdocumentor>
