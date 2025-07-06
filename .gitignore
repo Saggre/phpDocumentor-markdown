@@ -1,8 +1,11 @@
 # PhpDocumentor
-.phpdoc
+.phpdoc/cache/
 phpdoc.xml
+ast.dump
+var/
+.tests
 
-# PHPUbit
+# PHPUnit
 phpunit.xml
 .phpunit*
 
@@ -11,3 +14,6 @@ phpunit.xml
 
 # Composer
 /vendor/
+
+# Misc
+tmp/
