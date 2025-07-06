@@ -19,18 +19,6 @@
 {% if property.deprecated %}* **Warning:** this property is **deprecated**. This means that this property will likely be removed in a future version.
 {% endif %}
 {% endif %}
-{% set sees = property.tags.see | default([]) | filter(see => see.reference | trim) %}
-{% set links = property.tags.link | default([]) | filter(link => link.link | trim) %}
-{% if sees is not empty or links is not empty %}
-
-**See Also:**
-
-{%- for see in sees -%}
-* {{ see.reference }}{% if see.description %} - {{ see.description | raw }}{% endif %}{{- '\n' -}}
-{%- endfor -%}
-{%- for link in links -%}
-* {{ link.link }}{% if link.description and link.description != link.link %} - {{ link.description | raw }}{% endif %}{{- '\n' -}}
-{%- endfor -%}
-{% endif %}
+{% include 'partials/tags.md.twig' with { tags: property.tags } only %}
 
 ***

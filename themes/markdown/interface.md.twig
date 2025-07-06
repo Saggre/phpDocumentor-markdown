@@ -19,19 +19,7 @@
 {% for interface in node.interfaces %}{% if loop.index0 == 0 %}{{ '  ' }}{% endif %}{{ macros.mdClassLink(interface, macros.mdClassPath(node), interface) }}{% if loop.index0 > 0 %}{{ ', ' }}{% endif %}{% endfor %}
 
 {% endif %}
-{% set sees = node.tags.see | default([]) | filter(see => see.reference | trim) %}
-{% set links = node.tags.link | default([]) | filter(link => link.link | trim) %}
-{% if sees is not empty or links is not empty -%}
-
-**See Also:**
-
-{% for see in sees %}
-* {{ see.reference }}{% if see.description | trim %} - {{ see.description | raw }}{% endif %}{{- '\n' -}}
-{% endfor %}
-{% for link in links %}
-* {{ link.link }}{% if link.description | trim and link.description != link.link %} - {{ link.description | raw }}{% endif %}{{- '\n' -}}
-{% endfor %}
-{% endif %}
+{% include 'partials/tags.md.twig' with { tags: node.tags } only %}
 {% if node.constants | length > 0 %}
 
 ## Constants

@@ -1,0 +1,13 @@
+{% set sees = tags.see | default([]) | filter(see => see.reference | trim) %}
+{% set links = tags.link | default([]) | filter(link => link.link | trim) %}
+{% if sees is not empty or links is not empty %}
+
+**See Also:**
+
+{% for see in sees %}
+* {{ see.reference }}{% if see.description | trim %} - {{ see.description | raw }}{% endif %}{{- '\n' -}}
+{% endfor %}
+{% for link in links %}
+* {{ link.link }}{% if link.description | trim and link.description != link.link %} - {{ link.description | raw }}{% endif %}{{- '\n' -}}
+{% endfor %}
+{% endif %}
