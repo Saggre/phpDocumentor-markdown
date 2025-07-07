@@ -1,6 +1,6 @@
 # phpDocumentor - Generate GitHub/GitLab-Ready Markdown Documentation
 
-## Markdown template for phpDocumentor 3.7.0+
+## Markdown template for phpDocumentor3
 
 ![Tests Status](https://github.com/Saggre/phpDocumentor-markdown/workflows/Run%20tests/badge.svg?style=flat-square)
 ![Generate Docs Status](https://github.com/Saggre/phpDocumentor-markdown/workflows/Generate%20docs/badge.svg?style=flat-square)
@@ -73,9 +73,10 @@ composer test
 
 ## Contributing
 - Use PSR-12 coding style
-- Twig extensions do not yet work with phpDocumentor3 ([See #3041](https://github.com/phpDocumentor/phpDocumentor/pull/3041)), so custom functionality is created with [Twig macros](./themes/markdown/include/macros.twig).
-- The test suite uses Twig extensions to test the Twig macro functionality.
 - Check [`\phpDocumentor\Descriptor\ProjectDescriptor`](https://github.com/phpDocumentor/phpDocumentor/blob/master/src/phpDocumentor/Descriptor/ProjectDescriptor.php) for data structure used to generate the documentation.
+- There are unit tests and functional tests available in the `tests` directory.
+  - Unit tests are used to test individual Twig macros
+  - Functional tests are used to test the whole documentation generation process
 
 ## Inspired by:
 
