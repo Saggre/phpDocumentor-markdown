@@ -7,14 +7,14 @@
 } only %}
 
 * Full name: `{{ node.FullyQualifiedStructuralElementName }}`
-{% if node.parent and node.parent is not empty %}* Parent class: {{ macros.mdClassLink(node.parent, macros.mdClassPath(node), node.parent.FullyQualifiedStructuralElementName) }}
+{% if node.parent and node.parent is not empty %}* Parent class: {{ macros.mdLink(node.parent, macros.mdClassPath(node), node.parent.FullyQualifiedStructuralElementName, 'class') }}
 {% endif %}
 {% if node.final %}* This class is marked as **final** and can't be subclassed
 {% endif %}
 {% if node.deprecated %}* **Warning:** this class is **deprecated**. This means that this class will likely be removed in a future version.
 {% endif %}
 {% if node.interfaces is not empty %}* This class implements:
-{% for interface in node.interfaces %}{% if loop.index0 > 0 %}{{ ',\n  ' }}{% else %}{{ '  ' }}{% endif %}{{ macros.mdClassLink(interface, macros.mdClassPath(node), interface) }}{% endfor %}
+{% for interface in node.interfaces %}{% if loop.index0 > 0 %}{{ ',\n  ' }}{% else %}{{ '  ' }}{% endif %}{{ macros.mdLink(interface, macros.mdClassPath(node), interface, 'class') }}{% endfor %}
 
 {% endif %}
 {% if node.abstract %}* This class is an **Abstract class**

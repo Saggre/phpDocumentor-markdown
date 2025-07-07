@@ -60,7 +60,7 @@
 {% if exception.description | trim %}
 {{ exception.description | raw }}
 {% endif %}
-- {{ macros.mdClassLink(exception.type | raw, macros.mdClassPath(node), exception.type | shortFQSEN ) }}
+- {{ macros.mdLink(exception.type | raw, macros.mdClassPath(node), exception.type | shortFQSEN, 'class' ) }}
 {% endfor %}
 {% endif -%}
 {% include 'partials/tags.md.twig' with { tags: method.tags } only %}

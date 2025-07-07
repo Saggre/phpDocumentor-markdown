@@ -1,0 +1,51 @@
+{% import 'include/macros.twig' as macros %}
+{% block content %}
+{% include 'partials/header.md.twig' with {
+    title: node.name ~ '()',
+    subtitle: node.summary,
+    description: node.description,
+} only %}
+
+{% if node.deprecated %}* **Warning:** this function is **deprecated**. This means that this function will likely be removed in a future version.{% endif %}
+* Full name: `{{ node.name }}`
+* Defined in: `{{ node.file.path }}`
+{% include 'partials/tags.md.twig' with { tags: node.tags } only %}
+
+## Parameters
+
+{% if node.arguments is not empty %}
+{% set rows = [] %}
+{% for argument in node.arguments %}
+{% set rows = rows | merge([{
+    parameter: '`$' ~ argument.name ~ '`',
+    type: argument.type ? '**' ~ argument.type ~ '**' : '',
+    description: argument.description
+}]) %}
+{% endfor %}
+{{ macros.mdTable(rows, [
+    { label: 'Parameter', key: 'parameter' },
+    { label: 'Type', key: 'type' },
+    { label: 'Description', key: 'description' }
+]) -}}
+{% else %}
+This function has no parameters.
+{% endif %}
+
+## Return Value
+{% if node.response %}
+{% if node.response.type | trim %}
+
+**{{ node.response.type }}**
+{% endif %}
+{% if node.response.description | trim %}
+
+{{ node.response.description | raw }}
+{% endif %}
+{% else %}
+This function does not return a value.
+
+{% endif %}
+{% if parameter.includeFooter == 'yes' %}
+{% include 'partials/footer.md.twig' %}
+{% endif %}
+{% endblock %}

@@ -19,6 +19,10 @@
 {% if property.deprecated %}* **Warning:** this property is **deprecated**. This means that this property will likely be removed in a future version.
 {% endif %}
 {% endif %}
+{% if property.type and property.type.classes %}
+
+**Type:** {% for typeClass in property.type.classes %}{{ macros.mdLink(typeClass, path, null, 'class') }}{% if not loop.last %} | {% endif %}{% endfor %}
+{% endif %}
 {% include 'partials/tags.md.twig' with { tags: property.tags } only %}
 
 ***

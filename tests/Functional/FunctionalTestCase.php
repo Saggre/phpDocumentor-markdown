@@ -2,8 +2,6 @@
 
 namespace PhpDocumentorMarkdown\Test\Functional;
 
-use League\CommonMark\CommonMarkConverter;
-use League\CommonMark\Exception\CommonMarkException;
 use PhpDocumentorMarkdown\Test\Functional\Service\MarkdownGeneratorService;
 use PHPUnit\Framework\TestCase;
 

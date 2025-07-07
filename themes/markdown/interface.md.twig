@@ -8,7 +8,7 @@
 
 * Full name: `{{ node.FullyQualifiedStructuralElementName }}`
 {% if node.parent and node.parent is not empty %}* Parent interfaces:
-{% for parent in node.parent %}{% if loop.index0 == 0 %}{{ '  ' }}{% endif %}{{ macros.mdClassLink(parent, macros.mdClassPath(node), parent.FullyQualifiedStructuralElementName) }}{% if loop.index0 > 0 %}{{ ', ' }}{% endif %}{% endfor %}
+{% for parent in node.parent %}{% if loop.index0 == 0 %}{{ '  ' }}{% endif %}{{ macros.mdLink(parent, macros.mdClassPath(node), parent.FullyQualifiedStructuralElementName, 'class') }}{% if loop.index0 > 0 %}{{ ', ' }}{% endif %}{% endfor %}
 
 {% endif %}
 {% if node.final %}* This interface is marked as **final** and can't be subclassed
@@ -16,7 +16,7 @@
 {% if node.deprecated %}* **Warning:** this interface is **deprecated**. This means that this interface will likely be removed in a future version.
 {% endif %}
 {% if node.interfaces is not empty %}* This class implements:
-{% for interface in node.interfaces %}{% if loop.index0 == 0 %}{{ '  ' }}{% endif %}{{ macros.mdClassLink(interface, macros.mdClassPath(node), interface) }}{% if loop.index0 > 0 %}{{ ', ' }}{% endif %}{% endfor %}
+{% for interface in node.interfaces %}{% if loop.index0 == 0 %}{{ '  ' }}{% endif %}{{ macros.mdLink(interface, macros.mdClassPath(node), interface, 'class') }}{% if loop.index0 > 0 %}{{ ', ' }}{% endif %}{% endfor %}
 
 {% endif %}
 {% include 'partials/tags.md.twig' with { tags: node.tags } only %}

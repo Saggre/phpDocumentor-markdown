@@ -11,8 +11,11 @@
 {% if key == 'mdClassPath' %}
     {{- macros.mdClassPath(args[0]) -}}
 {% endif %}
-{% if key == 'mdClassLink' %}
-    {{- macros.mdClassLink(args[0], args[1], args[2]) -}}
+{% if key == 'mdFunctionPath' %}
+    {{- macros.mdFunctionPath(args[0]) -}}
+{% endif %}
+{% if key == 'mdLink' %}
+    {{- macros.mdLink(args[0], args[1], args[2], args[3]) -}}
 {% endif %}
 {% if key == 'mdRepeat' %}
     {{- macros.mdRepeat(args[0], args[1]) -}}

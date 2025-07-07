@@ -50,11 +50,11 @@ class MacroTest extends MacroTestCase
     {
         return [
             [
-                'expected' => '/Fully/Qualified/Structural/Element/Name.md',
+                'expected' => 'Fully/Qualified/Structural/Element/Name.md',
                 'args' => ['\Fully\Qualified\Structural\Element\Name'],
             ],
             [
-                'expected' => '/Fully/Qualified/Structural/Element/Name.md',
+                'expected' => 'Fully/Qualified/Structural/Element/Name.md',
                 'args' => [(object)['FullyQualifiedStructuralElementName' => '\Fully\Qualified\Structural\Element\Name']],
             ],
         ];
@@ -92,26 +92,49 @@ class MacroTest extends MacroTestCase
         self::assertEquals($expected, $result);
     }
 
-    public static function dataProviderTestMdClassLink(): array
+    public static function dataProviderTestMdFunctionPath(): array
     {
         return [
             [
-                'expected' => '[`Unknown`](./classes/Fully/Qualified/Structural/Element/Name.md)',
+                'expected' => 'functions/Fully/Qualified/Structural/Element/Name.md',
                 'args' => ['\Fully\Qualified\Structural\Element\Name'],
             ],
             [
-                'expected' => '[`ClassName`](Structural/Element/Name.md)',
-                'args' => ['\Fully\Qualified\Structural\Element\Name', 'classes/Fully/Qualified', 'ClassName'],
+                'expected' => 'functions/Fully/Qualified/Structural/Element/Name.md',
+                'args' => [(object)['FullyQualifiedStructuralElementName' => '\Fully\Qualified\Structural\Element\Name']],
             ],
         ];
     }
 
     /**
-     * @dataProvider dataProviderTestMdClassLink
+     * @dataProvider dataProviderTestMdFunctionPath
      */
-    public function testMdClassLink(string $expected, array $args): void
+    public function testMdFunctionPath(string $expected, array $args): void
     {
-        $result = $this->renderTemplate('mdClassLink', $args);
+        $result = $this->renderTemplate('mdFunctionPath', $args);
+        self::assertEquals($expected, $result);
+    }
+
+    public static function dataProviderTestMdLink(): array
+    {
+        return [
+            [
+                'expected' => '[`Unknown`](./classes/Fully/Qualified/Structural/Element/Name.md)',
+                'args' => ['\Fully\Qualified\Structural\Element\Name', null, null, 'class'],
+            ],
+            [
+                'expected' => '[`ClassName`](Structural/Element/Name.md)',
+                'args' => ['\Fully\Qualified\Structural\Element\Name', 'classes/Fully/Qualified', 'ClassName', 'class'],
+            ],
+        ];
+    }
+
+    /**
+     * @dataProvider dataProviderTestMdLink
+     */
+    public function testMdLink(string $expected, array $args): void
+    {
+        $result = $this->renderTemplate('mdLink', $args);
         self::assertEquals($expected, $result);
     }
 

@@ -34,3 +34,12 @@ This is an automatically generated documentation for **Pizza Place (Example docu
 |-------------------------------------------------------------------|--------------------------|
 | [`Base`](./classes/PhpDocumentorMarkdown/Example/Pizza/Base.md)   | Represents a pizza base. |
 | [`Sauce`](./classes/PhpDocumentorMarkdown/Example/Pizza/Sauce.md) | Pizza sauce class.       |
+
+### \PhpDocumentorMarkdown\Functions
+
+#### Functions
+
+| Function                                                                    | Description                                      |
+|-----------------------------------------------------------------------------|--------------------------------------------------|
+| [`mockFunctionWithParameters()`](./functions/mockFunctionWithParameters.md) | Mock function to demonstrate parameter handling. |
+| [`getDatabaseConfig()`](./functions/getDatabaseConfig.md)                   | Get database configuration.                      |

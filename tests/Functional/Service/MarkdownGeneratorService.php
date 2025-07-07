@@ -9,12 +9,14 @@ use Symfony\Component\Process\Process;
 
 class MarkdownGeneratorService
 {
+    protected string $projectRootPath;
     protected string $workingDir;
     protected Filesystem $filesystem;
 
     public function __construct(
-        protected string $projectRootPath
+        string $projectRootPath
     ) {
+        $this->projectRootPath = $projectRootPath;
         $this->filesystem = new Filesystem();
         $this->workingDir = tempnam(sys_get_temp_dir(), 'phpdoc');
         $this->filesystem->remove($this->workingDir);
@@ -32,11 +34,6 @@ class MarkdownGeneratorService
     protected function getProjectRootPath(): string
     {
         return $this->projectRootPath;
-    }
-
-    protected function getThemePath(): string
-    {
-        return "{$this->getProjectRootPath()}/themes/markdown";
     }
 
     protected function getPhpDocBinaryPath(): string
@@ -58,16 +55,13 @@ class MarkdownGeneratorService
                     PHP_BINARY,
                     $this->getPhpDocBinaryPath(),
                     '-vvv',
-                    '--config=none',
+                    "--config={$this->getProjectRootPath()}/phpdoc.dist.xml",
                     '--force',
-                    "--template={$this->getThemePath()}",
-                    "--directory=$this->workingDir/test",
                     "--target=$this->workingDir/output",
-                    '--title=Pizza Place (Example documentation)'
                 ],
                 $arguments
             ),
-            $this->workingDir
+            $this->getProjectRootPath()
         );
 
         return $process->mustRun();

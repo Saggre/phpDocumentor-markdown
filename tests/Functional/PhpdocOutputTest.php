@@ -31,6 +31,12 @@ class PhpdocOutputTest extends FunctionalTestCase
             array(
                 'path' => 'classes/PhpDocumentorMarkdown/Example/Pizza/Sauce.md',
             ),
+            array(
+                'path' => 'functions/getDatabaseConfig.md',
+            ),
+            array(
+                'path' => 'functions/mockFunctionWithParameters.md',
+            ),
         );
     }
 
