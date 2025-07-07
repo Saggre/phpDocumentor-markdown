@@ -1,6 +1,6 @@
 {
   "name": "saggre/phpdocumentor-markdown",
-  "description": "Markdown template for phpDocumentor 3.7.0+",
+  "description": "Markdown template for phpDocumentor3",
   "license": "MIT",
   "version": "1.0.0",
   "type": "library",
