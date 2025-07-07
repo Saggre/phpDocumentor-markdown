@@ -15,7 +15,7 @@
             </source>
         </api>
     </version>
-    <template name="./themes/markdown">
+    <template name="markdown" location="./themes">
         <!-- github|gitlab -->
         <parameter name="markdownFlavour" value="github"/>
         <!-- yes|no -->

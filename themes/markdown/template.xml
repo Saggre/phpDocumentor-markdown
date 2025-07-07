@@ -15,7 +15,4 @@
         <transformation writer="twig" query="indexes.functions" source="function.md.twig"
                         artifact="functions/{{name}}.md"/>
     </transformations>
-    <parameters>
-        <parameter key="twig-debug">true</parameter>
-    </parameters>
 </template>
