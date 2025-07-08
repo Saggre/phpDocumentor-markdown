@@ -11,7 +11,7 @@ This is an automatically generated documentation for **Pizza Place (Example docu
 | Class                                                                        | Description                  |
 |------------------------------------------------------------------------------|------------------------------|
 | [`AbstractProduct`](./classes/PhpDocumentorMarkdown/Example/AbstractProduct) | Base class for all products. |
-| [`Pizza`](./classes/PhpDocumentorMarkdown/Example/Pizza)                     | A pizza \| pie.              |
+| [`Pizza`](./classes/PhpDocumentorMarkdown/Example/Pizza)                     | A pizza \| pie's.            |
 
 #### Traits
 

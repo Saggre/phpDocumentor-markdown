@@ -108,9 +108,9 @@
  # @param length int The target length of the string
  #}
 {% macro mdPadRight(str, length) %}
-    {%- set str = str|default('') -%}
-    {%- set delta = length - str|length -%}
-    {{- str ~ _self.mdRepeat(' ', delta > 0 ? delta : 0) -}}
+    {%- set str = str | default('') -%}
+    {%- set delta = length - str | length -%}
+    {{- (str ~ _self.mdRepeat(' ', delta > 0 ? delta : 0)) | raw -}}
 {% endmacro %}
 
 {#
@@ -129,7 +129,7 @@
     {%- for row in rows %}
         {%- for col in headers %}
             {%- set value = attribute(row, col.key) %}
-            {%- set value = _self.mdEsc(value) | nl2br | replace({"\n": "", "\r": "", "\t": ""}) | raw %}
+            {%- set value = _self.mdEsc(value) %}
             {%- set length = value | length %}
             {%- if length > widths[loop.index0 ~ 'r'] %}
                 {%- set widths = widths | merge({ (loop.index0 ~ 'r'): length }) %}
@@ -150,8 +150,8 @@
     {%- for row in rows %}
         {%- for col in headers %}
             {%- set value = attribute(row, col.key) %}
-            {%- set value = _self.mdEsc(value) | nl2br | replace({"\n": "", "\r": "", "\t": ""}) | raw %}
-            {{- '| ' ~ _self.mdPadRight(value, widths[loop.index0 ~ 'r']) ~ ' ' }}
+            {%- set value = _self.mdEsc(value) %}
+            {{- ('| ' ~ _self.mdPadRight(value, widths[loop.index0 ~ 'r']) ~ ' ') | raw }}
         {%- endfor -%}
         {{ '|' ~ "\n" }}
     {%- endfor %}

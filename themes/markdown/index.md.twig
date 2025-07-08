@@ -19,7 +19,7 @@ This is an automatically generated documentation for **{{project.name}}**.
 {% set parameters = parameters | merge([
     {
         link: macros.mdLink(class.FullyQualifiedStructuralElementName, null, null, 'class'),
-        description: class.summary | nl2br | replace({"\n": "", "\r": "", "\t": ""}) | raw
+        description: class.summary | raw
     }
 ]) %}
 {% endfor -%}
@@ -37,7 +37,7 @@ This is an automatically generated documentation for **{{project.name}}**.
 {% set parameters = parameters | merge([
     {
         link: macros.mdLink(trait.FullyQualifiedStructuralElementName, null, null, 'class'),
-        description: trait.summary | nl2br | replace({"\n": "", "\r": "", "\t": ""}) | raw
+        description: trait.summary | raw
     }
 ]) %}
 {% endfor -%}
@@ -55,7 +55,7 @@ This is an automatically generated documentation for **{{project.name}}**.
 {% set parameters = parameters | merge([
     {
         link: macros.mdLink(interface.FullyQualifiedStructuralElementName, null, null, 'class'),
-        description: interface.summary | nl2br | replace({"\n": "", "\r": "", "\t": ""}) | raw
+        description: interface.summary | raw
     }
 ]) %}
 {% endfor -%}
@@ -73,7 +73,7 @@ This is an automatically generated documentation for **{{project.name}}**.
 {% set parameters = parameters | merge([
     {
         link: macros.mdLink(function.name, null, function.name ~ '()', 'function'),
-        description: function.summary | nl2br | replace({"\n": "", "\r": "", "\t": ""}) | raw
+        description: function.summary | raw
     }
 ]) %}
 {% endfor -%}

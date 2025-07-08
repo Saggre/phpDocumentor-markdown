@@ -1,6 +1,6 @@
 # Pizza
 
-A pizza \| pie.
+A pizza \| pie's.
 
 ***
 
@@ -67,7 +67,7 @@ Constructor description
 |-----------|-----------------------------------------------------|----------------|
 | `$name`   | **string**                                          | Product name.  |
 | `$price`  | **float**                                           | Product price. |
-| `$base`   | **\PhpDocumentorMarkdown\Example\Pizza\Base\|null** | Pizza base.    |
+| `$base`   | **\PhpDocumentorMarkdown\Example\Pizza\Base\|null** | Pizza's base.  |
 
 ***
 

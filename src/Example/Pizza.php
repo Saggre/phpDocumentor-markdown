@@ -6,7 +6,7 @@ use JsonSerializable;
 use PhpDocumentorMarkdown\Example\Pizza\Base;
 
 /**
- * A pizza | pie.
+ * A pizza | pie's.
  */
 class Pizza extends AbstractProduct implements ProductInterface, JsonSerializable
 {
@@ -42,7 +42,7 @@ class Pizza extends AbstractProduct implements ProductInterface, JsonSerializabl
      *
      * @param  string  $name  Product name.
      * @param  float  $price  Product price.
-     * @param  Base|null  $base  Pizza base.
+     * @param  Base|null  $base  Pizza's base.
      */
     public function __construct(string $name = '', float $price = 10.0, ?Base $base = null)
     {

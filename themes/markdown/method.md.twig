@@ -34,7 +34,7 @@
     {
         name: '`$' ~ argument.name ~ '`',
         type: argument.type ? '**' ~ argument.type ~ '**' : '',
-        description: argument.description | nl2br | replace({"\n": "", "\r": "", "\t": ""}) | raw
+        description: argument.description | raw
     }
 ]) %}
 {% endfor -%}
