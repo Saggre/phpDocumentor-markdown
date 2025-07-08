@@ -1,4 +1,5 @@
 {% import 'include/macros.twig' as macros %}
+{% autoescape false %}
 {% block content %}
 {% include 'partials/header.md.twig' with { node: project } %}
 
@@ -83,4 +84,8 @@ This is an automatically generated documentation for **{{project.name}}**.
 {%- endif %}
 {% endif %}
 {% endfor %}
-{% if parameter.includeFooter == 'yes' %}{% include 'partials/footer.md.twig' %}{% endif %}{% endblock %}
+{% if parameter.includeFooter == 'yes' %}
+{% include 'partials/footer.md.twig' %}
+{% endif %}
+{% endblock %}
+{% endautoescape %}

@@ -1,4 +1,5 @@
 {% import 'include/macros.twig' as macros %}
+{% autoescape false %}
 {% block content %}
 {% include 'partials/header.md.twig' with { node: node } %}
 
@@ -70,3 +71,4 @@
 {% include 'partials/footer.md.twig' %}
 {% endif %}
 {% endblock %}
+{% endautoescape %}
