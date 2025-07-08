@@ -213,4 +213,43 @@ MD,
         $result = $this->renderTemplate('mdTable', $args);
         self::assertEquals(trim($expected), trim($result));
     }
+
+    public static function dataProviderTestMdNestingLevel(): array
+    {
+        return [
+            [
+                'expected' => 0,
+                'args' => [''],
+            ],
+            [
+                'expected' => 0,
+                'args' => ['/foo'],
+            ],
+            [
+                'expected' => 1,
+                'args' => ['foo/bar'],
+            ],
+            [
+                'expected' => 2,
+                'args' => ['foo/bar/baz'],
+            ],
+            [
+                'expected' => 3,
+                'args' => ['foo/bar/baz/qux'],
+            ],
+            [
+                'expected' => 3,
+                'args' => ['foo/bar/baz/qux/'],
+            ],
+        ];
+    }
+
+    /**
+     * @dataProvider dataProviderTestMdNestingLevel
+     */
+    public function testMdNestingLevel(int $expected, array $args): void
+    {
+        $result = $this->renderTemplate('mdNestingLevel', $args);
+        self::assertEquals($expected, $result);
+    }
 }

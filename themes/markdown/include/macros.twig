@@ -156,3 +156,12 @@
         {{ '|' ~ "\n" }}
     {%- endfor %}
 {% endmacro %}
+
+{#
+ # Calculate the nesting level of a given path
+ # @param path string The path to analyze
+ #}
+{% macro mdNestingLevel(path) %}
+    {%- set normalized = path | replace({'\\': '/'}) | trim('/') -%}
+    {{- normalized ? (normalized | split('/') | length - 1) : 0 -}}
+{% endmacro %}

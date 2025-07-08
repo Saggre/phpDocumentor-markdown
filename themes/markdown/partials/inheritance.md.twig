@@ -5,5 +5,9 @@
     {%- else -%}
         {{- '  ' -}}
     {%- endif -%}
-    {{- macros.mdLink(otherNode, macros.mdClassPath(node), otherNode.FullyQualifiedStructuralElementName, 'class') -}}
+    {%- if '0' == macros.mdNestingLevel(otherNode.FullyQualifiedStructuralElementName) -%}
+        {{- '`' ~ otherNode.FullyQualifiedStructuralElementName | default(otherNode.name) ~ '`' -}}
+    {%- else -%}
+        {{- macros.mdLink(otherNode, macros.mdClassPath(node), otherNode.FullyQualifiedStructuralElementName, 'class') -}}
+    {%- endif -%}
 {%- endfor -%}
