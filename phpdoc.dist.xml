@@ -21,6 +21,8 @@
         <!-- yes|no -->
         <parameter name="urlFileExtensions" value="no"/>
         <!-- yes|no -->
+        <parameter name="includeTitle" value="yes"/>
+        <!-- yes|no -->
         <parameter name="includeFooter" value="no"/>
     </template>
 </phpdocumentor>

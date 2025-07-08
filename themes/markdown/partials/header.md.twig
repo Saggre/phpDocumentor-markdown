@@ -1,5 +1,7 @@
 {% import 'include/macros.twig' as macros %}
+{% if includeTitle != 'no' %}
 # {{ (node.name ~ titleSuffix | default('')) | raw }}
+{% endif %}
 {% if node.summary | trim %}
 
 {{ macros.mdEsc(node.summary) | raw }}
