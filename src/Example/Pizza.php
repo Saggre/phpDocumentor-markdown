@@ -44,7 +44,7 @@ class Pizza extends AbstractProduct implements ProductInterface, JsonSerializabl
      * @param  float  $price  Product price.
      * @param  Base|null  $base  Pizza base.
      */
-    public function __construct(string $name, float $price, ?Base $base = null)
+    public function __construct(string $name = '', float $price = 10.0, ?Base $base = null)
     {
         $this->name  = $name;
         $this->price = $price;

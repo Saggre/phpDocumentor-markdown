@@ -53,7 +53,7 @@ Property base description
 Constructor title
 
 ```php
-public __construct(string $name, float $price, \PhpDocumentorMarkdown\Example\Pizza\Base|null $base = null): mixed
+public __construct(string $name = '', float $price = 10.0, \PhpDocumentorMarkdown\Example\Pizza\Base|null $base = null): mixed
 ```
 
 Constructor description 
