@@ -19,7 +19,7 @@
         <!-- github|gitlab -->
         <parameter name="markdownFlavour" value="github"/>
         <!-- yes|no -->
-        <parameter name="urlFileExtensions" value="yes"/>
+        <parameter name="urlFileExtensions" value="no"/>
         <!-- yes|no -->
         <parameter name="includeFooter" value="no"/>
     </template>

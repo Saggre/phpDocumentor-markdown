@@ -6,7 +6,7 @@ Interface for a product.
 
 * Full name: `\PhpDocumentorMarkdown\Example\ProductInterface`
 * Parent interfaces:
-  [`\PhpDocumentorMarkdown\Example\Arrayable`](./Arrayable.md)
+  [`\PhpDocumentorMarkdown\Example\Arrayable`](./Arrayable)
 
 ## Methods
 

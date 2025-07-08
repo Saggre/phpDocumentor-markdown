@@ -50,11 +50,11 @@ class MacroTest extends MacroTestCase
     {
         return [
             [
-                'expected' => 'Fully/Qualified/Structural/Element/Name.md',
+                'expected' => 'Fully/Qualified/Structural/Element/Name',
                 'args' => ['\Fully\Qualified\Structural\Element\Name'],
             ],
             [
-                'expected' => 'Fully/Qualified/Structural/Element/Name.md',
+                'expected' => 'Fully/Qualified/Structural/Element/Name',
                 'args' => [(object)['FullyQualifiedStructuralElementName' => '\Fully\Qualified\Structural\Element\Name']],
             ],
         ];
@@ -73,11 +73,11 @@ class MacroTest extends MacroTestCase
     {
         return [
             [
-                'expected' => 'classes/Fully/Qualified/Structural/Element/Name.md',
+                'expected' => 'classes/Fully/Qualified/Structural/Element/Name',
                 'args' => ['\Fully\Qualified\Structural\Element\Name'],
             ],
             [
-                'expected' => 'classes/Fully/Qualified/Structural/Element/Name.md',
+                'expected' => 'classes/Fully/Qualified/Structural/Element/Name',
                 'args' => [(object)['FullyQualifiedStructuralElementName' => '\Fully\Qualified\Structural\Element\Name']],
             ],
         ];
@@ -96,11 +96,11 @@ class MacroTest extends MacroTestCase
     {
         return [
             [
-                'expected' => 'functions/Fully/Qualified/Structural/Element/Name.md',
+                'expected' => 'functions/Fully/Qualified/Structural/Element/Name',
                 'args' => ['\Fully\Qualified\Structural\Element\Name'],
             ],
             [
-                'expected' => 'functions/Fully/Qualified/Structural/Element/Name.md',
+                'expected' => 'functions/Fully/Qualified/Structural/Element/Name',
                 'args' => [(object)['FullyQualifiedStructuralElementName' => '\Fully\Qualified\Structural\Element\Name']],
             ],
         ];
@@ -119,11 +119,11 @@ class MacroTest extends MacroTestCase
     {
         return [
             [
-                'expected' => '[`Unknown`](./classes/Fully/Qualified/Structural/Element/Name.md)',
+                'expected' => '[`Unknown`](./classes/Fully/Qualified/Structural/Element/Name)',
                 'args' => ['\Fully\Qualified\Structural\Element\Name', null, null, 'class'],
             ],
             [
-                'expected' => '[`ClassName`](Structural/Element/Name.md)',
+                'expected' => '[`ClassName`](Structural/Element/Name)',
                 'args' => ['\Fully\Qualified\Structural\Element\Name', 'classes/Fully/Qualified', 'ClassName', 'class'],
             ],
         ];

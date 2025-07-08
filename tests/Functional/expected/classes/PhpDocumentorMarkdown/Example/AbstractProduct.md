@@ -6,7 +6,7 @@ Base class for all products.
 
 * Full name: `\PhpDocumentorMarkdown\Example\AbstractProduct`
 * This class implements:
-  [`\PhpDocumentorMarkdown\Example\ProductInterface`](./ProductInterface.md)
+  [`\PhpDocumentorMarkdown\Example\ProductInterface`](./ProductInterface)
 * This class is an **Abstract class**
 
 **See Also:**
