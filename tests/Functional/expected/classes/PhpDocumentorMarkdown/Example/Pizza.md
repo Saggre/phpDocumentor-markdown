@@ -2,6 +2,8 @@
 
 A pizza \| pie.
 
+***
+
 * Full name: `\PhpDocumentorMarkdown\Example\Pizza`
 * Parent class: [`\PhpDocumentorMarkdown\Example\AbstractProduct`](./AbstractProduct.md)
 * This class implements:
@@ -38,15 +40,26 @@ Pizza base.
 protected \PhpDocumentorMarkdown\Example\Pizza\Base|null $base
 ```
 
+Property base description 
+
+- **See:** \PhpDocumentorMarkdown\Example\ManyInterfaces
+
 ***
 
 ## Methods
 
 ### __construct
 
+Constructor title
+
 ```php
 public __construct(string $name, float $price, \PhpDocumentorMarkdown\Example\Pizza\Base|null $base = null): mixed
 ```
+
+Constructor description 
+
+- **See:** \PhpDocumentorMarkdown\Example\ManyInterfaces 
+- **See:** https://example.com
 
 **Parameters:**
 
@@ -86,6 +99,16 @@ public getPrice(): float
 
 ```php
 public jsonSerialize(): mixed
+```
+
+***
+
+### toArray
+
+Get the instance as an array.
+
+```php
+public toArray(): array
 ```
 
 ***

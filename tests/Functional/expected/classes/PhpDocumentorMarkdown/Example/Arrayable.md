@@ -1,5 +1,7 @@
 # Arrayable
 
+***
+
 * Full name: `\PhpDocumentorMarkdown\Example\Arrayable`
 
 ## Methods

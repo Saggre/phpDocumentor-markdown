@@ -8,10 +8,7 @@
 ```php
 {{ property.visibility ~ ' ' }}{% if property.static %}{{ 'static' ~ ' ' }}{% endif %}{% if property.type and property.type is not empty %}{{ property.type ~ ' ' }}{% endif %}{{ '$' ~ property.name }}
 ```
-{% if property.description | trim %}
-
-{{ macros.mdEsc(property.description) | raw }}
-{% endif %}
+{% include 'partials/description.md.twig' with { node: property } %}
 {% if property.static or property.deprecated %}
 
 {% if property.static %}* This property is **static**.

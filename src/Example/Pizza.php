@@ -29,11 +29,17 @@ class Pizza extends AbstractProduct implements ProductInterface, JsonSerializabl
     /**
      * Pizza base.
      *
+     * Property base description {@see ManyInterfaces}
+     *
      * @var Base|null
      */
     protected ?Base $base;
 
     /**
+     * Constructor title
+     *
+     * Constructor description {@see ManyInterfaces} {@see https://example.com}
+     *
      * @param  string  $name  Product name.
      * @param  float  $price  Product price.
      * @param  Base|null  $base  Pizza base.
@@ -68,5 +74,10 @@ class Pizza extends AbstractProduct implements ProductInterface, JsonSerializabl
     public function jsonSerialize()
     {
         // TODO: Implement jsonSerialize() method.
+    }
+
+    public function toArray(): array
+    {
+        // TODO: Implement toArray() method.
     }
 }

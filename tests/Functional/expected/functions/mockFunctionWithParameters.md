@@ -2,6 +2,8 @@
 
 Mock function to demonstrate parameter handling.
 
+***
+
 * Full name: `mockFunctionWithParameters`
 * Defined in: `src/Example/functions.php`
 

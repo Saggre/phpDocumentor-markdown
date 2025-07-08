@@ -2,6 +2,8 @@
 
 Get database configuration.
 
+***
+
 * Full name: `getDatabaseConfig`
 * Defined in: `src/Example/functions.php`
 

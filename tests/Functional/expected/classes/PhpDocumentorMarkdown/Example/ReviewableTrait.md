@@ -2,6 +2,8 @@
 
 A trait for reviewable objects.
 
+***
+
 * Full name: `\PhpDocumentorMarkdown\Example\ReviewableTrait`
 
 ## Properties

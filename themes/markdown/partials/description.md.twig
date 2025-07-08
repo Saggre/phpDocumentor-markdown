@@ -1,0 +1,9 @@
+{% if node.description | trim %}
+{% set description = node.description.bodyTemplate | default(node.description) %}
+{% for tag in node.description.tags %}
+{% set key = '%' ~ loop.index ~ '$s' %}
+{% set description = description | replace({(key): (loop.index0 == 0 ? '\n\n- ' : '\n- ') ~ '**See:** ' ~ tag.reference | trim }) %}
+{% endfor %}
+
+{{ description | raw }}
+{% endif %}

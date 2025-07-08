@@ -15,10 +15,7 @@
 {%- endfor %})
 {{- method.response.type ? ': ' ~ method.response.type }}
 ```
-{% if method.description | trim %}
-
-{{ method.description | raw }}
-{% endif -%}
+{% include 'partials/description.md.twig' with { node: method } %}
 {% if method.static or method.abstract or method.final or method.deprecated %}
 
 {% if method.static %}* This method is **static**.{% endif -%}
@@ -49,8 +46,7 @@
 {% if method.response.description and method.response.description is not empty %}
 
 **Return Value:**
-
-{{ method.response.description | raw }}
+{% include 'partials/description.md.twig' with { node: method.response } %}
 {% endif %}
 {% if method.tags.throws | length > 0 or method.tags.throw | length > 0 %}
 

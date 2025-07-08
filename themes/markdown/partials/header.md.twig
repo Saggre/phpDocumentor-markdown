@@ -1,11 +1,8 @@
 {% import 'include/macros.twig' as macros %}
-# {{ title | raw }}
-{% if subtitle | trim %}
+# {{ (node.name ~ titleSuffix | default('')) | raw }}
+{% if node.summary | trim %}
 
-{{ macros.mdEsc(subtitle) | raw }}
+{{ macros.mdEsc(node.summary) | raw }}
 {% endif -%}
-{%- if description | trim %}
-
-{{ macros.mdEsc(description) | raw }}
-{%- endif -%}
+{% include 'partials/description.md.twig' with { node: node } %}
 {% include 'partials/toc.md.twig' %}

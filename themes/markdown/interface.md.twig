@@ -1,10 +1,8 @@
 {% import 'include/macros.twig' as macros %}
 {% block content %}
-{% include 'partials/header.md.twig' with {
-    title: node.name,
-    subtitle: node.summary,
-    description: node.description,
-} only %}
+{% include 'partials/header.md.twig' with { node: node } only %}
+
+***
 
 * Full name: `{{ node.FullyQualifiedStructuralElementName }}`
 {% if node.parent and node.parent is not empty %}* Parent interfaces:
@@ -15,7 +13,7 @@
 {% endif %}
 {% if node.deprecated %}* **Warning:** this interface is **deprecated**. This means that this interface will likely be removed in a future version.
 {% endif %}
-{% if node.interfaces is not empty %}* This class implements:
+{% if node.interfaces is not empty %}* This interface implements:
 {% for interface in node.interfaces %}{% if loop.index0 == 0 %}{{ '  ' }}{% endif %}{{ macros.mdLink(interface, macros.mdClassPath(node), interface, 'class') }}{% if loop.index0 > 0 %}{{ ', ' }}{% endif %}{% endfor %}
 
 {% endif %}

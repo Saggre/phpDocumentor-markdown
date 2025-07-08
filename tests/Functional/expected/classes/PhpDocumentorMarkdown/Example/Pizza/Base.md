@@ -2,6 +2,8 @@
 
 Represents a pizza base.
 
+***
+
 * Full name: `\PhpDocumentorMarkdown\Example\Pizza\Base`
 
 ## Constants

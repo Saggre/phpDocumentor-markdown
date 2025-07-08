@@ -24,6 +24,7 @@ This is an automatically generated documentation for **Pizza Place (Example docu
 | Interface                                                                         | Description              |
 |-----------------------------------------------------------------------------------|--------------------------|
 | [`Arrayable`](./classes/PhpDocumentorMarkdown/Example/Arrayable.md)               |                          |
+| [`ManyInterfaces`](./classes/PhpDocumentorMarkdown/Example/ManyInterfaces.md)     | A ManyInterfaces         |
 | [`ProductInterface`](./classes/PhpDocumentorMarkdown/Example/ProductInterface.md) | Interface for a product. |
 
 ### \PhpDocumentorMarkdown\Example\Pizza

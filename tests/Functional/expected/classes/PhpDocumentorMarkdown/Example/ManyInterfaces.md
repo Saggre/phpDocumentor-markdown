@@ -1,14 +1,26 @@
-# ProductInterface
+# ManyInterfaces
 
-Interface for a product.
+ManyInterfaces description
+
+- **See:** \PhpDocumentorMarkdown\Example\AbstractProduct
 
 ***
 
-* Full name: `\PhpDocumentorMarkdown\Example\ProductInterface`
+* Full name: `\PhpDocumentorMarkdown\Example\ManyInterfaces`
 * Parent interfaces:
-  [`\PhpDocumentorMarkdown\Example\Arrayable`](./Arrayable.md)
+  [`\PhpDocumentorMarkdown\Example\ProductInterface`](./ProductInterface.md)[`JsonSerializable`](../../JsonSerializable.md),
 
-## Methods
+## Inherited methods
+
+### toArray
+
+Get the instance as an array.
+
+```php
+public toArray(): array
+```
+
+***
 
 ### __construct
 
@@ -51,18 +63,6 @@ Get the tax rate for this product.
 
 ```php
 public getTaxRate(): float
-```
-
-***
-
-## Inherited methods
-
-### toArray
-
-Get the instance as an array.
-
-```php
-public toArray(): array
 ```
 
 ***

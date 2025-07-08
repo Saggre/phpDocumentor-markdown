@@ -2,6 +2,8 @@
 
 Pizza sauce class.
 
+***
+
 * Full name: `\PhpDocumentorMarkdown\Example\Pizza\Sauce`
 
 ## Properties

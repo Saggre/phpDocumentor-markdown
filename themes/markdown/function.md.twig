@@ -1,10 +1,11 @@
 {% import 'include/macros.twig' as macros %}
 {% block content %}
 {% include 'partials/header.md.twig' with {
-    title: node.name ~ '()',
-    subtitle: node.summary,
-    description: node.description,
+    node: node,
+    titleSuffix: '()'
 } only %}
+
+***
 
 {% if node.deprecated %}* **Warning:** this function is **deprecated**. This means that this function will likely be removed in a future version.{% endif %}
 * Full name: `{{ node.name }}`
