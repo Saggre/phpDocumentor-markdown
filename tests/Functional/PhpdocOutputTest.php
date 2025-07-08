@@ -26,6 +26,9 @@ class PhpdocOutputTest extends FunctionalTestCase
                 'path' => 'classes/PhpDocumentorMarkdown/Example/ReviewableTrait.md',
             ),
             array(
+                'path' => 'classes/PhpDocumentorMarkdown/Example/ManyInterfaces.md',
+            ),
+            array(
                 'path' => 'classes/PhpDocumentorMarkdown/Example/Pizza/Base.md',
             ),
             array(

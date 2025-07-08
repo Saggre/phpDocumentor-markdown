@@ -8,7 +8,7 @@ A pizza \| pie.
 * Parent class: [`\PhpDocumentorMarkdown\Example\AbstractProduct`](./AbstractProduct.md)
 * This class implements:
   [`\PhpDocumentorMarkdown\Example\ProductInterface`](./ProductInterface.md),
-  [`\JsonSerializable`](../../JsonSerializable.md)
+  `\JsonSerializable`
 
 ## Properties
 

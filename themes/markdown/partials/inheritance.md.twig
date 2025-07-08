@@ -1,0 +1,9 @@
+{% import 'include/macros.twig' as macros %}
+{%- for otherNode in others -%}
+    {%- if loop.index0 > 0 -%}
+        {{- ',\n  ' -}}
+    {%- else -%}
+        {{- '  ' -}}
+    {%- endif -%}
+    {{- macros.mdLink(otherNode, macros.mdClassPath(node), otherNode.FullyQualifiedStructuralElementName, 'class') -}}
+{%- endfor -%}

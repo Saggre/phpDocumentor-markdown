@@ -12,7 +12,7 @@
 {% if node.deprecated %}* **Warning:** this class is **deprecated**. This means that this class will likely be removed in a future version.
 {% endif %}
 {% if node.interfaces is not empty %}* This class implements:
-{% for interface in node.interfaces %}{% if loop.index0 > 0 %}{{ ',\n  ' }}{% else %}{{ '  ' }}{% endif %}{{ macros.mdLink(interface, macros.mdClassPath(node), interface, 'class') }}{% endfor %}
+{% include 'partials/inheritance.md.twig' with { node: node, others: node.interfaces } only %}
 
 {% endif %}
 {% if node.abstract %}* This class is an **Abstract class**
