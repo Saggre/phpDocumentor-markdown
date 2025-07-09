@@ -7,6 +7,33 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.0.0] - 2025-07-10
+
+### Added
+
+- Option for removing page titles
+- Tags template
+- Table of contents template
+- Inheritance template
+- Functional tests
+- Unit tests for new macros
+
+### Changed
+
+- Rewrote markdown templates for improved formatting
+- Updated GitHub Actions workflows and workflow names
+- Moved page titles to header partial template
+- Defaulted to using URLs without file extensions
+
+### Fixed
+
+- Escaping issues in templates, tables and method signatures
+- Global parameters path resolution
+
+### Removed
+
+- Links from global classes and interfaces
+
 ## [0.1.4] - 2023-11-24
 
 ### Added
