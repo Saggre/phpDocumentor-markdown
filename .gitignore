@@ -1,5 +1,5 @@
 # PhpDocumentor
-.phpdoc/cache/
+.phpdoc/
 phpdoc.xml
 ast.dump
 var/
