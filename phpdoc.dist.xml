@@ -6,7 +6,7 @@
 >
     <title>Pizza Place (Example documentation)</title>
     <paths>
-        <output>docs/.wiki</output>
+        <output>.wiki</output>
     </paths>
     <version number="latest">
         <api>

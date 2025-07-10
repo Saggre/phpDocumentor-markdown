@@ -1,3 +1,0 @@
-[submodule "docs/.wiki"]
-	path = docs/.wiki
-	url = git@github.com:Saggre/phpDocumentor-markdown.wiki.git

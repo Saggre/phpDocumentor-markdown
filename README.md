@@ -25,7 +25,7 @@ This template can be used to document:
 | Properties | ✅    | ✅            | ✅                               | ✅                |
 
 ## Example
-Examples are available in the [docs/.wiki](docs/.wiki/Home.md) directory.
+Examples are available in the [.wiki](.wiki/Home.md) directory.
 
 ## Installation & Usage
 - Please refer to [this guide](https://docs.phpdoc.org/guide/getting-started/installing.html) for instructions on installing phpDocumentor.
