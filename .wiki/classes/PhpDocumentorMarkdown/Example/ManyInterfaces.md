@@ -10,7 +10,7 @@ ManyInterfaces description
 
 * Full name: `\PhpDocumentorMarkdown\Example\ManyInterfaces`
 * Parent interfaces:
-  [`\PhpDocumentorMarkdown\Example\ProductInterface`](./ProductInterface),
+  [`\PhpDocumentorMarkdown\Example\ProductInterface`](./ProductInterface.md),
   `JsonSerializable`
 
 ## Inherited methods

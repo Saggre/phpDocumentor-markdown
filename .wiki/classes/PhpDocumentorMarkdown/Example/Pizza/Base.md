@@ -69,6 +69,6 @@ public getYeast(): int
 
 **Throws:**
 
-- [`Exception`](../../../Exception)
+- [`Exception`](../../../Exception.md)
 
 ***
