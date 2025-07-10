@@ -16,13 +16,13 @@
         </api>
     </version>
     <template name="markdown" location="./themes">
-        <!-- github|gitlab -->
+        <!-- Print GitLab or GitHub compatible Markdown. Options: github|gitlab -->
         <parameter name="markdownFlavour" value="github"/>
-        <!-- yes|no -->
+        <!-- Add ".md" to links. Options: yes|no -->
         <parameter name="urlFileExtensions" value="no"/>
-        <!-- yes|no -->
+        <!-- Include H1 level title in Markdown. Options: yes|no -->
         <parameter name="includeTitle" value="yes"/>
-        <!-- yes|no -->
+        <!-- Include a footer with timestamp. Options: yes|no -->
         <parameter name="includeFooter" value="no"/>
     </template>
 </phpdocumentor>

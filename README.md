@@ -1,23 +1,40 @@
-# phpDocumentor - Generate GitHub/GitLab-Ready Markdown Documentation
+# phpDocumentor-markdown - Automatically generate Markdown documentation
+
+Use cases: In-repository documentation, GitHub/GitLab wikis, AI prompt context.
 
 ## Markdown template for phpDocumentor3
 
 ![Tests Status](https://github.com/Saggre/phpDocumentor-markdown/workflows/Run%20tests/badge.svg?style=flat-square)
 ![Generate Docs Status](https://github.com/Saggre/phpDocumentor-markdown/workflows/Generate%20docs/badge.svg?style=flat-square)
 
-Have you ever wished there was an easier way to generate documentation for your PHP source code? Well, now there is! With [phpDocumentor](https://www.phpdoc.org/) and phpDocumentor-markdown, you can automatically generate GitHub/GitLab-ready Markdown documentation from your PHP source code. This template can be used to document classes, interfaces, traits, constants, properties and methods.
+Wish there was an easy way to generate PHP source code documentation? \
+Using [`phpDocumentor`](https://www.phpdoc.org/) with `phpDocumentor-markdown` template, you can automatically generate GitHub/GitLab-ready Markdown documentation from PHP source code. 
+
+This template can be used to document: 
+
+|            | Name | Descriptions | Inheritance | Implements | Constants | Properties | Methods | Inherited methods | 
+|------------|------|--------------|-------------|------------|-----------|------------|---------|-------------------|
+| Classes    | ✅    | ✅            | ✅           | ✅          | ✅         | ✅          | ✅       | ✅                 |
+| Interfaces | ✅    | ✅            | ✅           | ➖          | ✅         | ✅          | ✅       | ➖                 |
+| Traits     | ✅    | ✅            | ➖           | ➖          | ✅         | ✅          | ✅       | ➖                 |
+
+|            | Name | Descriptions | Types (parameter, return, etc.) | Access modifiers |
+|------------|------|--------------|---------------------------------|------------------|
+| Functions  | ✅    | ✅            | ✅                               | ✅                | 
+| Methods    | ✅    | ✅            | ✅                               | ✅                | 
+| Properties | ✅    | ✅            | ✅                               | ✅                |
 
 ## Example
-An example is available in the [example](docs/.wiki/Home.md) directory.
+Examples are available in the [docs/.wiki](docs/.wiki/Home.md) directory.
 
 ## Installation & Usage
-- Please refer to [this guide](https://docs.phpdoc.org/3.0/guide/getting-started/installing.html) for instructions on installing phpDocumentor.
-- Usage instructions assume that `phpDocumentor` is the phpDocumentor 3.x binary.
+- Please refer to [this guide](https://docs.phpdoc.org/guide/getting-started/installing.html) for instructions on installing phpDocumentor.
+- Usage instructions assume that `phpdoc` is the phpDocumentor binary.
 
 ### Running manually
 ```bash
 # Run phpDocumentor with --template argument pointed to this directory's markdown template
-phpDocumentor --directory=src --target=docs --template=<PATH TO THIS REPOSITORY/themes/markdown>
+phpdoc --directory=src --target=docs --template=<PATH TO THIS REPOSITORY/themes/markdown>
 ```
 
 ### Using Composer
@@ -31,27 +48,49 @@ composer require --dev saggre/phpdocumentor-markdown
 #### Running manually after installing via Composer
 ```bash
 # Run phpDocumentor with --template argument pointed to markdown template inside vendor directory
-phpDocumentor --directory=src --target=docs --template="vendor/saggre/phpdocumentor-markdown/themes/markdown"
+phpdoc --directory=src --target=docs --template="vendor/saggre/phpdocumentor-markdown/themes/markdown"
 ```
 
+### Installation & Usage tips
+
 #### Adding a Composer helper script
+
 Add this script to your `composer.json` and run `composer create-docs` to generate the documentation.
 
 ```json
 "scripts": {
-    "create-docs": "phpDocumentor --directory=src --target=docs --template='vendor/saggre/phpdocumentor-markdown/themes/markdown'"
+    "create-docs": "phpdoc --directory=src --target=docs --template='vendor/saggre/phpdocumentor-markdown/themes/markdown'"
 },
 ```
 
 #### Using with PhpDocumentor XML config
+
 Add a template element to your phpDocumentor XML config and run `phpDocumentor` to generate the documentation.
+
 ```xml
 <phpdocumentor>
     <!-- Specify template element inside phpdocumentor -->
     <template name="./vendor/saggre/phpdocumentor-markdown/themes/markdown"/>
 </phpdocumentor>
 ```
+
 You can also check out the [config file](./phpdoc.dist.xml) used for generating this repository's example documentation for a full example.
+
+#### GitLab wiki
+
+The output of this template can be used directly as a GitLab wiki.
+
+#### GitHub wiki
+
+⚠️ GitHub wiki [uses a flat directory structure](https://github.com/orgs/community/discussions/14020) for linking, so the internal links in the resulting documentation will not work as expected.
+
+#### CI pipelines
+
+You can use the [PhpDocumentor Docker image](https://hub.docker.com/r/phpdoc/phpdoc) with this template in your CI pipelines to generate documentation automatically.
+
+#### AI integration
+
+The generated documentation can be used as prompt context for AI models that work with source code. For other use cases you'll likely want structured data, like JSON.
 
 ## Running tests
 ```bash
@@ -72,8 +111,6 @@ composer test
 ```
 
 ## Contributing
-- Use PSR-12 coding style
-- Check [`\phpDocumentor\Descriptor\ProjectDescriptor`](https://github.com/phpDocumentor/phpDocumentor/blob/master/src/phpDocumentor/Descriptor/ProjectDescriptor.php) for data structure used to generate the documentation.
 - There are unit tests and functional tests available in the `tests` directory.
   - Unit tests are used to test individual Twig macros
   - Functional tests are used to test the whole documentation generation process

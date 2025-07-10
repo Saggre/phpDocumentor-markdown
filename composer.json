@@ -13,8 +13,8 @@
     "phpdocumentor",
     "phpdoc",
     "markdown",
-    "github",
-    "gitlab",
+    "ci",
+    "ai",
     "documentation"
   ],
   "require": {
