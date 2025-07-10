@@ -7,6 +7,8 @@ namespace PhpDocumentorMarkdown\Example;
  */
 trait ReviewableTrait
 {
+    public const bool REVIEWABLE = true;
+
     /**
      * @var array $reviews Product reviews.
      */

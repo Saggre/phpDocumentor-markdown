@@ -17,6 +17,28 @@
 
 {% endif %}
 {% include 'partials/tags.md.twig' with { tags: node.tags } only %}
+{% if node.constants | length > 0 %}
+
+## Constants
+
+{% set constants = [] %}
+{% for constant in node.constants %}
+{% set constants = constants | merge([
+    {
+        name: '`' ~ constant.name ~ '`',
+        visibility: constant.visibility | default('*default*'),
+        type: constant.type ? constant.type : '',
+        value: constant.value
+    }
+]) %}
+{% endfor %}
+{{ macros.mdTable(constants, [
+    { label: 'Constant', key: 'name' },
+    { label: 'Visibility', key: 'visibility' },
+    { label: 'Type', key: 'type' },
+    { label: 'Value', key: 'value' },
+]) -}}
+{% endif %}
 {% if node.properties | length > 0 %}
 
 ## Properties

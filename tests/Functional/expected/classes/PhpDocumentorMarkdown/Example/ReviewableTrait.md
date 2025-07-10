@@ -6,6 +6,12 @@ A trait for reviewable objects.
 
 * Full name: `\PhpDocumentorMarkdown\Example\ReviewableTrait`
 
+## Constants
+
+| Constant     | Visibility | Type | Value |
+|--------------|------------|------|-------|
+| `REVIEWABLE` | public     |      | true  |
+
 ## Properties
 
 ### reviews
