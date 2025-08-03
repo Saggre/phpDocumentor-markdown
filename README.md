@@ -6,6 +6,7 @@ Use cases: In-repository documentation, GitHub/GitLab wikis, AI prompt context.
 
 ![Tests Status](https://github.com/Saggre/phpDocumentor-markdown/workflows/Run%20tests/badge.svg?style=flat-square)
 ![Generate Docs Status](https://github.com/Saggre/phpDocumentor-markdown/workflows/Generate%20docs/badge.svg?style=flat-square)
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FSaggre%2FphpDocumentor-markdown.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2FSaggre%2FphpDocumentor-markdown?ref=badge_shield)
 
 Wish there was an easy way to generate PHP source code documentation? \
 Using [`phpDocumentor`](https://www.phpdoc.org/) with `phpDocumentor-markdown` template, you can automatically generate GitHub/GitLab-ready Markdown documentation from PHP source code. 
@@ -121,3 +122,7 @@ composer test
 * [cvuorinen/phpdoc-markdown-public](https://github.com/cvuorinen/phpdoc-markdown-public)
 * [evert/phpdoc-md](https://github.com/evert/phpdoc-md)
 * [heimrichhannot/phpdoc-github-template](https://github.com/heimrichhannot/phpdoc-github-template)
+
+
+## License
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FSaggre%2FphpDocumentor-markdown.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2FSaggre%2FphpDocumentor-markdown?ref=badge_large)
